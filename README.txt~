@@ -1,7 +1,7 @@
 This is the initial pinac repository.
 
 <<<<<<< HEAD:README.txt
-This is an edit by Phil 10
+This is another edit by Phil 10
 =======
-This is another edit by Phil
->>>>>>> test:README.txt
+Test out merge conflicts with this line.
+>>>>>>> 232664af0692615a4ac4a32b04f9576bf5801776:README.txt
