@@ -1,4 +1,4 @@
 First edit by Srinivasan Sundararajan
 Second Edit by dgoyal
 third edit by VINIT MEHTA
---------- Team completed the git lab successfully ------ yiepee..
+--------- Team completed the git lab successfully ------ 
