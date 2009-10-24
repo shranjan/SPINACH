@@ -1,0 +1,1 @@
+prototype for each tema member.
