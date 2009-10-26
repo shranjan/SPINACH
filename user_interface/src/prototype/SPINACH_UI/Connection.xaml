@@ -1,0 +1,29 @@
+﻿<Window x:Class="SPINACH_UI.Connection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="SPINACH - Connection" Height="318" Width="514" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="CanResize" Icon="/SPINACH_UI;component/Icon.JPG" Background="Lavender" Loaded="Window_Loaded" FontFamily="Segoe UI" FontSize="12" Name="frmConnection">
+    <Grid>
+    <Label HorizontalAlignment="Left" Margin="37,140,0,117" Name="lblSelfIP" Width="80" FontFamily="Segoe UI" FontSize="12">IP Address</Label>
+    <TextBox Margin="132,0,0,117" Name="txtSelfIP" HorizontalAlignment="Left" Width="105" FontFamily="Segoe UI" Height="23" VerticalAlignment="Bottom" TabIndex="1" FontSize="12" />
+    <Label HorizontalAlignment="Left" Margin="37,0,0,87" Name="lblPort" Width="80" Height="23" VerticalAlignment="Bottom" FontFamily="Segoe UI" FontSize="12">Port No.</Label>
+    <TextBox Margin="132,0,0,86" Name="txtPort" Height="23" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="105" FontFamily="Segoe UI" TabIndex="2" FontSize="12" />
+    <Label HorizontalAlignment="Left" Margin="37,0,0,57" Name="lblUsername" Width="80" FontFamily="Segoe UI" Height="23" VerticalAlignment="Bottom" FontSize="12">UserName</Label>
+    <TextBox HorizontalAlignment="Left" Margin="132,0,0,57" Name="txtUsername" Width="105" Height="23" VerticalAlignment="Bottom" FontFamily="Segoe UI" TabIndex="3" FontSize="12" />
+    <Image Margin="35,17,0,0" Name="imgLogo" Stretch="Fill" Source="/SPINACH_UI;component/SPINACH_logo.jpg" Height="90" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150">
+      <Image.BitmapEffect>
+        <DropShadowBitmapEffect Color="DarkGray" />
+      </Image.BitmapEffect>
+    </Image>
+    <Label HorizontalAlignment="Right" Margin="0,0,142,115" Name="lblPeerIP" Width="61" Visibility="Hidden" Height="23" VerticalAlignment="Bottom" FontFamily="Segoe UI" FontSize="12">Peer IP</Label>
+    <Label HorizontalAlignment="Right" Margin="0,0,142,85" Name="lblPeerPort" Width="61.679" Visibility="Hidden" FontFamily="Segoe UI" Height="23" VerticalAlignment="Bottom" FontSize="12">Peer Port</Label>
+    <TextBox Margin="0,0,36,115" Name="txtPeerIP" IsEnabled="True" Visibility="Hidden" FontFamily="Segoe UI" HorizontalAlignment="Right" Width="105" Height="23" VerticalAlignment="Bottom" TabIndex="6" FontSize="12" />
+    <TextBox Margin="0,0,36,84" Name="txtPeerPort" IsEnabled="True" Visibility="Hidden" FontFamily="Segoe UI" Height="23" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="105" TabIndex="7" FontSize="12" />
+    <RadioButton Margin="0,119,104,0" Name="rdbJoinSwarm" HorizontalAlignment="Right" Width="100" Checked="rdbJoinSwarm_Checked" Unchecked="rdbJoinSwarm_Unchecked" FontFamily="Segoe UI" Height="14" VerticalAlignment="Top" TabIndex="5" FontSize="12">
+        Join Swarm
+    </RadioButton>
+    <RadioButton Margin="0,93,104,0" Name="rdbCreateSwarm" FontFamily="Segoe UI" HorizontalAlignment="Right" Width="100" Height="14" VerticalAlignment="Top" TabIndex="4" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="12">
+        Create Swarm
+    </RadioButton>
+    <Button Margin="210,0,187,11" Name="btnConnect" FontFamily="Segoe UI" Height="28" VerticalAlignment="Bottom" TabIndex="8" FontSize="12" Click="btnConnect_Click" IsDefault="True">Connect</Button>
+  </Grid>
+</Window>
