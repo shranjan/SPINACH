@@ -1,1 +1,1 @@
-prototype for each tema member.
+prototype for each team member verified.
