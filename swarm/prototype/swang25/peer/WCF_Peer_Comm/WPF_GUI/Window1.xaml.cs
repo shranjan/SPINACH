@@ -64,9 +64,10 @@ namespace WPF_GUI
 
     void OnNewMessageHandler(string msg)
     {
-        string temp = mPeer.getIPandName(msg);
+        MessageParser mMsg = new MessageParser();
+        mMsg.GetMsg(msg);
+        String temp=mMsg.parse(ref mPeer);
         listBox2.Items.Insert(0, temp);
-      listBox2.Items.Insert(0, msg);
       
       
     }
@@ -85,11 +86,14 @@ namespace WPF_GUI
 
     private void button2_Click(object sender, RoutedEventArgs e)
     {
-        Peer p = new Peer(textBox1.Text, textBox2.Text, textBox6.Text);
+        Peer p = new Peer();
+        p.SetIP(textBox1.Text);
+        p.SetPort(textBox2.Text);
+        p.SetName(textBox6.Text);
         mPeer = p;
-        mPeer.AddSelf();
+        mPeer.InsertPeer(mPeer.GetIP() + ":" + mPeer.GetPort(),mPeer.GetName(),mPeer.GetCPU());
       string localPort = textBox2.Text;
-      string endpoint = "http://localhost:" + localPort + "/ICommunicator";
+      string endpoint = "http://" + textBox1.Text + ":" + localPort + "/ICommunicator";
 
       try
       {
@@ -121,7 +125,7 @@ namespace WPF_GUI
     {
       string remoteAddress = textBox5.Text;
       string remotePort = textBox3.Text;
-      string endpoint = remoteAddress + ":" + remotePort + "/ICommunicator";
+      string endpoint = "http://" + textBox5.Text + ":" + remotePort + "/ICommunicator";
 
       sndr = new WCF_Peer_Comm.Sender();
       sndr.CreateSendChannel(endpoint);
@@ -181,7 +185,9 @@ namespace WPF_GUI
 
     private void button4_Click(object sender, RoutedEventArgs e)
     {
-        string msg=mPeer.msgIPandName();
+        MessageGenerator mMsg = new MessageGenerator();
+       // string msg = mMsg.msgIPNameCPU(ref mPeer);
+        string msg = mMsg.msgRun();
         textBox4.Text = msg;
     }
 
