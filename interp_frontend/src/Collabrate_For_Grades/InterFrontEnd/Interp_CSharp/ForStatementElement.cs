@@ -37,7 +37,8 @@ public class ForStatementElement : Element
             Range = value;
         }
     }
-
+    
+    //Adds the code to the list.
     public Element ADDCODE
     {
         set
@@ -47,7 +48,7 @@ public class ForStatementElement : Element
     }
 
 
-    //adds the code inside the parallelfor loop to the list.
+    //gets the code inside the parallelfor loop to the list.
     public List<Element> CODELIST
     {
         get

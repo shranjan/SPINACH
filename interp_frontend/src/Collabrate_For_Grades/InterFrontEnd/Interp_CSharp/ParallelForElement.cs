@@ -2,7 +2,7 @@
 // ParallelForElement.cs: Implements a vistor that interprets the 
 //  parallelfor statement.
 // 
-// version: 1.0
+// version: 1.1
 // author: Srinivasan Sundararajan.
 // language: C# .Net 3.5
 ////////////////////////////////////////////////////////////////////////
@@ -51,7 +51,7 @@ public class ParallelForElement : Element
         }
     }
 
-    //
+    //function that adds the list of code to the list of list and refreshes the original list.
     public void syncfunction()
     {
         CodeList.Add(Code);
