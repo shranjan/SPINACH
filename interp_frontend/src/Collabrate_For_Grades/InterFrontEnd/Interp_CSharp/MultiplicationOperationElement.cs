@@ -1,11 +1,11 @@
 ﻿////////////////////////////////////////////////////////////////////////
-// MulitplicationOperationElement.java: holds the data needed for an multiplication 
+// AdditionOperationElement.java: holds the data needed for an addition 
 //  operation.
 // 
 // version: 1.0
 // description: part of the interpreter example for the visitor design
 //  pattern.
-// author: Deepak Goyal (dgoyal@syr.edu)
+// author: phil pratt-szeliga (pcpratts@syr.edu)
 // language: Java 1.6.0.0
 ////////////////////////////////////////////////////////////////////////
 
