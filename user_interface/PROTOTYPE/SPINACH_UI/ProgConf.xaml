@@ -1,0 +1,42 @@
+﻿<Window x:Class="SPINACH_UI.ProgConf"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="SPINACH - Program Configuration" Height="466" Width="675" AllowsTransparency="False" WindowState="Normal" Name="frmProgConf" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen" Icon="/SPINACH_UI;component/Icon.JPG" Loaded="frmProgConf_Loaded" TabIndex="1">
+    <Grid Background="Lavender">
+        <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="299*" />
+      <ColumnDefinition Width="327*" />
+        </Grid.ColumnDefinitions>
+        <Menu Height="22" Name="mnuProg" VerticalAlignment="Top" ClipToBounds="True" Opacity="100" Visibility="Hidden" Grid.ColumnSpan="4">
+            <MenuItem Header="_File" Name="mnuFile">
+                <MenuItem Header="_New..." Name="submnuNew" Click="submnuNew_Click"/>
+                <MenuItem Header="_Load" Name="submnuLoad" Click="submnuLoad_Click"/>
+                <Separator />
+                <MenuItem Header="_Disconnect" Name="submnuDisconnect" Click="submnuDisconnect_Click"/>
+                <MenuItem Header="E_xit" Name="submnuExit" Click="submnuExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Help" Name="mnuHelp" />
+        </Menu>
+        <ListBox Margin="15,63,17.104,20" Name="lstUserList" ToolTip="The list of users connected in the swarm" Grid.Column="1">
+            <ListBox.ContextMenu>
+                <ContextMenu />
+            </ListBox.ContextMenu>
+        </ListBox>
+        <Label Height="28" Margin="15,32,150.733,0" Name="lblSwarmList" VerticalAlignment="Top" Grid.Column="1">Swarm User List</Label>
+        <RichTextBox Margin="27.267,180,9,61" Name="rtbChat" IsUndoEnabled="False" IsReadOnly="True" VerticalScrollBarVisibility="Auto">
+        <RichTextBox.Resources>
+            <Style TargetType="{x:Type Paragraph}">
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+        </RichTextBox.Resources>
+        </RichTextBox>
+        <TextBox Margin="27.267,0,56,11.139" Name="txtMessage" Height="37" VerticalAlignment="Bottom" TabIndex="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+        <Button Height="37" HorizontalAlignment="Right" Margin="0,0,9,11.139" Name="cmdSend" VerticalAlignment="Bottom" Width="39" Click="cmdSend_Click" IsDefault="True">_Send</Button>
+        <Image Height="90" Margin="27.267,32,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Source="/SPINACH_UI;component/SPINACH_logo.jpg" HorizontalAlignment="Left" Width="156.629">
+            <Image.BitmapEffect>
+                <DropShadowBitmapEffect Color="DarkGray" />
+            </Image.BitmapEffect>
+        </Image>
+    <Label Height="28" Margin="27.267,149,75.892,0" Name="lblChat" VerticalAlignment="Top">Chat</Label>
+  </Grid>
+</Window>
