@@ -4,7 +4,7 @@
 // version: 1.0
 // description: part of the interpreter example for the visitor design
 //  pattern.
-// author: phil pratt-szeliga (pcpratts@syr.edu)
+// author: Deepak Goyal (dgoyal@syr.edu)
 // language: C# .Net 3.5
 ////////////////////////////////////////////////////////////////////////
 using System;
@@ -18,7 +18,7 @@ namespace Interp_CSharp
 {
    class Program
    {
-      InterpreterVisitor interp_visitor = new InterpreterVisitor();
+      //InterpreterVisitor interp_visitor = new InterpreterVisitor();
       PrettyPrintVisitor print_visitor = new PrettyPrintVisitor();
 
       public void VisitLine(String line){
@@ -31,8 +31,8 @@ namespace Interp_CSharp
             List<Element> elements = program.ret;
             for(int i = 0; i < elements.Count; i++){
               Element curr = elements[i];
-              curr.Accept(print_visitor);
-              curr.Accept(interp_visitor);
+              //curr.Accept(print_visitor);
+              //curr.Accept(interp_visitor);
             }
           } catch (RecognitionException e)  {
             Console.WriteLine(e.Message);
@@ -44,20 +44,17 @@ namespace Interp_CSharp
          while(true){
            Console.Write("Interp> ");
            String line = Console.ReadLine();
-           if(line == "reset")
-             interp_visitor = new InterpreterVisitor();
+           if (line == "reset") { }
            else
-             VisitLine(line);        
+               VisitLine(line);        
          }
       }
 
       public static void Main(String[] args)
       {
          Program theprogram = new Program();
-
-         //first demonstrate visiting premade line.
-         theprogram.VisitLine("myvariable = 1 + 2; var = myvariable + 3; print var;");
-         theprogram.RunEvalLoop();
+         theprogram.VisitLine("int a; double b; String s; Vector<double>[5] v=[1.0,2.12,3.43,4.44,5.312]; Matrix<double>[3][2] m=[1.0,2.0,3.33,4.1,5.12,6.44]; delete m; Struct simple{ int a; int b;}; simple s; s.a=4; print s.a;");
+         //theprogram.VisitLine("M=(3)(2)[1,1,1,1,1,1];N=(2)(3)[2,1,1,1,1,1];var = 3+2; Z=M*N; print var;");
       }
    }
 }

@@ -15,6 +15,38 @@ public class PrettyPrintVisitor : Visitor {
   public override void VisitVariableElement(VariableElement element){
     Console.Write("var:" + element.getText() + " ");
   }
+  public override void VisitMatrixElement(MatrixVariableDeclaration element)
+  {
+      
+  }
+  public override void VisitDeleteElement(DeleteVariable element)
+  {
+      //throw new NotImplementedException();
+  }
+  public override void VisitDoubleElement(DoubleElement element)
+  {
+      //throw new NotImplementedException();
+  }
+  public override void VisitVectorElement(VectorVariableDeclaration element)
+  {
+      //throw new NotImplementedException();
+  }
+  public override void VisitStructDeclaration(StructDeclaration element)
+  {
+      //throw new NotImplementedException();
+  }
+  public override void VisitStructObject(StructObjectDeclaration element)
+  {
+      //throw new NotImplementedException();
+  }
+  public override void VisitStructAssignment(StructAssignDeclaration element)
+  {
+      //throw new NotImplementedException();
+  }
+  public override void VisitStructVar(ScalarVariableDeclaration element)
+  {
+      //throw new NotImplementedException();
+  }
   public override void VisitIntegerElement(IntegerElement element){
     Console.Write("int:" + element.getText() + " ");
   }
@@ -29,6 +61,13 @@ public class PrettyPrintVisitor : Visitor {
     Console.Write("+ ");
     VisitElement(element.getRhs());
     Console.Write(" ");
+  }
+  public override void VisitMultiplicationOperationElement(MultiplicationOperationElement element)
+  {
+      VisitElement(element.getLhs());
+      Console.Write("* ");
+      VisitElement(element.getRhs());
+      Console.Write(" ");
   }
   public override void VisitPrintOperationElement(PrintOperationElement element){
     Console.Write("function:print ");

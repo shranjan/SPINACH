@@ -63,17 +63,28 @@
   <ItemGroup>
     <Compile Include="AdditionOperationElement.cs" />
     <Compile Include="AssignmentOperationElement.cs" />
+    <Compile Include="DeleteVariable.cs" />
+    <Compile Include="DoubleElement.cs" />
     <Compile Include="Element.cs" />
     <Compile Include="IntegerElement.cs" />
     <Compile Include="InterpLexer.cs" />
     <Compile Include="InterpParser.cs" />
-    <Compile Include="InterpreterVisitor.cs" />
+    <Compile Include="MatrixVariableDeclaration.cs" />
+    <Compile Include="MultiplicationOperationElement.cs" />
     <Compile Include="PrettyPrintVisitor.cs" />
     <Compile Include="PrintOperationElement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScalarVariableDeclaration.cs" />
+    <Compile Include="StructAssignDeclaration.cs" />
+    <Compile Include="StructDeclaration.cs" />
+    <Compile Include="StructObjectDeclaration.cs" />
     <Compile Include="VariableElement.cs" />
+    <Compile Include="VectorVariableDeclaration.cs" />
     <Compile Include="Visitor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Interp.g" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
