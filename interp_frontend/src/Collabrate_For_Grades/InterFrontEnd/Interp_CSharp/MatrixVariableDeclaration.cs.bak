@@ -37,10 +37,6 @@ public class MatrixVariableDeclaration : Element
     public void setColumn(IntegerElement c) { Column = c; }
     public int[,] getintValue() { return intMatrix; }
     public double[,] getdoubleValue() { return doubleMatrix; }
-    public List<Element> getList()
-    {
-        return mValue;
-    }
     public void addValue(Element val)
     {
         mValue.Add(val);

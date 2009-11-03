@@ -18,8 +18,8 @@ public class VectorVariableDeclaration : Element
     IntegerElement mRange;
     String mType;
     List<Element> mValue=new List<Element>();
-    List<int> intlist = new List<int>();
-    List<double> doublelist = new List<double>();
+    List<int> intlist;
+    List<double> doublelist;
     //IntegerElement Column;
 
     public override void Accept(Visitor visitor)
@@ -40,10 +40,6 @@ public class VectorVariableDeclaration : Element
     public void addValue(Element val)
     {
         mValue.Add(val);
-    }
-    public List<Element> getList()
-    {
-        return mValue;
     }
     public void setValue()
     {
