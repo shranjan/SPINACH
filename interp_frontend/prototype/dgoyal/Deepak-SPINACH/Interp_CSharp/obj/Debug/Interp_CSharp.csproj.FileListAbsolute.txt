@@ -42,3 +42,5 @@ C:\Documents and Settings\Administrator\Desktop\SPINA\Deepak-Interp_CSharp\Inter
 C:\Documents and Settings\Administrator\Desktop\SPINA\Deepak-Interp_CSharp\Interp_CSharp\bin\Debug\Antlr3.Utility.xml
 C:\Documents and Settings\Administrator\Desktop\SPINA\Deepak-Interp_CSharp\Interp_CSharp\bin\Debug\Antlr3.Runtime.xml
 C:\Documents and Settings\Administrator\Desktop\SPINA\Deepak-Interp_CSharp\Interp_CSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\pinac\interp_frontend\prototype\dgoyal\Deepak-SPINACH\Interp_CSharp\obj\Debug\Interp_CSharp.exe
+C:\Documents and Settings\Administrator\Desktop\pinac\interp_frontend\prototype\dgoyal\Deepak-SPINACH\Interp_CSharp\obj\Debug\Interp_CSharp.pdb

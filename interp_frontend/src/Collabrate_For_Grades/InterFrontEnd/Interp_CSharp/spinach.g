@@ -40,22 +40,15 @@ expr1 returns [Element ret]
   | functioncall{retval.ret=$functioncall.ret;}
   | equality{retval.ret = $equality.ret;}
   | nonequality{retval.ret = $nonequality.ret;}
-  | forstatement{retval.ret = $forstatement.ret;};
+  | forstatement{retval.ret = $forstatement.ret;}
+  | functiondefination{retval.ret = $functiondefination.ret;}
+  | functionreturn{retval.ret =$functionreturn.ret;}
+  | plotfunctions{retval.ret = $plotfunctions.ret;};
 
-assignment returns [AssignmentOperationElement ret]
-@init {
-  retval.ret = new AssignmentOperationElement();
-}
-  : (variable {retval.ret.setLhs($variable.ret); }
-    | structassign {retval.ret.setStructLhs($structassign.ret);})
-    ASSIGNMENT 
-    (var_or_int_literal {retval.ret.setRhs($var_or_int_literal.ret); } 
-    | addition {retval.ret.setRhs($addition.ret); }
-    ) END_OF_STATEMENT;
-
-var_or_int_literal returns [Element ret]
+var_int_or_double_literal returns [Element ret]
   :  (variable { retval.ret = $variable.ret; } 
-  |   int_literal {retval.ret = $int_literal.ret; } );
+  |   int_literal {retval.ret = $int_literal.ret; }
+  |   double_literal {retval.ret = $double_literal.ret;});
 
 variable returns [VariableElement ret]
 @init {
@@ -69,29 +62,53 @@ int_literal returns [IntegerElement ret]
 }
   : INT_LITERAL { retval.ret.setText($INT_LITERAL.text); };
 
+double_literal returns [DoubleElement ret]
+@init {
+	retval.ret = new DoubleElement();
+	}
+	: el1=DOUBLE_LITERAL {retval.ret.setText($el1.text);};
+
 matrixvardec returns [MatrixVariableDeclaration ret]
 @init {
-retval.ret = new MatrixVariableDeclaration();
-}
-:('Matrix' '<' ('int' { retval.ret.setType("int");}|'double' { retval.ret.setType("double");})'>' '['el1=int_literal { retval.ret.setRow($el1.ret);}']'
-'[' el2=int_literal { retval.ret.setColumn($el2.ret);}']'
-(el3= variable { retval.ret.setVar($el3.ret);}))END_OF_STATEMENT;
+	retval.ret = new MatrixVariableDeclaration();
+	}
+	:('Matrix' '<' VARTYPE { retval.ret.setType($VARTYPE.text);}'>' '['el1=int_literal { retval.ret.setRow($el1.ret);}']'
+	'[' el2=int_literal { retval.ret.setColumn($el2.ret);}']'
+	 (el3= variable { retval.ret.setVar($el3.ret);})
+	 ASSIGNMENT
+	 '['((el4=int_literal {retval.ret.addValue($el4.ret);}|el5=double_literal {retval.ret.addValue($el5.ret);})
+	 (','el6=int_literal {retval.ret.addValue($el6.ret);}|','el7=double_literal {retval.ret.addValue($el7.ret);})*)']'){retval.ret.setValue();}
+	 END_OF_STATEMENT;
 
 vectorvardec returns [VectorVariableDeclaration ret]
 @init {
-retval.ret = new VectorVariableDeclaration();
-}
-:('Vector' '<'('int' { retval.ret.setType("int");}|'double' { retval.ret.setType("double");})'>' '['el1=int_literal {retval.ret.setValue($el1.ret);}']'
-el2=variable {retval.ret.setText($el2.ret);})END_OF_STATEMENT;
+	retval.ret = new VectorVariableDeclaration();
+	}
+	:('Vector' '<' VARTYPE { retval.ret.setType($VARTYPE.text);}'>' '['el1=int_literal {retval.ret.setRange($el1.ret);}']'
+	 el2=variable {retval.ret.setText($el2.ret);} 
+	 ASSIGNMENT 
+	 '['((el3=int_literal {retval.ret.addValue($el3.ret);}|el4=double_literal {retval.ret.addValue($el4.ret);})
+	 (','el5=int_literal {retval.ret.addValue($el5.ret);}|','el6=double_literal {retval.ret.addValue($el6.ret);})*)']'){retval.ret.setValue();}
+	 END_OF_STATEMENT;
 
+assignment returns [AssignmentOperationElement ret]
+@init {
+  retval.ret = new AssignmentOperationElement();
+}
+  : (variable {retval.ret.setLhs($variable.ret); }
+    | structassign {retval.ret.setLhs($structassign.ret);})
+    ASSIGNMENT 
+    (var_int_or_double_literal {retval.ret.setRhs($var_int_or_double_literal.ret); } 
+    | addition {retval.ret.setRhs($addition.ret); }
+    ) END_OF_STATEMENT;
 
 addition returns [AdditionOperationElement ret]
 @init {
   retval.ret = new AdditionOperationElement();
 }
-  : el1=var_or_int_literal { retval.ret.setLhs($el1.ret); } 
+  : el1=var_int_or_double_literal { retval.ret.setLhs($el1.ret); } 
     '+' 
-    el2=var_or_int_literal { retval.ret.setRhs($el2.ret); };
+    el2= var_int_or_double_literal { retval.ret.setRhs($el2.ret); };
     
     
  
@@ -105,11 +122,11 @@ retval.ret = new StructDeclaration();
 
 scalarvardec returns [ScalarVariableDeclaration ret]
 @init {
-retval.ret = new ScalarVariableDeclaration();
-}
-:(('int' { retval.ret.setType("int");}|'double' { retval.ret.setType("double");}
-| 'string' { retval.ret.setType("string");}) 
-variable { retval.ret.setVar($variable.ret);})END_OF_STATEMENT;
+	retval.ret = new ScalarVariableDeclaration();
+	}	
+	:((VARTYPE { retval.ret.setType($VARTYPE.text);}
+	| STRINGTYPE { retval.ret.setType($STRINGTYPE.text);}) 
+	variable { retval.ret.setVar($variable.ret);})END_OF_STATEMENT;
  
 structobjdec returns [StructObjectDeclaration ret]
 @init {
@@ -135,7 +152,7 @@ print returns [PrintOperationElement ret]
 @init {
   retval.ret = new PrintOperationElement();
 }
-  : 'print' var_or_int_literal {retval.ret.setChildElement($var_or_int_literal.ret); }
+  : 'print' var_int_or_double_literal {retval.ret.setChildElement($var_int_or_double_literal.ret); }
     END_OF_STATEMENT; 
     
 
@@ -148,7 +165,7 @@ parallelfor returns [ParallelForElement ret]
 range returns[RangeElement ret]
 @init{
   retval.ret= new RangeElement();
-}:LEFTBRACE e11 = variable{retval.ret.RANGEVARIABLE = $e11.ret;} '->' e12 = int_literal{retval.ret.STARTINGRANGE = $e12.ret;} DOT DOT e13= int_literal{retval.ret.ENDINGRANGE = $e13.ret;} RIGHTBRACE;
+}:LEFTBRACE e11 = variable{retval.ret.RANGEVARIABLE = $e11.ret;} POINT e12 = int_literal{retval.ret.STARTINGRANGE = $e12.ret;} 'to' e13= int_literal{retval.ret.ENDINGRANGE = $e13.ret;} RIGHTBRACE;
 
 //bodyloop returns [list<Element> ret]
 //@init{
@@ -172,7 +189,7 @@ forstatement returns [ForStatementElement ret]
  @init{ retval.ret = new FunctionCallElement();
  }
   :variable{retval.ret.setfunctioncallname($variable.ret);}
-  '('(el1=var_or_int_literal{retval.ret.setparameters($el1.ret);} (',' el2=var_or_int_literal{retval.ret.setparameters($el2.ret);})*)? ')'
+  '('(el1=var_int_or_double_literal{retval.ret.setparameters($el1.ret);} (',' el2=var_int_or_double_literal{retval.ret.setparameters($el2.ret);})*)? ')'
   END_OF_STATEMENT
 ;
  
@@ -185,7 +202,7 @@ equality returns [EqualityOperationElement ret]
  
 : variable {retval.ret.setequalityLhs($variable.ret); }
      EQUALITYEXPRESSION
-   var_or_int_literal {retval.ret.setequalityRhs($var_or_int_literal.ret); } 
+        var_int_or_double_literal {retval.ret.setequalityRhs($var_int_or_double_literal.ret); } 
      ;
     
     
@@ -197,7 +214,7 @@ nonequality returns [NonEqualityOperationElement ret]
  
 : variable {retval.ret.setnonequalityLhs($variable.ret); }
      NONEQUALITYEXPRESSION
-   var_or_int_literal {retval.ret.setnonequalityRhs($var_or_int_literal.ret); } 
+   var_int_or_double_literal {retval.ret.setnonequalityRhs($var_int_or_double_literal.ret); } 
      ;    
 
 //In the function body according to this design it will return only one of the expression to function definition class. we need a list of all the valid SPINACH code inside the function body.
@@ -207,7 +224,7 @@ functiondefination returns [FunctionElement ret]
 @init{
 retval.ret = new FunctionElement();
 }
-: (('int'{retval.ret.setreturntype("int");}|'double'){retval.ret.setreturntype("double");}
+: (VARTYPE{retval.ret.setreturntype($VARTYPE.text);}
   variable {retval.ret.setfunctionname($variable.ret);}
   '('
  ((e11= functiondeclaration{retval.ret.setArguments($e11.ret);}(',' e12 =functiondeclaration{retval.ret.setArguments($e12.ret);})*)?)
@@ -216,7 +233,7 @@ retval.ret = new FunctionElement();
   | vectorvardec { retval.ret.setBody($vectorvardec.ret);}
   | matrixvardec { retval.ret.setBody($matrixvardec.ret);}
   | deletionofvar { retval.ret.setBody($deletionofvar.ret);} | print { retval.ret.setBody($print.ret); }
-  | ifelse{retval.ret.setBody($ifelse.ret);})+
+  | ifelse{retval.ret.setBody($ifelse.ret);}| functionreturn{retval.ret.setBody($functionreturn.ret);})+
 '}')|'void'{retval.ret.setreturntype("void");}
   variable {retval.ret.setfunctionname($variable.ret);}
   '('
@@ -226,14 +243,23 @@ retval.ret = new FunctionElement();
   | vectorvardec { retval.ret.setBody($vectorvardec.ret);}
   | matrixvardec { retval.ret.setBody($matrixvardec.ret);}
   | deletionofvar { retval.ret.setBody($deletionofvar.ret);} | print { retval.ret.setBody($print.ret); }
-  | ifelse{retval.ret.setBody($ifelse.ret);})+
+  | ifelse{retval.ret.setBody($ifelse.ret);}| functionreturn{retval.ret.setBody($functionreturn.ret);})+
 '}'
 ;
 functiondeclaration returns [DeclarationElement ret]
  @init { retval.ret = new DeclarationElement();
 }
-:(('int'{retval.ret.settype("int");}|'double'{retval.ret.settype("double");}|)  variable{retval.ret.setvariable($variable.ret); })
+:((VARTYPE{retval.ret.settype($VARTYPE.text);})  variable{retval.ret.setvariable($variable.ret); })
 ;
+
+functionreturn returns [ReturnElement ret]
+@init{
+retval.ret = new ReturnElement();
+}
+:'return' (var_int_or_double_literal{retval.ret.setreturnvariable($var_int_or_double_literal.ret);}) END_OF_STATEMENT
+;
+
+
 //END OF VINIT TASKS
  
  
@@ -241,57 +267,69 @@ plotfunctions returns [PlotFunctionElement ret]
 @init { retval.ret = new PlotFunctionElement();
 }
 : ('subPlot'{retval.ret.setPlotFunction("subPlot");} '('
-   (el1 = int_literal {retval.ret.setRow($el1.ret);}) ','
-   (el2 = int_literal {retval.ret.setColumn($el2.ret);}) ','
-   (vl1 = variable {retval.ret.setData($vl1.ret);}) ','
-   ((el3 = int_literal{retval.ret.setMode($el3.ret);})',')?
-   (vl2 =variable {retval.ret.setTitle($vl2.ret);})','
-   (el4 = int_literal{retval.ret.setPlotType($el4.ret);})
-   ')'END_OF_STATEMENT)
-   | ('plot'{retval.ret.setPlotFunction("plot");} '('   
-      (vl1= variable {retval.ret.setData($vl1.ret);}) ','
-   ((el1 = int_literal{retval.ret.setMode($el1.ret);})',')?
-   (vl2= variable {retval.ret.setTitle($vl2.ret);})','
-   (el2 =int_literal{retval.ret.setPlotType($el2.ret);})
-   ')'END_OF_STATEMENT)
-   | ('resetPlot''('')'{retval.ret.setPlotFunction("resetPlot");}END_OF_STATEMENT)
-   | ('setPlotAxis'{retval.ret.setPlotFunction("setPlotAxis");}'('
-       (el1 =int_literal{retval.ret.setPlotType($el1.ret);})','
-       (ell2 =int_literal{retval.ret.setXFact($ell2.ret);})','
-       ((ell3=int_literal{retval.ret.setYFact($ell3.ret);})',')?
-((el4=int_literal{retval.ret.setZFact($el4.ret);}','))?
+(el1 = int_literal {retval.ret.setRow($el1.ret);}) ','
+(el2 = int_literal {retval.ret.setColumn($el2.ret);}) ','
+(vl1 = variable {retval.ret.setData($vl1.ret);}) ','
+((el3 = int_literal{retval.ret.setMode($el3.ret);})',')?
+(vl2 =variable {retval.ret.setTitle($vl2.ret);})','
+(el4 = int_literal{retval.ret.setPlotType($el4.ret);})
 ')'END_OF_STATEMENT)
-   |  ('setAxisTitle'{retval.ret.setPlotFunction("setAxisTitle");}'('
-       (el1=int_literal{retval.ret.setPlotType($el1.ret);})','
-       (vl1= variable{retval.ret.setXTitle($vl1.ret);})','
-       ((vl2 =variable{retval.ret.setYTitle($vl2.ret);})',')?
-((vl3 =variable{retval.ret.setZTitle($vl3.ret);})',')?
+| ('plot'{retval.ret.setPlotFunction("plot");} '('
+(vl1= variable {retval.ret.setData($vl1.ret);}) ','
+((el1 = int_literal{retval.ret.setMode($el1.ret);})',')?
+(vl2= variable {retval.ret.setTitle($vl2.ret);})','
+(el2 =int_literal{retval.ret.setPlotType($el2.ret);})
+')'END_OF_STATEMENT)
+| ('resetPlot''('')'{retval.ret.setPlotFunction("resetPlot");}END_OF_STATEMENT)
+| ('setPlotAxis'{retval.ret.setPlotFunction("setPlotAxis");}'('
+(ell2 =int_literal{retval.ret.setXFact($ell2.ret);})','
+((ell3=int_literal{retval.ret.setYFact($ell3.ret);})',')
+((el4=int_literal{retval.ret.setZFact($el4.ret);}))
+')'END_OF_STATEMENT)
+|('setPlotAxis'{retval.ret.setPlotFunction("setPlotAxis");}'('
+(ell2 =int_literal{retval.ret.setXFact($ell2.ret);})','
+((ell3=int_literal{retval.ret.setYFact($ell3.ret);}))
+')'END_OF_STATEMENT)
+|('setPlotAxis'{retval.ret.setPlotFunction("setPlotAxis");}'('
+(ell2 =int_literal{retval.ret.setXFact($ell2.ret);})
+')'END_OF_STATEMENT)
+| ('setAxisTitle'{retval.ret.setPlotFunction("setAxisTitle");}'('
+(vl1= variable{retval.ret.setXTitle($vl1.ret);})','
+((vl2 =variable{retval.ret.setYTitle($vl2.ret);})',')
+((vl3 =variable{retval.ret.setZTitle($vl3.ret);}))
+')'END_OF_STATEMENT)
+| ('setAxisTitle'{retval.ret.setPlotFunction("setAxisTitle");}'('
+(vl1= variable{retval.ret.setXTitle($vl1.ret);})','
+((vl2 =variable{retval.ret.setYTitle($vl2.ret);}))
+')'END_OF_STATEMENT)
+|('setAxisTitle'{retval.ret.setPlotFunction("setAxisTitle");}'('
+(vl1= variable{retval.ret.setXTitle($vl1.ret);})
 ')'END_OF_STATEMENT)
 |('setScaleMode''('{retval.ret.setPlotFunction("setScaleMode");}
-   SCALEMODE {retval.ret.setScaleMode($SCALEMODE.Text);}
-   ')'
+SCALEMODE {retval.ret.setScaleMode($SCALEMODE.Text);}
+')'
 END_OF_STATEMENT)
 ;
- 
 /*
  * Lexer Rules
  */
  
 END_OF_STATEMENT: ';';
 SCALEMODE: 'log' | 'linear' ;
+VARTYPE	: 'int' | 'double';
+STRINGTYPE : 'string';	
+DOT	:'.';
 ASSIGNMENT: '=';
 PLUS: '+';
 MULTIPLY:'*';
 VARIABLE: ('a'..'z' | 'A'..'Z' )+;
 INT_LITERAL: ('0'..'9')+;
+DOUBLE_LITERAL:(INT_LITERAL DOT INT_LITERAL);	
 WHITESPACE : (' ' | '\t' | '\n' | '\r' )+ {$channel = HIDDEN; } ;
 LEFTBRACE :'(';
 RIGHTBRACE:')';
 LEFTPARANTHESIS:'{';
 RIGHTPARANTHESIS:'}';
-DASH: '->';
-DOT:'.';
-RANGE:LEFTBRACE VARIABLE DASH INT_LITERAL DOT DOT INT_LITERAL RIGHTBRACE;
-CONDITION: ;
+POINT: '->';
 EQUALITYEXPRESSION: '==';
 NONEQUALITYEXPRESSION: '!='; 

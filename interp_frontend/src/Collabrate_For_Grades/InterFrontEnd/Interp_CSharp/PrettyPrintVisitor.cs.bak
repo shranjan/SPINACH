@@ -5,7 +5,7 @@
 // version: 1.0
 // description: part of the interpreter example for the visitor design
 //  pattern.
-// author: Interpreter Front End team. 
+// author: Srinivasan (pcpratts@syr.edu)
 // language: C# .Net 3.5
 ////////////////////////////////////////////////////////////////////////
 using System;
@@ -304,26 +304,45 @@ public class PrettyPrintVisitor : Visitor {
       }
   }
 
-    /// <summary>
-    /// -- Plotting functions.
-    /// </summary>
-    /// <param name="element"></param>
+  //public override void VisitPlotFunctionElement(PlotFunctionElement element)
+  //{
+  //    Console.WriteLine("Inside visit plot function..\n");
+  //    //VisitElement(element.getData());
 
+  //    if (element.getPlotFunction() == "subPlot")
+  //    {
+  //        if (element.getPlotType().getText() == "1")
+  //        {
+  //            //-- call the 1d subplot function.
+  //            Console.WriteLine("\n visited type 1 of subPlot \n");
+  //        }
+  //        else if (element.getPlotType().getText() == "2")
+  //        {
+  //            //-- call the 2d subplot function.
+  //            Console.WriteLine(" visited type 2 of subPlot \n");
+  //        }
+  //    }
+  //    else if (element.getPlotFunction() == "plot")
+  //    {
+  //        Console.WriteLine("\n visited Plot \n");
+  //    }
+
+  //}
   public override void VisitPlotFunctionElement(PlotFunctionElement element)
   {
       {
-        
+          Console.WriteLine("Inside visit plot function Element\n");
 
           if (element.getPlotFunction() == "subPlot")
           {
               if (element.getPlotType().getText() == "1")
               {
-                  Console.WriteLine("subPlot of type 1D :");
+                  Console.WriteLine("subPlot of type 1D :\n");
                   Console.Write("subPlot1D(");
                   VisitElement(element.getRow()); Console.Write(",");
                   VisitElement(element.getColumn()); Console.Write(",");
                   VisitElement(element.getData()); Console.Write(",");
-                  VisitElement(element.getTitle()); Console.Write(");\n");
+                  VisitElement(element.getTitle()); Console.Write(");");
 
 
 
@@ -331,13 +350,13 @@ public class PrettyPrintVisitor : Visitor {
               else if (element.getPlotType().getText() == "2")
               {
                   //-- call the 2d subplot function.
-                 
-                  Console.WriteLine("subPlot of type 2D :");
+                  Console.WriteLine("visited subPlot type 2D \n");
+                  Console.WriteLine("subPlot of type 2D :\n");
                   Console.Write("subPlot2D(");
                   VisitElement(element.getRow()); Console.Write(",");
                   VisitElement(element.getColumn()); Console.Write(",");
                   VisitElement(element.getData()); Console.Write(",");
-                  VisitElement(element.getTitle()); Console.Write(");\n");
+                  VisitElement(element.getTitle()); Console.Write(");");
               }
               else if (element.getPlotType().getText() == "3")
               {
@@ -345,29 +364,26 @@ public class PrettyPrintVisitor : Visitor {
                   ///-- MODE: TBD
                   ///-- CHANGE: MODE TO A DEFAULT VALUE:
 
-                  Console.WriteLine("subPlot of type 3D :");
+                  Console.WriteLine("visited subPlot type 3D \n");
+                  Console.WriteLine("subPlot of type 3D :\n");
                   Console.Write("subPlot3D(");
                   VisitElement(element.getRow()); Console.Write(",");
                   VisitElement(element.getColumn()); Console.Write(",");
                   VisitElement(element.getData()); Console.Write(",");
                   VisitElement(element.getMode()); Console.Write(",");
-                  VisitElement(element.getTitle()); Console.Write(");\n");
+                  VisitElement(element.getTitle()); Console.Write(");");
               }
           }
           else if (element.getPlotFunction() == "plot")
           {
-              //-- same implementation as above can be used.
-              Console.WriteLine("\nvisited plot fuction \n");
-              
+              Console.WriteLine("\n visited plot \n");
           }
           else if (element.getPlotFunction() == "resetPlot")
           {
-              
-              Console.WriteLine("\n visited resetPlot() \n");
+              Console.WriteLine("\n visited resetPlot \n");
           }
           else if (element.getPlotFunction() == "setPlotAxis")
           {
-              ///-- will change from int to double....
               Console.WriteLine("\n visited setPlotAxis \n");
           }
           else if (element.getPlotFunction() == "setPlotAxisTitle")

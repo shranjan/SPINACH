@@ -5,22 +5,24 @@
 // version: 1.0
 // description: part of the interpreter example for the visitor design
 //  pattern.
-// author: phil pratt-szeliga (pcpratts@syr.edu)
+// author: Deepak Goyal (dgoyal@syr.edu)
 // language: C# .Net 3.5
 ////////////////////////////////////////////////////////////////////////
 
 public class AssignmentOperationElement : Element {
 
-  VariableElement mLhs;
+  Element mLhs;
+  //StructAssignDeclaration structLhs;
   Element mRhs;  
 
   public override void Accept(Visitor visitor){
     visitor.VisitAssignmentOperationElement(this);
   }
 
-  public VariableElement getLhs() { return mLhs; }
-  public void setLhs(VariableElement lhs) { mLhs = lhs; }
-
+  public Element getLhs() { return mLhs; }
+  public void setLhs(Element lhs) { mLhs = lhs; }
+ // public StructAssignDeclaration getStructLhs() { return structLhs; }
+  //public void setStructLhs(StructAssignDeclaration lhs) { structLhs = lhs; }
   public Element getRhs() { return mRhs; }
   public void setRhs(Element rhs) { mRhs = rhs; }
 }
