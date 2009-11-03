@@ -4,7 +4,7 @@
 // version: 1.0
 // description: part of the interpreter example for the visitor design
 //  pattern.
-// author: Deepak Goyal (dgoyal@syr.edu)
+// author: Srinivasan Sundararajan(ssunda04@syr.edu)
 // language: antlr 3.0.1 parser generator - grammer input
 ////////////////////////////////////////////////////////////////////////
 
@@ -31,7 +31,12 @@ program returns [List<Element> ret]
   retval.ret = new List<Element>();
 }
   : (expr {retval.ret.Add($expr.ret); } )+;
+
 expr returns [Element ret]
+  :expr1{retval.ret = $expr1.ret;}| parallelfor{retval.ret = $parallelfor.ret;}
+;
+
+expr1 returns [Element ret]
   : assignment {retval.ret = $assignment.ret;}
   | scalarvardec { retval.ret = $scalarvardec.ret;}
   | vectorvardec { retval.ret = $vectorvardec.ret;}
@@ -39,7 +44,15 @@ expr returns [Element ret]
   | deletionofvar { retval.ret = $deletionofvar.ret;}
   | structdec {retval.ret = $structdec.ret;}
   | structobjdec { retval.ret = $structobjdec.ret;}
-  | print { retval.ret = $print.ret; };
+  | print { retval.ret = $print.ret; }
+  | ifelse{retval.ret = $ifelse.ret;}
+  | functioncall{retval.ret=$functioncall.ret;}
+  | equality{retval.ret = $equality.ret;}
+  | nonequality{retval.ret = $nonequality.ret;}
+  | forstatement{retval.ret = $forstatement.ret;}
+  | functiondefination{retval.ret = $functiondefination.ret;}
+  | functionreturn{retval.ret =$functionreturn.ret;}
+  | plotfunctions{retval.ret = $plotfunctions.ret;};
 
 assignment returns [AssignmentOperationElement ret]
 @init {
@@ -159,23 +172,49 @@ print returns [PrintOperationElement ret]
   : 'print' var_int_or_double_literal {retval.ret.setChildElement($var_int_or_double_literal.ret); }
     END_OF_STATEMENT; 
 
+parallelfor returns [ParallelForElement ret]
+@init {
+  retval.ret = new ParallelForElement();
+}: 'parallelfor' r11 = range{retval.ret.RANGE = $range.ret;} LEFTPARANTHESIS  ((e11=expr1{retval.ret.ADDCODE =$e11.ret;})+(('SYNC'{retval.ret.syncfunction();} END_OF_STATEMENT)|{retval.ret.syncfunction();}))+ RIGHTPARANTHESIS
+;
+
+range returns[RangeElement ret]
+@init{
+  retval.ret= new RangeElement();
+}:LEFTBRACE e11 = variable{retval.ret.RANGEVARIABLE = $e11.ret;} POINT e12 = int_literal{retval.ret.STARTINGRANGE = $e12.ret;} 'to' e13= int_literal{retval.ret.ENDINGRANGE = $e13.ret;} RIGHTBRACE;
+
+ifelse returns [IfStatementElement ret]
+@init{
+   retval.ret = new IfStatementElement();
+}
+:('if' LEFTBRACE (equality{retval.ret.CONDITION = $equality.ret;}|nonequality{retval.ret.CONDITION = $nonequality.ret;}) RIGHTBRACE LEFTPARANTHESIS ((e11 = program{retval.ret.IFCODE = $e11.ret;})|)RIGHTPARANTHESIS)('else'  LEFTPARANTHESIS ((e12 =  program{retval.ret.ELSECODE = $e12.ret;})|) RIGHTPARANTHESIS)? ;
+
+forstatement returns [ForStatementElement ret]
+@init{
+   retval.ret = new ForStatementElement();
+}:'for'  r11=range{retval.ret.RANGE = $r11.ret;} LEFTPARANTHESIS (e11=expr1{retval.ret.ADDCODE =$e11.ret;})+ RIGHTPARANTHESIS;
+
+
 /*
  * Lexer Rules
  */
 
 END_OF_STATEMENT: ';';
+SCALEMODE: 'log' | 'linear' ;
+VARTYPE	: 'int' | 'double';
+STRINGTYPE : 'string';	
+DOT	:'.';
 ASSIGNMENT: '=';
 PLUS: '+';
-MULTIPLY: '*';
-//OPENBRACKET	:	'(';
-//CLOSEBRACKET :	')';
-//SQUAREOPENBRACKET :	'[';
-//SQUARECLOSEBRACKET :	']';
-VARTYPE	:	('int'|'double');
-STRINGTYPE	:	('String');
+MULTIPLY:'*';
 VARIABLE: ('a'..'z' | 'A'..'Z' )+;
 INT_LITERAL: ('0'..'9')+;
-DOUBLE_LITERAL:(INT_LITERAL'.'INT_LITERAL)+;	
-//ALPHA	:	(VARIABLE|INT_LITERAL | '('..')')+;
+DOUBLE_LITERAL:(INT_LITERAL DOT INT_LITERAL);	
 WHITESPACE : (' ' | '\t' | '\n' | '\r' )+ {$channel = HIDDEN; } ;
-
+LEFTBRACE :'(';
+RIGHTBRACE:')';
+LEFTPARANTHESIS:'{';
+RIGHTPARANTHESIS:'}';
+POINT: '->';
+EQUALITYEXPRESSION: '==';
+NONEQUALITYEXPRESSION: '!='; 
