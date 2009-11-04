@@ -69,15 +69,26 @@ namespace UserInterface
             if (rtbInput.HorizontalScrollBarVisibility == ScrollBarVisibility.Disabled)
             {
                 rtbInput.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
-                fdInput.PageWidth =2000;
+                rtbInput.Document.PageWidth =20000;
+                LineNumbers();
+                syntax();
             }
             else
             {
                 rtbInput.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
-                fdInput.PageWidth = rtbInput.Width;
+                rtbInput.Document.PageWidth = rtbInput.Width;
+                LineNumbers();
+                syntax();
             }
         }
 
+        private void mnuLine_Click(object sender, RoutedEventArgs e)
+        {
+            if (mnuLine.IsChecked)
+                lstLine.Visibility = Visibility.Visible;
+            else
+                lstLine.Visibility = Visibility.Hidden;
+        }
         private void mnuOption_Click(object sender, RoutedEventArgs e)
         {
             mnuLine.Visibility = Visibility.Visible;
@@ -124,7 +135,14 @@ namespace UserInterface
         {
             progUserList = list;
         }
-
+        struct tags
+        {
+            public int start;
+            public int size;
+        };
+        List<tags> m_tags = new List<tags>();
+        List<String> keywords = new List<String>();
+        
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             if (et == editorType.collaborator)
@@ -134,7 +152,128 @@ namespace UserInterface
                     lstUsers.Items.Add(progUserList[i]);
                 }
             }
+            keywords.Add("int");
+            keywords.Add("double");
+            keywords.Add("for");
         }
+
+        private void format()
+        {
+            m_tags.Sort(compare);
+            for (int i = 0; i < m_tags.Count; i++)
+            {
+                TextPointer str = rtbInput.Document.ContentStart.GetPositionAtOffset(m_tags[i].start, LogicalDirection.Forward);
+                TextPointer stp = str.GetPositionAtOffset(m_tags[i].size, LogicalDirection.Backward);
+                TextRange ts = new TextRange(str, stp);
+                ts.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Colors.Blue));
+            }
+        }
+        private void syntax()
+        {
+            TextPointer start = rtbInput.Document.ContentStart;
+            TextPointer end = rtbInput.Document.ContentEnd;
+            TextRange tr = new TextRange(start, end);
+            tr.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(Colors.Black)); 
+            m_tags.Clear();
+            for (int s = 0; s < keywords.Count && tr.Text.Length > 2; s++)
+            {
+                int index = -1;
+                string text = tr.Text.ToString();
+                string[] txt;
+                index = text.LastIndexOf(keywords[s]);
+                while (index != -1 && text.Length > 0)
+                {
+                    tags t = new tags();
+                    text = text.Substring(0, index + keywords[s].Length);
+                    txt = text.Split('\n');
+                    int num = 0;
+                    for (int i = 0; i <txt.Length; i++)
+                        if (txt[i].Length > 2)
+                            num = num + 1;
+                    if ((index == 0 || (index > 0 && (text[index - 1] == ' ' || text[index - 1] == '\n'))) && index + keywords[s].Length <= tr.Text.Length && (tr.Text[index + keywords[s].Length] == ' ' || tr.Text[index + keywords[s].Length] == '\r'))
+                    {
+                        t.start = index+2*num;
+                        t.size = keywords[s].Length;
+                        m_tags.Add(t);
+                    }
+                    text = text.Substring(0, index);
+                    index = text.LastIndexOf(keywords[s]);
+                }
+            }
+            format();
+        }
+
+        
+        private void LineNumbers()
+        {
+            TextPointer start = rtbInput.Document.ContentStart;
+            TextPointer end = rtbInput.Document.ContentEnd;
+            TextRange tr = new TextRange(start, end);
+            string[] txt = tr.Text.Split('\n');
+
+            if (tr.Text.Length > 2)
+            {
+                if (!mnuWrap.IsChecked)
+                {
+                    lstLine.Items.Clear();
+                    if (txt.Length > 0 && lstLine.Items.Count >= 0)
+                    {
+                        if (lstLine.Items.Count <= txt.Length - 2)
+                        {
+                            while (lstLine.Items.Count <= txt.Length - 2)
+                                lstLine.Items.Add(lstLine.Items.Count + 1);
+                        }
+                    }
+                }
+                else
+                {
+                    if (txt.Length > 0 && lstLine.Items.Count >= 0)
+                    {
+                        int lines = 0;
+                        lstLine.Items.Clear();
+                        int i;
+                        
+                        for (i = 0; i <= txt.Length - 2; i++)
+                        {
+                            
+                            lines = 0;
+                            lines += txt[i].Length / 99;
+                            if (txt[i].Length % 99 != 0)
+                                lines += 1;
+                                lstLine.Items.Add(i + 1);
+                            for (int j = 1; j< lines; j++)
+                            {
+                                lstLine.Items.Add(" ");
+                            }
+                        }
+                       
+                    }
+                }
+            }
+            tr = new TextRange(rtbInput.Document.ContentStart, rtbInput.Document.ContentEnd);
+            
+            if (tr.Text.Length == 0 && lstLine.Items.Count > 0)
+            {
+                while (lstLine.Items.Count > 0)
+                    lstLine.Items.RemoveAt(lstLine.Items.Count - 1);
+            }
+            }
+             
+            private int compare(tags t1, tags t2)
+            {
+                if (t1.start < t2.start)
+                    return 1;
+                if (t1.start == t2.start)
+                    return 0;
+                return -1;
+            }
+
+            private void rtbInput_KeyUp(object sender, KeyEventArgs e)
+            {
+                LineNumbers();
+                syntax();
+            }
+
         
     }
 }

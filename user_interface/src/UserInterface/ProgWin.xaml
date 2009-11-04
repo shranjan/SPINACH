@@ -26,16 +26,15 @@
                 <MenuItem  Name="mnuDelete" Header="_Delete..." Click="mnuDelete_Click"></MenuItem>    
        </MenuItem>
             <MenuItem Name="Option" Header="_Option" Click="mnuOption_Click">
-                <MenuItem  Name="mnuLine" Header="_Line" IsCheckable="True" Click="MenuItem_Click"></MenuItem>
+                <MenuItem  Name="mnuLine" Header="_Line" IsCheckable="True" Click="mnuLine_Click"></MenuItem>
                 <MenuItem  Name="mnuWrap" Header="_Wrap" IsCheckable="True" IsChecked="True" Click="mnuWrap_Click"></MenuItem>
-            <MenuItem  Name="mnuHighlight" Header="User Highlight" IsCheckable="True" Click="MenuItem_Click"></MenuItem>
+                <MenuItem  Name="mnuHighlight" Header="_User Highlight" IsCheckable="True" Click="MenuItem_Click"></MenuItem>
             </MenuItem>
             <MenuItem Name="mnuPlot" Header="_Plot" Click="mnuPlot_Click">
                 
             </MenuItem>
         </Menu>
-            <RichTextBox Margin="28,81,21,71" Name="rtbInput" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Grid.RowSpan="2">
-            <FlowDocument Name="fdInput" PageWidth="Auto"></FlowDocument>
+            <RichTextBox Margin="28,81,21,71" Name="rtbInput" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" KeyUp="rtbInput_KeyUp" Grid.RowSpan="2" Padding="0" AcceptsTab="True">
             <RichTextBox.Resources>
                 <Style TargetType="{x:Type Paragraph}">
                     <Setter Property="Margin" Value="0"/>
@@ -58,5 +57,6 @@
         <Button Height="23" Margin="0,0,12,8" Name="button1" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Right" Width="75">Save Plot</Button>
         <Label Height="32" Margin="25,0,0,0" Name="lblProgName" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Width="98">Program Name</Label>
         <Label Height="32" Name="lblOwner" VerticalAlignment="Top" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="1" Width="47">Owner</Label>
+        <ListBox HorizontalAlignment="Left" Margin="0,81,0,71" Name="lstLine" Width="27" Grid.RowSpan="2" Visibility="Hidden" Padding="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" />
     </Grid>
 </Window>
