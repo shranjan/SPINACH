@@ -29,6 +29,7 @@ namespace UserInterface
     /// </summary>
     public partial class ProgWin : Window
     {
+        private ErrorModule err = new ErrorModule();
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
@@ -40,12 +41,14 @@ namespace UserInterface
         public ProgWin()
         {
             InitializeComponent();
+            err.ProgWinError+=new ErrorNotification(ShowError);
         }
 
         public ProgWin(editorType e)
         {
             InitializeComponent();
             et = e;
+            err.ProgWinError += new ErrorNotification(ShowError);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -275,7 +278,22 @@ namespace UserInterface
                 LineNumbers();
                 syntax();
             }
+            private void ShowError(string Msg)
+            {
+                MessageBox.Show(Msg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
-        
+            private void btnCompute_Click(object sender, RoutedEventArgs e)
+            {
+                
+            }
+
+            public void loadProgram(int read, int write, string text)
+            {
+                TextPointer tp = rtbInput.CaretPosition.GetPositionAtOffset(0, LogicalDirection.Forward);
+                rtbInput.CaretPosition.InsertTextInRun(text);
+                //rtbChat.CaretPosition.InsertParagraphBreak();
+                rtbInput.CaretPosition = tp;
+            }
     }
 }
