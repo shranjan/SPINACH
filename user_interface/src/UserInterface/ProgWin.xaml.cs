@@ -1,4 +1,4 @@
-﻿//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 //  ProgWin.xaml.cs - Program Editor                                            //
 //  ver 1.0                                                                     //
 //                                                                              //
@@ -258,6 +258,7 @@ namespace UserInterface
                     lstLine.Items.RemoveAt(lstLine.Items.Count - 1);
             }
             }
+
              
             private int compare(tags t1, tags t2)
             {
@@ -267,6 +268,7 @@ namespace UserInterface
                     return 0;
                 return -1;
             }
+
 
             private void rtbInput_KeyUp(object sender, KeyEventArgs e)
             {

@@ -5,6 +5,7 @@
     <Window.ContextMenu>
         <ContextMenu/>
     </Window.ContextMenu>
+    
     <Grid Background="Lavender" Name="DocumentRoot" IsHitTestVisible="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="360*" />
