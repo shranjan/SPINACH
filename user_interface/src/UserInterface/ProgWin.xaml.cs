@@ -188,7 +188,7 @@ namespace UserInterface
                     txt = text.Split('\n');
                     int num = 0;
                     for (int i = 0; i <txt.Length; i++)
-                        if (txt[i].Length > 2)
+                        if (txt[i].Length > 1)
                             num = num + 1;
                     if ((index == 0 || (index > 0 && (text[index - 1] == ' ' || text[index - 1] == '\n'))) && index + keywords[s].Length <= tr.Text.Length && (tr.Text[index + keywords[s].Length] == ' ' || tr.Text[index + keywords[s].Length] == '\r'))
                     {
