@@ -3,10 +3,10 @@
 //  ver 1.0                                                                     //
 //                                                                              //
 //  Language:      C#                                                           //
-//  Platform:      Windows Vista                                                //
+//  Platform:      Windows 7                                                    //
 //  Application:   SPINACH                                                      //
 //  Author:        Abhay Ketkar (asketkar@syr.edu)                              //
-//                 (315) 751 7324                                               //
+//                 (315) 439 7224                                               //
 //////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -41,15 +41,29 @@ namespace UserInterface
   /// <summary>
   /// Interaction logic for Connection.xaml
   /// </summary>
+
   public partial class Connection : Window
   {
-
+    private ErrorModule Err = new ErrorModule();
     private List<string> userList = new List<string>();
+
+    //----< Connection Ctor >----
     public Connection()
     {
       InitializeComponent();
+      Err.ConnError += new ErrorNotification(ShowError);
     }
 
+    //----< Connection Window Load Event >----
+    private void Window_Loaded(object sender, RoutedEventArgs e)
+    {
+        txtSelfIP.Text = GetIP();
+        txtPort.Text = "8080";
+        txtSelfIP.Focus();
+        txtSelfIP.SelectAll();
+    }
+
+    //----< Get the IP of the machine >----
     private string GetIP()
     {
       string strHostName = "";
@@ -59,6 +73,7 @@ namespace UserInterface
       return addr[addr.Length-1].ToString();
     }
 
+    //----< Join Swarm Radio Button Checked Event >----
     private void rdbJoinSwarm_Checked(object sender, RoutedEventArgs e)
     {
       txtPeerIP.Visibility = Visibility.Visible;
@@ -68,6 +83,7 @@ namespace UserInterface
 
     }
 
+    //----< Join Swarm Radio Button Unchecked Event >----
     private void rdbJoinSwarm_Unchecked(object sender, RoutedEventArgs e)
     {
       txtPeerIP.Visibility = Visibility.Hidden;
@@ -76,20 +92,18 @@ namespace UserInterface
       lblPeerPort.Visibility = Visibility.Hidden;
     }
 
-    private void Window_Loaded(object sender, RoutedEventArgs e)
+    //----< Show error MessageBox to the user >----
+    private void ShowError(string Msg)
     {
-      txtSelfIP.Text = GetIP();
-      txtPort.Text = "8080";
-      txtSelfIP.Focus();
-      txtSelfIP.SelectAll();
+      MessageBox.Show(Msg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
     }
 
+    //----< Connect Button Click Event >----
     private void btnConnect_Click(object sender, RoutedEventArgs e)
     {
-      ProgConf winProgConf = new ProgConf();
-      if (txtUsername.Text == "")
+        if (txtUsername.Text == "" || txtUsername.Text == " ")
       {
-        MessageBox.Show("Please enter a valid username", "Username", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        MessageBox.Show("Please enter the Username", "Username", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         txtUsername.Focus();
       }
       else if ((rdbCreateSwarm.IsChecked == false) && (rdbJoinSwarm.IsChecked == false))
@@ -99,6 +113,7 @@ namespace UserInterface
       }
       else
       {
+          //Connect to the Swarm
           //userList = SwarmConnect(selfip, selfport, username, peerip, peerport);
           //userList = SwarmConnect1(selfip, selfport, username);
 
@@ -111,30 +126,19 @@ namespace UserInterface
               userList.Add("Rutu : 129.324.355.0 : 2020");
               //make sure whether the user has entered the peer ip and port
               //i am making this as a function so that it can be used later
-              if (!validatePeer())
+              if (txtPeerIP.Text == "" || txtPeerPort.Text == "")
               {
                   MessageBox.Show("Please enter valid Peer IP/Port", "Peer IP/Port", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                   return;
               }
           }
           //prototype ends
-
+          ProgConf winProgConf = new ProgConf();
           winProgConf.setUserList(userList);
-
           winProgConf.setUsername(txtUsername.Text);
           winProgConf.Show();
           this.Close();
       }
     }
-
-    private bool validatePeer()
-    {
-        if (txtPeerIP.Text == "" || txtPeerPort.Text == "")
-            return false;
-        else
-            return true;
-    }
-
-    
   }
 }
