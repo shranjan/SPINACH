@@ -22,6 +22,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Forms;
+using System.IO;
 
 namespace UserInterface
 {
@@ -33,6 +35,11 @@ namespace UserInterface
         private bool connected = false;                         //Specifies the state of the connection
         private string username = "";
         private List<string> userList;
+        
+        /// <summary>
+        /// Default constructor - Initializing the intial things
+        /// </summary>
+        // TODO check all the initializations
         public ProgConf()
         {
             InitializeComponent();
@@ -58,7 +65,7 @@ namespace UserInterface
         private void submnuDisconnect_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result;
-            result = MessageBox.Show("Do you really want to disconnect from the swarm?", "Disconnect?", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+            result = System.Windows.MessageBox.Show("Do you really want to disconnect from the swarm?", "Disconnect?", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             if (result == MessageBoxResult.Yes)
             {
                 //Code for disconnecting from thw swarm
@@ -99,11 +106,21 @@ namespace UserInterface
             }
         }
 
+      /// <summary>
+      /// Sets the username to be displayed on the screen.
+      /// This is sent by the connection module.
+      /// </summary>
+      /// <param name="user">username which was accepted by the swarm while connecting</param>
       public void setUsername(string user)
       {
         username = user;
       }
 
+      /// <summary>
+      /// Sets the userlist sent by the connection module.
+      /// This list contains all the users currently in the swarm.
+      /// </summary>
+      /// <param name="list">List of all the users in the swarm</param>
       public void setUserList(List<string> list)
       {
         userList = list;
@@ -119,11 +136,46 @@ namespace UserInterface
         editor.setUserList(userList);
       }
 
+      /// <summary>
+      /// This will load the file and pass the text to the editor.
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
       private void submnuLoad_Click(object sender, RoutedEventArgs e)
       {
-          ProgWin editor = new ProgWin(ProgWin.editorType.owner);
-          editor.Show();
-          editor.setUserList(userList);
+          Stream myStream = null;
+          OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+          openFileDialog1.InitialDirectory = "c:\\";
+          openFileDialog1.Filter = "ssf files (*.ssf)|*.ssf|All files (*.*)|*.*";
+          openFileDialog1.FilterIndex = 1;
+          openFileDialog1.RestoreDirectory = true;
+          String text = "";
+
+          if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+          {
+              try
+              {
+                  if ((myStream = openFileDialog1.OpenFile()) != null)
+                  {
+                      StreamReader sr = new StreamReader(openFileDialog1.FileName);
+                      using(sr)
+                      {
+                          string line;
+                          while ((line = sr.ReadLine()) != null)
+                              text = text+line;
+                      }
+                  }
+                  ProgWin editor = new ProgWin(ProgWin.editorType.owner);
+                  editor.Show();
+                  editor.setUserList(userList);
+              }
+              catch (Exception ex)
+              {
+                  System.Windows.MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+              }
+          }
+
       }
 
       private void NewAccessPermission(int read, int write, string text)
@@ -134,6 +186,10 @@ namespace UserInterface
       {
       }
 
+      /// <summary>
+      /// Updates the list of users in the swarm.
+      /// </summary>
+      /// <param name="userList">List of users in the swarm</param>
       private void updateList(List<string> userList)
       {
       }
