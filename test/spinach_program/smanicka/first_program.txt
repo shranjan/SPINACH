@@ -1,0 +1,20 @@
+var = 2;
+secondvar = 4;
+thirdvar  = 567.89; 
+fourthvar = var + secondvar;
+fifthvar  = firstvar * secondvar;
+sixthvar  = fifthvar - secondvar;
+Struct s{ int a; int b;};
+s svar;
+svar.a=4;
+print var;
+print secondvar;
+print thirdvar;
+print fourthvar;
+print fifthvar;
+print sisthvar;
+print svar.a;
+delete var;
+
+
+
