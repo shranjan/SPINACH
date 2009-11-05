@@ -35,6 +35,7 @@ namespace UserInterface
         private bool connected = false;                         //Specifies the state of the connection
         private string username = "";
         private List<string> userList;
+        private ErrorModule err = new ErrorModule();
         
         /// <summary>
         /// Default constructor - Initializing the intial things
@@ -45,6 +46,7 @@ namespace UserInterface
             InitializeComponent();
             mnuProg.Visibility = Visibility.Visible;
             txtMessage.Focus();
+            err.ProgConfError += new ErrorNotification(ShowError);
         }
 
         private void mnuFile_Click(object sender, RoutedEventArgs e)
@@ -182,8 +184,9 @@ namespace UserInterface
       {
       }
 
-      private void error(int errorCode)
+      private void ShowError(string errorMsg)
       {
+          MessageBox.Show(errorMsg, "Fatal Error", MessageBoxButton.OK, MessageBoxImage.Error);
       }
 
       /// <summary>
