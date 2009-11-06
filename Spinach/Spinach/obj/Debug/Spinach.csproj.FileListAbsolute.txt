@@ -12,3 +12,5 @@ C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach.Properties.Resou
 C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach.csproj.GenerateResource.Cache
 C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach.exe
 C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach.pdb
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.exe
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.pdb
