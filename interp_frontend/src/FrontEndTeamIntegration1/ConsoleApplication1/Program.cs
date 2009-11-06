@@ -16,7 +16,7 @@ using System.Text;
 using System.IO;
 using Antlr.Runtime;
 
-namespace Interp_CSharp
+namespace SPINACH_FRONTEND
 {
  public class Program :  spinachParser
    {
@@ -73,6 +73,8 @@ namespace Interp_CSharp
               Onerror(102, e.Message);
           } 
 
+  
+
       }
 
       public void RunEvalLoop(){
@@ -83,6 +85,12 @@ namespace Interp_CSharp
            else
                VisitLine(line);        
          }
+      }
+
+      public List<string> getKeywords()
+      {
+          Keywords obj = new Keywords();
+          return obj.getkeywords();
       }
 
       //public static void Main(String[] args)
@@ -113,6 +121,13 @@ namespace Interp_CSharp
       //    }
       //}
    }
+
+
+
+    /// <summary>
+    /// -- testing.... 
+    /// </summary>
+
  class exec
  {
      public exec()
@@ -120,9 +135,11 @@ namespace Interp_CSharp
      }
      public static void Main(string[] args)
      {
+         List<string> keywords = new List<string>();
          CommonTokenStream str = new CommonTokenStream();
          //We need the syntax for the core object
          Program myprog = new Program(str);
+         keywords = myprog.getKeywords();
          myprog.error += new Program.errorreport(error1);
          //myprog.VisitLine("subPlot(1,1,a,\"abc\",1D);plot(b,\"abcd\",1D);for(i->1to4){struct s{int a;}; s.a = 0;//this is a comment string s; s = \"This is a example\";}");
          //myprog.VisitLine("if(a<=0){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;} return a;}else{double e; return e;}");
