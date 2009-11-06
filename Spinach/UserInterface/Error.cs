@@ -26,6 +26,7 @@ namespace UserInterface
     public delegate void ErrorNotification(string Msg);
     public class ErrorModule
     {
+        //FEO fo;
         public event ErrorNotification ConnError;
         public event ErrorNotification ProgConfError;
         public event ErrorNotification ProgWinError;
@@ -50,5 +51,10 @@ namespace UserInterface
             else if (Code < 150 && ProgWinError != null)
               ProgWinError(ErrMsg);
         }    
+
+        //public void GetFrontEndObject(FEO f)
+        //{
+        //    fo = f;
+        //}
     }
 }

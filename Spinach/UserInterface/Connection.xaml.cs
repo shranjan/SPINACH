@@ -36,7 +36,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
 
-namespace Spinach
+namespace UserInterface
 {
   /// <summary>
   /// Interaction logic for Connection.xaml
@@ -46,9 +46,6 @@ namespace Spinach
   {
     private ErrorModule Err = new ErrorModule();
     private List<string> userList = new List<string>();
-
-//    SwarmMem mem = new SwarmMem();
-    
 
     //----< Connection Ctor >----
     public Connection()

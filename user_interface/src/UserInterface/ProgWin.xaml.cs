@@ -21,7 +21,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Windows.Forms;
+using System.IO;
 namespace UserInterface
 {
     /// <summary>
@@ -273,14 +274,14 @@ namespace UserInterface
             }
 
 
-            private void rtbInput_KeyUp(object sender, KeyEventArgs e)
+            private void rtbInput_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
             {
                 LineNumbers();
                 syntax();
             }
             private void ShowError(string Msg)
             {
-                MessageBox.Show(Msg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show(Msg, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             private void btnCompute_Click(object sender, RoutedEventArgs e)
@@ -294,6 +295,35 @@ namespace UserInterface
                 rtbInput.CaretPosition.InsertTextInRun(text);
                 //rtbChat.CaretPosition.InsertParagraphBreak();
                 rtbInput.CaretPosition = tp;
+            }
+
+            private void mnuSave_Click(object sender, RoutedEventArgs e)
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "ssf files (*.ssf)|*.ssf|All files (*.*)|*.*";
+                saveFileDialog1.FilterIndex = 1;
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    try
+                    {
+                            StreamWriter sw = new StreamWriter(saveFileDialog1.FileName,false);
+                            using (sw)
+                            {
+
+                                TextPointer start = rtbInput.Document.ContentStart;
+                                TextPointer end = rtbInput.Document.ContentEnd;
+                                TextRange tr = new TextRange(start, end);
+                                sw.Write(tr.Text.ToString());
+                                sw.Close();
+                            } 
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.MessageBox.Show("Error: Could not Write file to disk. Original error: " + ex.Message);
+                    }
+                }
+
             }
     }
 }

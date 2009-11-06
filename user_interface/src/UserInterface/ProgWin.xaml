@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <Menu Name="mnu" Height="22" VerticalAlignment="Top" Grid.ColumnSpan="3">
          <MenuItem Header="_File" Name="File" Click="mnuFile_Click">
-            <MenuItem  Name="mnuSave" Header="_Save..." Click="MenuItem_Click"></MenuItem>
+            <MenuItem  Name="mnuSave" Header="_Save..." Click="mnuSave_Click"></MenuItem>
             <MenuItem  Name="mnuExit" Header="_Exit"  Click="mnuExit_Click"></MenuItem>
          </MenuItem>
         <MenuItem Name="mnuAccess" Header="_Access" Click="mnuAccess_Click">
@@ -45,7 +45,7 @@
         
         <Label HorizontalAlignment="Left" Margin="20,52,0,0" Name="lblInput" Width="63" Height="32" VerticalAlignment="Top">Program</Label>
         <Label Margin="24,30,0,0" Name="lblResult" Height="32" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="47">Result</Label>
-        <Button Height="23" Margin="0,0,21,32" Name="btnCompute" VerticalAlignment="Bottom" Grid.Row="1" HorizontalAlignment="Right" Width="75">Compute</Button>
+        <Button Height="23" Margin="0,0,21,32" Name="btnCompute" VerticalAlignment="Bottom" Grid.Row="1" HorizontalAlignment="Right" Width="75" Click="btnCompute_Click">Compute</Button>
         <RichTextBox Margin="28,54,3,71" Name="rtbResult" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="1" IsEnabled="True" IsReadOnly="True" />
         <ListBox Margin="5,54,12,71" Name="lstUsers" Grid.Column="2" Grid.Row="1" />
         <Label Margin="0,32,51,0" Name="lblUsers" Height="32" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1">Collaborators</Label>
