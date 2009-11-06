@@ -1,0 +1,14 @@
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\bin\Debug\Spinach.exe
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\bin\Debug\Spinach.pdb
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\bin\Debug\SwarmComputing.dll
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\bin\Debug\SwarmComputing.pdb
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Window1.baml
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Window1.g.cs
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\App.g.cs
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach_MarkupCompile.cache
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach.g.resources
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach.Properties.Resources.resources
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach.csproj.GenerateResource.Cache
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach.exe
+C:\Users\Rutu\Desktop\SPINACH\Spinach\Spinach\obj\Debug\Spinach.pdb
