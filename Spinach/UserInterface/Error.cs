@@ -17,6 +17,7 @@
 
 using System;
 using System.Collections.Generic;
+using Spinach;
 
 namespace UserInterface
 {
@@ -30,6 +31,7 @@ namespace UserInterface
         public event ErrorNotification ConnError;
         public event ErrorNotification ProgConfError;
         public event ErrorNotification ProgWinError;
+        private exec FE;
 
         private Dictionary<int, string> ErrorDict = new Dictionary<int, string>();
 
@@ -50,11 +52,12 @@ namespace UserInterface
               ProgConfError(ErrMsg);
             else if (Code < 150 && ProgWinError != null)
               ProgWinError(ErrMsg);
-        }    
+        }
 
-        //public void GetFrontEndObject(FEO f)
-        //{
-        //    fo = f;
-        //}
+        public void SetFrontEndObject(exec fe)
+        {
+            FE = fe;
+            FE.error_ += new exec.errorreport(ErrorMsg);
+        }
     }
 }
