@@ -45,7 +45,7 @@ namespace Spinach
 
        public Program(CommonTokenStream str,String coreObject):base(str)
        {
-
+           strBuilder = new StringBuilder();
        }
 
       public void VisitLine(String line){
@@ -58,6 +58,9 @@ namespace Spinach
              if (strBuilder.ToString() == "")
              {
                  List<Element> elements = program.ret;
+
+                 ///-- call core function. to pass list of element.
+
                  for (int i = 0; i < elements.Count; i++)
                  {
                      Element curr = elements[i];
@@ -122,6 +125,8 @@ namespace Spinach
 
 /*
  * Test class
+ * Entery point for console application.
+ * 
  * 
  */
 
@@ -137,8 +142,8 @@ public class UI
     obj.error_ += new Spinach.exec.errorreport(error);
     obj.Visitline("parallelfor(i->1to){Vector<int>[2] a =[1,2,3,4];}");
     obj.Visitline("subPlot(1,1,a,\"abc\",1D);plot(b,\"abcd\",1D);for(i->1to4){struct s{int a;}; s.a = 0;//this is a comment string s; s = \"This is a example\";}");
-    //obj.Visitline("if(a<=0){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;} return a;}else{double e; return e;}");
-    //obj.Visitline("int copy(Matrix<int> a,Vector<double> b , int c ){ int h; int l ; for(i->1to100){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;}} return a; int j; h= (l+j)*h*l+l-h;}");
+    obj.Visitline("if(a<=0){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;} return a;}else{double e; return e;}");
+    obj.Visitline("int copy(Matrix<int> a,Vector<double> b , int c ){ int h; int l ; for(i->1to100){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;}} return a; int j; h= (l+j)*h*l+l-h;}");
 
   }
   public static void error(int code, string message)
