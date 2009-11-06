@@ -165,11 +165,12 @@ namespace UserInterface
                       {
                           string line;
                           while ((line = sr.ReadLine()) != null)
-                              text = text+line;
+                              text = text + line + "\n";
                       }
                   }
                   ProgWin editor = new ProgWin(ProgWin.editorType.owner);
                   editor.Show();
+                  editor.loadProgram(0, 0, text);
                   editor.setUserList(userList);
               }
               catch (Exception ex)
@@ -186,7 +187,7 @@ namespace UserInterface
 
       private void ShowError(string errorMsg)
       {
-          MessageBox.Show(errorMsg, "Fatal Error", MessageBoxButton.OK, MessageBoxImage.Error);
+          System.Windows.MessageBox.Show(errorMsg, "Fatal Error", MessageBoxButton.OK, MessageBoxImage.Error);
       }
 
       /// <summary>
