@@ -23,6 +23,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.IO;
+using Spinach;
+
 namespace UserInterface
 {
     /// <summary>
@@ -34,6 +36,7 @@ namespace UserInterface
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
+        private Spinach.exec FE = new exec();
 
         public enum editorType { owner, collaborator };
 
@@ -43,6 +46,7 @@ namespace UserInterface
         {
             InitializeComponent();
             err.ProgWinError+=new ErrorNotification(ShowError);
+            keywords = FE.getKeywords();
         }
 
         public ProgWin(editorType e)
@@ -50,6 +54,9 @@ namespace UserInterface
             InitializeComponent();
             et = e;
             err.ProgWinError += new ErrorNotification(ShowError);
+            keywords = FE.getKeywords();
+            err.SetFrontEndObject(FE);
+            
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -156,9 +163,9 @@ namespace UserInterface
                     lstUsers.Items.Add(progUserList[i]);
                 }
             }
-            keywords.Add("int");
-            keywords.Add("double");
-            keywords.Add("for");
+            //keywords.Add("int");
+            //keywords.Add("double");
+            //keywords.Add("for");
         }
 
         private void format()
@@ -286,7 +293,10 @@ namespace UserInterface
 
             private void btnCompute_Click(object sender, RoutedEventArgs e)
             {
-                
+                TextPointer start = rtbInput.Document.ContentStart;
+                TextPointer end = rtbInput.Document.ContentEnd;
+                TextRange tr = new TextRange(start, end);
+                FE.Visitline(tr.Text.ToString());
             }
 
             public void loadProgram(int read, int write, string text)
