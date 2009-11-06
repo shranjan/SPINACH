@@ -1,3 +1,9 @@
+int var;
+int secondvar;
+double thirdvar;
+int fourthvar;
+int fifthvar;
+int sixthvar;
 var = 2;
 secondvar = 4;
 thirdvar  = 567.89; 
@@ -12,7 +18,7 @@ print secondvar;
 print thirdvar;
 print fourthvar;
 print fifthvar;
-print sisthvar;
+print sixthvar;
 print svar.a;
 delete var;
 
