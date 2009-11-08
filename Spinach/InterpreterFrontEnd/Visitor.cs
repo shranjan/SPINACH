@@ -26,21 +26,18 @@ public abstract class Visitor {
   public abstract void VisitParallelForElement(ParallelForElement element);
   public abstract void VisitForStatementElement(ForStatementElement element);
   public abstract void VisitIfStatementElement(IfStatementElement element);
-  public abstract void VisitRangeElement(RangeElement element);
+ 
   public abstract void VisitFunctionCallElement(FunctionCallElement element);
   public abstract void VisitFunctionElement(FunctionElement element);
-  //public abstract void VisitDeclarationElement(DeclarationElement element);
-  public abstract void VisitEqualityOperationElement(EqualityOperationElement element);
+ 
+ 
   public abstract void VisitReturnElement(ReturnElement element);
   public abstract void VisitDeleteElement(DeleteVariable element);
-  public abstract void VisitNonEqualityOperationElement(NonEqualityOperationElement element);
+  
   public abstract void VisitStructVar(ScalarVariableDeclaration element);
   public abstract void VisitVectorElement(VectorVariableDeclaration element);
   public abstract void VisitPlotFunctionElement(PlotFunctionElement element);
-  public abstract void VisitLessThanElement(LessThanElement element);
-  public abstract void VisitLessThanEqualToElement(LessThanEqualToElement element);
-  public abstract void VisitGreaterThanElement(GreaterThanElement element);
-  public abstract void VisitGreaterThanEqualToElement(GreaterThanEqualToElement element);
+  
   public abstract void VisitSubtractionElement(SubtractionElement element);
   public abstract void VisitDotProductElement(DotProductElement element);
   public abstract void VisitMatrixTransposeElement(MatrixTranspose element);
@@ -79,19 +76,6 @@ public abstract class Visitor {
     }else if (element is IfStatementElement){
         IfStatementElement if_elem = (IfStatementElement)element;
         VisitIfStatementElement(if_elem);
-    }else if (element is RangeElement){
-        RangeElement range_elem = (RangeElement)element;
-        VisitRangeElement(range_elem);
-    }
-    else if (element is EqualityOperationElement)
-    {
-        EqualityOperationElement range_elem = (EqualityOperationElement)element;
-        VisitEqualityOperationElement(range_elem);
-    }
-    else if (element is NonEqualityOperationElement)
-    {
-        NonEqualityOperationElement range_elem = (NonEqualityOperationElement)element;
-        VisitNonEqualityOperationElement(range_elem);
     }
     else if (element is StructDeclaration)
     {
@@ -148,26 +132,6 @@ public abstract class Visitor {
     {
         DoubleElement double_elem = (DoubleElement)element;
         VisitDoubleElement(double_elem);
-    }
-    else if (element is LessThanElement)
-    {
-        LessThanElement _elem = (LessThanElement)element;
-        VisitLessThanElement(_elem);
-    }
-    else if (element is LessThanEqualToElement)
-    {
-        LessThanEqualToElement _elem = (LessThanEqualToElement)element;
-        VisitLessThanEqualToElement(_elem);
-    }
-    else if (element is GreaterThanElement)
-    {
-        GreaterThanElement _elem = (GreaterThanElement)element;
-        VisitGreaterThanElement(_elem);
-    }
-    else if (element is GreaterThanEqualToElement)
-    {
-        GreaterThanEqualToElement _elem = (GreaterThanEqualToElement)element;
-        VisitGreaterThanEqualToElement(_elem);
     }
     else if (element is BracketElement)
     {

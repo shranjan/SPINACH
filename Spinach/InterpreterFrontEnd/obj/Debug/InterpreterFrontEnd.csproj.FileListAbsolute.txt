@@ -17,5 +17,5 @@ C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\antl
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\Antlr3.Runtime.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\Antlr3.Utility.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\StringTemplate.dll
-C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.exe
-C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.exe
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll

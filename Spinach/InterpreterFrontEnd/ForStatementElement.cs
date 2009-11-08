@@ -37,11 +37,17 @@ using System.Collections;
 
 public class ForStatementElement : Element
 {
-    //The Range Element.
-    RangeElement Range;
+    //The Range Variable.
+    private VariableElement RangeVar;
+
+    //The starting Range.
+    private IntegerElement StartRange;
+
+    //The Ending Range.
+    private IntegerElement EndingRange;
 
     //List that contains the code in the body of the loop.
-    List<Element> CodeList = new List<Element>();
+    private List<Element> CodeList = new List<Element>();
 
     public override void Accept(Visitor visitor)
     {
@@ -49,15 +55,41 @@ public class ForStatementElement : Element
     }
 
     //Set and get property for range variable.
-    public RangeElement RANGE
+    public VariableElement RANGEVARIABLE
     {
         get
         {
-            return Range;
+            return RangeVar;
         }
         set
         {
-            Range = value;
+            RangeVar = value;
+        }
+    }
+
+    //set and get the starting range
+    public IntegerElement STARTINGRANGE
+    {
+        get
+        {
+            return StartRange;
+        }
+        set
+        {
+            StartRange = value;
+        }
+    }
+
+    //set and get the Ending range
+    public IntegerElement ENDINGRANGE
+    {
+        get
+        {
+            return EndingRange;
+        }
+        set
+        {
+            EndingRange = value;
         }
     }
 

@@ -37,13 +37,19 @@ using System.Collections;
 public class IfStatementElement : Element
 {
     //if condition element
-    Element Condition;
+    private String Condition;
+
+    //Lhs element.
+    private Element mLhs;
+
+    //Rhs element.
+    private Element mRhs;
 
     //List that contains If body
-    List<Element> IfCode;
+    private List<Element> IfCode;
 
     //List that contains else Body
-    List<Element> ElseCode;
+    private List<Element> ElseCode;
 
 
     public override void Accept(Visitor visitor)
@@ -52,7 +58,7 @@ public class IfStatementElement : Element
     }
 
     //sets and gets the condition for if else.
-    public Element CONDITION
+    public string OP
     {
         get
         {
@@ -62,6 +68,26 @@ public class IfStatementElement : Element
         {
             Condition = value;
         }
+    }
+
+    //Set and get Lhs
+    public Element getLhs()
+    {
+        return mLhs;
+    }
+    public void setLhs(Element elem)
+    {
+        mLhs = elem;
+    }
+
+    //Set and get Rhs
+    public Element getRhs()
+    {
+        return mRhs;
+    }
+    public void setRhs(Element elem)
+    {
+        mRhs = elem;
     }
 
     //Sets and gets the if body.

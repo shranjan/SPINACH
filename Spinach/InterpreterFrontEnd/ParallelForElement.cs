@@ -38,14 +38,20 @@ using System.Collections;
 
 public class ParallelForElement : Element
 {
-    //The Range variable.
-    RangeElement Range;
-    
+    //The Range Variable.
+    private VariableElement RangeVar;
+
+    //The starting Range.
+    private IntegerElement StartRange;
+
+    //The Ending Range.
+    private IntegerElement EndingRange;
+
     //List of code.
-    List<Element> Code = new List<Element>();
+    private List<Element> Code = new List<Element>();
 
     //List that contains the code in the body of the loop.
-    List<List<Element>> CodeList = new List<List<Element>>();
+    private List<List<Element>> CodeList = new List<List<Element>>();
     
     public override void Accept(Visitor visitor)
     {
@@ -53,17 +59,44 @@ public class ParallelForElement : Element
     }
 
     //Set and get property for range variable.
-    public RangeElement RANGE
+    public VariableElement RANGEVARIABLE
     {
         get
         {
-            return Range;
+            return RangeVar;
         }
         set
         {
-            Range= value;
+            RangeVar = value;
         }
     }
+
+    //set and get the starting range
+    public IntegerElement STARTINGRANGE
+    {
+        get
+        {
+            return StartRange;
+        }
+        set
+        {
+            StartRange = value;
+        }
+    }
+
+    //set and get the Ending range
+    public IntegerElement ENDINGRANGE
+    {
+        get
+        {
+            return EndingRange;
+        }
+        set
+        {
+            EndingRange = value;
+        }
+    }
+
 
     //adds the code inside the parallelfor loop to the list.
     public Element ADDCODE
