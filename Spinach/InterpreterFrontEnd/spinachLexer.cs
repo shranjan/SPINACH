@@ -1,4 +1,4 @@
-// $ANTLR 3.1.3 Mar 18, 2009 10:09:25 spinach.g 2009-11-05 18:26:37
+// $ANTLR 3.1.3 Mar 18, 2009 10:09:25 spinach.g 2009-11-07 22:37:19
 
 
 using System.Collections.Generic;
@@ -118,10 +118,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__28;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:12:7: ( 'Matrix' )
-            // spinach.g:12:9: 'Matrix'
+            // spinach.g:12:7: ( '//' )
+            // spinach.g:12:9: '//'
             {
-            	Match("Matrix"); 
+            	Match("//"); 
 
 
             }
@@ -142,10 +142,11 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__29;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:13:7: ( '[' )
-            // spinach.g:13:9: '['
+            // spinach.g:13:7: ( 'Matrix' )
+            // spinach.g:13:9: 'Matrix'
             {
-            	Match('['); 
+            	Match("Matrix"); 
+
 
             }
 
@@ -165,10 +166,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__30;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:14:7: ( ']' )
-            // spinach.g:14:9: ']'
+            // spinach.g:14:7: ( '[' )
+            // spinach.g:14:9: '['
             {
-            	Match(']'); 
+            	Match('['); 
 
             }
 
@@ -188,10 +189,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__31;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:15:7: ( ',' )
-            // spinach.g:15:9: ','
+            // spinach.g:15:7: ( ']' )
+            // spinach.g:15:9: ']'
             {
-            	Match(','); 
+            	Match(']'); 
 
             }
 
@@ -211,11 +212,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__32;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:16:7: ( 'Vector' )
-            // spinach.g:16:9: 'Vector'
+            // spinach.g:16:7: ( ',' )
+            // spinach.g:16:9: ','
             {
-            	Match("Vector"); 
-
+            	Match(','); 
 
             }
 
@@ -235,10 +235,11 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__33;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:17:7: ( '-' )
-            // spinach.g:17:9: '-'
+            // spinach.g:17:7: ( 'Vector' )
+            // spinach.g:17:9: 'Vector'
             {
-            	Match('-'); 
+            	Match("Vector"); 
+
 
             }
 
@@ -258,11 +259,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__34;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:18:7: ( 'struct' )
-            // spinach.g:18:9: 'struct'
+            // spinach.g:18:7: ( '-' )
+            // spinach.g:18:9: '-'
             {
-            	Match("struct"); 
-
+            	Match('-'); 
 
             }
 
@@ -282,10 +282,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__35;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:19:7: ( 'delete' )
-            // spinach.g:19:9: 'delete'
+            // spinach.g:19:7: ( 'struct' )
+            // spinach.g:19:9: 'struct'
             {
-            	Match("delete"); 
+            	Match("struct"); 
 
 
             }
@@ -306,10 +306,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__36;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:20:7: ( 'print' )
-            // spinach.g:20:9: 'print'
+            // spinach.g:20:7: ( 'delete' )
+            // spinach.g:20:9: 'delete'
             {
-            	Match("print"); 
+            	Match("delete"); 
 
 
             }
@@ -330,10 +330,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__37;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:21:7: ( 'parallelfor' )
-            // spinach.g:21:9: 'parallelfor'
+            // spinach.g:21:7: ( 'print' )
+            // spinach.g:21:9: 'print'
             {
-            	Match("parallelfor"); 
+            	Match("print"); 
 
 
             }
@@ -354,10 +354,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__38;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:22:7: ( 'SYNC' )
-            // spinach.g:22:9: 'SYNC'
+            // spinach.g:22:7: ( 'parallelfor' )
+            // spinach.g:22:9: 'parallelfor'
             {
-            	Match("SYNC"); 
+            	Match("parallelfor"); 
 
 
             }
@@ -378,10 +378,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__39;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:23:7: ( 'to' )
-            // spinach.g:23:9: 'to'
+            // spinach.g:23:7: ( 'SYNC' )
+            // spinach.g:23:9: 'SYNC'
             {
-            	Match("to"); 
+            	Match("SYNC"); 
 
 
             }
@@ -402,10 +402,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__40;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:24:7: ( 'if' )
-            // spinach.g:24:9: 'if'
+            // spinach.g:24:7: ( 'to' )
+            // spinach.g:24:9: 'to'
             {
-            	Match("if"); 
+            	Match("to"); 
 
 
             }
@@ -426,10 +426,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__41;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:25:7: ( 'else' )
-            // spinach.g:25:9: 'else'
+            // spinach.g:25:7: ( 'if' )
+            // spinach.g:25:9: 'if'
             {
-            	Match("else"); 
+            	Match("if"); 
 
 
             }
@@ -450,10 +450,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__42;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:26:7: ( 'for' )
-            // spinach.g:26:9: 'for'
+            // spinach.g:26:7: ( 'else' )
+            // spinach.g:26:9: 'else'
             {
-            	Match("for"); 
+            	Match("else"); 
 
 
             }
@@ -474,10 +474,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__43;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:27:7: ( 'void' )
-            // spinach.g:27:9: 'void'
+            // spinach.g:27:7: ( 'for' )
+            // spinach.g:27:9: 'for'
             {
-            	Match("void"); 
+            	Match("for"); 
 
 
             }
@@ -498,10 +498,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__44;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:28:7: ( 'DOT' )
-            // spinach.g:28:9: 'DOT'
+            // spinach.g:28:7: ( 'void' )
+            // spinach.g:28:9: 'void'
             {
-            	Match("DOT"); 
+            	Match("void"); 
 
 
             }
@@ -522,10 +522,11 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__45;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:29:7: ( 'T' )
-            // spinach.g:29:9: 'T'
+            // spinach.g:29:7: ( 'DOT' )
+            // spinach.g:29:9: 'DOT'
             {
-            	Match('T'); 
+            	Match("DOT"); 
+
 
             }
 
@@ -545,11 +546,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__46;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:30:7: ( '//' )
-            // spinach.g:30:9: '//'
+            // spinach.g:30:7: ( 'T' )
+            // spinach.g:30:9: 'T'
             {
-            	Match("//"); 
-
+            	Match('T'); 
 
             }
 
@@ -809,8 +809,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = END_OF_STATEMENT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:456:17: ( ';' )
-            // spinach.g:456:19: ';'
+            // spinach.g:460:17: ( ';' )
+            // spinach.g:460:19: ';'
             {
             	Match(';'); 
 
@@ -832,7 +832,7 @@ public class spinachLexer : Lexer {
     		{
             int _type = SCALEMODE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:457:10: ( 'log' | 'linear' )
+            // spinach.g:461:10: ( 'log' | 'linear' )
             int alt1 = 2;
             int LA1_0 = input.LA(1);
 
@@ -866,7 +866,7 @@ public class spinachLexer : Lexer {
             switch (alt1) 
             {
                 case 1 :
-                    // spinach.g:457:12: 'log'
+                    // spinach.g:461:12: 'log'
                     {
                     	Match("log"); 
 
@@ -874,7 +874,7 @@ public class spinachLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // spinach.g:457:20: 'linear'
+                    // spinach.g:461:20: 'linear'
                     {
                     	Match("linear"); 
 
@@ -899,7 +899,7 @@ public class spinachLexer : Lexer {
     		{
             int _type = VARTYPE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:458:9: ( 'int' | 'double' )
+            // spinach.g:462:9: ( 'int' | 'double' )
             int alt2 = 2;
             int LA2_0 = input.LA(1);
 
@@ -921,7 +921,7 @@ public class spinachLexer : Lexer {
             switch (alt2) 
             {
                 case 1 :
-                    // spinach.g:458:11: 'int'
+                    // spinach.g:462:11: 'int'
                     {
                     	Match("int"); 
 
@@ -929,7 +929,7 @@ public class spinachLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // spinach.g:458:19: 'double'
+                    // spinach.g:462:19: 'double'
                     {
                     	Match("double"); 
 
@@ -954,8 +954,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = STRINGTYPE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:459:12: ( 'string' )
-            // spinach.g:459:14: 'string'
+            // spinach.g:463:12: ( 'string' )
+            // spinach.g:463:14: 'string'
             {
             	Match("string"); 
 
@@ -978,8 +978,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = DOT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:460:5: ( '.' )
-            // spinach.g:460:6: '.'
+            // spinach.g:464:5: ( '.' )
+            // spinach.g:464:6: '.'
             {
             	Match('.'); 
 
@@ -1001,8 +1001,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = ASSIGNMENT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:461:11: ( '=' )
-            // spinach.g:461:13: '='
+            // spinach.g:465:11: ( '=' )
+            // spinach.g:465:13: '='
             {
             	Match('='); 
 
@@ -1024,8 +1024,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = PLUS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:462:5: ( '+' )
-            // spinach.g:462:7: '+'
+            // spinach.g:466:5: ( '+' )
+            // spinach.g:466:7: '+'
             {
             	Match('+'); 
 
@@ -1047,8 +1047,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = MULTIPLY;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:463:9: ( '*' )
-            // spinach.g:463:10: '*'
+            // spinach.g:467:9: ( '*' )
+            // spinach.g:467:10: '*'
             {
             	Match('*'); 
 
@@ -1070,10 +1070,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = VARIABLE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:464:9: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
-            // spinach.g:464:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            // spinach.g:468:9: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
+            // spinach.g:468:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
             {
-            	// spinach.g:464:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            	// spinach.g:468:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
             	int cnt3 = 0;
             	do 
             	{
@@ -1137,10 +1137,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = INT_LITERAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:465:12: ( ( '0' .. '9' )+ )
-            // spinach.g:465:14: ( '0' .. '9' )+
+            // spinach.g:469:12: ( ( '0' .. '9' )+ )
+            // spinach.g:469:14: ( '0' .. '9' )+
             {
-            	// spinach.g:465:14: ( '0' .. '9' )+
+            	// spinach.g:469:14: ( '0' .. '9' )+
             	int cnt4 = 0;
             	do 
             	{
@@ -1156,7 +1156,7 @@ public class spinachLexer : Lexer {
             	    switch (alt4) 
             		{
             			case 1 :
-            			    // spinach.g:465:15: '0' .. '9'
+            			    // spinach.g:469:15: '0' .. '9'
             			    {
             			    	MatchRange('0','9'); 
 
@@ -1194,11 +1194,11 @@ public class spinachLexer : Lexer {
     		{
             int _type = DOUBLE_LITERAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:466:15: ( ( INT_LITERAL DOT INT_LITERAL ) )
-            // spinach.g:466:16: ( INT_LITERAL DOT INT_LITERAL )
+            // spinach.g:470:15: ( ( INT_LITERAL DOT INT_LITERAL ) )
+            // spinach.g:470:16: ( INT_LITERAL DOT INT_LITERAL )
             {
-            	// spinach.g:466:16: ( INT_LITERAL DOT INT_LITERAL )
-            	// spinach.g:466:17: INT_LITERAL DOT INT_LITERAL
+            	// spinach.g:470:16: ( INT_LITERAL DOT INT_LITERAL )
+            	// spinach.g:470:17: INT_LITERAL DOT INT_LITERAL
             	{
             		mINT_LITERAL(); 
             		mDOT(); 
@@ -1225,10 +1225,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = WHITESPACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:467:12: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
-            // spinach.g:467:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // spinach.g:471:12: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+            // spinach.g:471:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
             {
-            	// spinach.g:467:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            	// spinach.g:471:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
             	int cnt5 = 0;
             	do 
             	{
@@ -1293,8 +1293,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LEFTBRACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:468:11: ( '(' )
-            // spinach.g:468:12: '('
+            // spinach.g:472:11: ( '(' )
+            // spinach.g:472:12: '('
             {
             	Match('('); 
 
@@ -1316,8 +1316,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = RIGHTBRACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:469:11: ( ')' )
-            // spinach.g:469:12: ')'
+            // spinach.g:473:11: ( ')' )
+            // spinach.g:473:12: ')'
             {
             	Match(')'); 
 
@@ -1339,8 +1339,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LEFTPARANTHESIS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:470:16: ( '{' )
-            // spinach.g:470:17: '{'
+            // spinach.g:474:16: ( '{' )
+            // spinach.g:474:17: '{'
             {
             	Match('{'); 
 
@@ -1362,8 +1362,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = RIGHTPARANTHESIS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:471:17: ( '}' )
-            // spinach.g:471:18: '}'
+            // spinach.g:475:17: ( '}' )
+            // spinach.g:475:18: '}'
             {
             	Match('}'); 
 
@@ -1385,8 +1385,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = POINT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:472:6: ( '->' )
-            // spinach.g:472:8: '->'
+            // spinach.g:476:6: ( '->' )
+            // spinach.g:476:8: '->'
             {
             	Match("->"); 
 
@@ -1409,8 +1409,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = EQUALITYEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:473:19: ( '==' )
-            // spinach.g:473:21: '=='
+            // spinach.g:477:19: ( '==' )
+            // spinach.g:477:21: '=='
             {
             	Match("=="); 
 
@@ -1433,8 +1433,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = NONEQUALITYEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:474:22: ( '!=' )
-            // spinach.g:474:24: '!='
+            // spinach.g:478:22: ( '!=' )
+            // spinach.g:478:24: '!='
             {
             	Match("!="); 
 
@@ -1457,8 +1457,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LESSTHANEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:475:20: ( '<' )
-            // spinach.g:475:21: '<'
+            // spinach.g:479:20: ( '<' )
+            // spinach.g:479:21: '<'
             {
             	Match('<'); 
 
@@ -1480,8 +1480,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LESSTHANEQUALTOEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:476:26: ( '<=' )
-            // spinach.g:476:27: '<='
+            // spinach.g:480:26: ( '<=' )
+            // spinach.g:480:27: '<='
             {
             	Match("<="); 
 
@@ -1504,8 +1504,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = GREATERTHANEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:477:23: ( '>' )
-            // spinach.g:477:24: '>'
+            // spinach.g:481:23: ( '>' )
+            // spinach.g:481:24: '>'
             {
             	Match('>'); 
 
@@ -1527,8 +1527,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = GREATERTHANEQUALTOEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:478:29: ( '>=' )
-            // spinach.g:478:30: '>='
+            // spinach.g:482:29: ( '>=' )
+            // spinach.g:482:30: '>='
             {
             	Match(">="); 
 
@@ -1935,84 +1935,85 @@ public class spinachLexer : Lexer {
 	}
 
     const string DFA6_eotS =
-        "\x02\uffff\x01\x1e\x03\uffff\x01\x1e\x01\x2b\x0a\x1e\x01\x3c\x01"+
-        "\uffff\x01\x1e\x03\x3f\x01\uffff\x01\x1e\x01\uffff\x01\x46\x03\uffff"+
-        "\x01\x3f\x06\uffff\x01\x48\x01\x4a\x02\x1e\x02\uffff\x09\x1e\x01"+
-        "\x56\x01\x57\x05\x1e\x01\uffff\x01\x1e\x05\uffff\x02\x1e\x06\uffff"+
-        "\x0b\x1e\x02\uffff\x01\x6f\x01\x1e\x01\x71\x01\x1e\x01\x73\x02\x1e"+
-        "\x01\x76\x0d\x1e\x01\u0084\x01\u0085\x01\uffff\x01\u0086\x01\uffff"+
-        "\x01\u0087\x01\uffff\x02\x1e\x01\uffff\x0b\x1e\x01\u0095\x01\x1e"+
-        "\x04\uffff\x03\x1e\x01\u009a\x01\u009b\x01\u009c\x01\u009d\x04\x1e"+
-        "\x01\u00a2\x01\x6f\x01\uffff\x01\x1e\x01\u00a4\x01\x1e\x01\x76\x04"+
-        "\uffff\x01\u00a6\x03\x1e\x01\uffff\x01\x1e\x01\uffff\x01\x1e\x01"+
-        "\uffff\x09\x1e\x01\u00b5\x04\x1e\x01\uffff\x01\u00ba\x02\x1e\x01"+
-        "\u00bd\x01\uffff\x01\u00be\x01\u00bf\x03\uffff";
+        "\x03\uffff\x01\x1e\x03\uffff\x01\x1e\x01\x2b\x0a\x1e\x01\x3c\x01"+
+        "\x1e\x03\x3f\x01\uffff\x01\x1e\x01\uffff\x01\x46\x03\uffff\x01\x3f"+
+        "\x06\uffff\x01\x48\x01\x4a\x02\x1e\x02\uffff\x09\x1e\x01\x56\x01"+
+        "\x57\x05\x1e\x01\uffff\x01\x1e\x05\uffff\x02\x1e\x06\uffff\x0b\x1e"+
+        "\x02\uffff\x01\x6f\x01\x1e\x01\x71\x01\x1e\x01\x73\x02\x1e\x01\x76"+
+        "\x0d\x1e\x01\u0084\x01\u0085\x01\uffff\x01\u0086\x01\uffff\x01\u0087"+
+        "\x01\uffff\x02\x1e\x01\uffff\x0b\x1e\x01\u0095\x01\x1e\x04\uffff"+
+        "\x03\x1e\x01\u009a\x01\u009b\x01\u009c\x01\u009d\x04\x1e\x01\u00a2"+
+        "\x01\x6f\x01\uffff\x01\x1e\x01\u00a4\x01\x1e\x01\x76\x04\uffff\x01"+
+        "\u00a6\x03\x1e\x01\uffff\x01\x1e\x01\uffff\x01\x1e\x01\uffff\x09"+
+        "\x1e\x01\u00b5\x04\x1e\x01\uffff\x01\u00ba\x02\x1e\x01\u00bd\x01"+
+        "\uffff\x01\u00be\x01\u00bf\x03\uffff";
     const string DFA6_eofS =
         "\u00c0\uffff";
     const string DFA6_minS =
-        "\x01\x09\x01\uffff\x01\x61\x03\uffff\x01\x65\x01\x3e\x02\x65\x01"+
+        "\x01\x09\x02\uffff\x01\x61\x03\uffff\x01\x65\x01\x3e\x02\x65\x01"+
         "\x61\x01\x59\x01\x6f\x01\x66\x01\x6c\x02\x6f\x01\x4f\x01\x41\x01"+
-        "\uffff\x01\x65\x03\x2e\x01\uffff\x01\x69\x01\uffff\x01\x3d\x03\uffff"+
-        "\x01\x2e\x06\uffff\x02\x3d\x01\x74\x01\x63\x02\uffff\x01\x72\x01"+
-        "\x62\x01\x74\x01\x6c\x01\x75\x01\x69\x01\x72\x01\x6f\x01\x4e\x02"+
-        "\x41\x01\x74\x01\x73\x01\x72\x01\x69\x01\x54\x01\uffff\x01\x73\x05"+
-        "\uffff\x01\x67\x01\x6e\x06\uffff\x01\x72\x01\x74\x01\x69\x01\x50"+
-        "\x01\x41\x01\x65\x01\x62\x01\x6e\x01\x61\x01\x74\x01\x43\x02\uffff"+
-        "\x01\x41\x01\x65\x01\x41\x01\x64\x01\x41\x01\x75\x01\x65\x01\x41"+
-        "\x01\x65\x01\x69\x01\x6f\x01\x63\x01\x6e\x02\x6c\x01\x78\x01\x63"+
-        "\x01\x74\x01\x6c\x01\x74\x01\x6c\x02\x41\x01\uffff\x01\x41\x01\uffff"+
-        "\x01\x41\x01\uffff\x01\x72\x01\x74\x01\uffff\x01\x61\x01\x78\x01"+
-        "\x72\x01\x74\x01\x67\x02\x6f\x01\x69\x01\x61\x02\x65\x01\x41\x01"+
-        "\x6c\x04\uffff\x01\x6e\x01\x50\x01\x72\x04\x41\x02\x74\x01\x73\x01"+
-        "\x6c\x02\x41\x01\uffff\x01\x65\x01\x41\x01\x6c\x01\x41\x04\uffff"+
-        "\x02\x41\x01\x54\x01\x65\x01\uffff\x01\x6c\x01\uffff\x01\x6f\x01"+
-        "\uffff\x01\x78\x01\x69\x01\x4d\x01\x66\x01\x74\x01\x69\x01\x74\x02"+
-        "\x6f\x01\x41\x01\x73\x01\x6c\x01\x64\x01\x72\x01\uffff\x01\x41\x02"+
-        "\x65\x01\x41\x01\uffff\x02\x41\x03\uffff";
+        "\x65\x03\x2e\x01\uffff\x01\x69\x01\uffff\x01\x3d\x03\uffff\x01\x2e"+
+        "\x06\uffff\x02\x3d\x01\x74\x01\x63\x02\uffff\x01\x72\x01\x62\x01"+
+        "\x74\x01\x6c\x01\x75\x01\x69\x01\x72\x01\x6f\x01\x4e\x02\x41\x01"+
+        "\x74\x01\x73\x01\x72\x01\x69\x01\x54\x01\uffff\x01\x73\x05\uffff"+
+        "\x01\x67\x01\x6e\x06\uffff\x01\x72\x01\x74\x01\x69\x01\x50\x01\x41"+
+        "\x01\x65\x01\x62\x01\x6e\x01\x61\x01\x74\x01\x43\x02\uffff\x01\x41"+
+        "\x01\x65\x01\x41\x01\x64\x01\x41\x01\x75\x01\x65\x01\x41\x01\x65"+
+        "\x01\x69\x01\x6f\x01\x63\x01\x6e\x02\x6c\x01\x78\x01\x63\x01\x74"+
+        "\x01\x6c\x01\x74\x01\x6c\x02\x41\x01\uffff\x01\x41\x01\uffff\x01"+
+        "\x41\x01\uffff\x01\x72\x01\x74\x01\uffff\x01\x61\x01\x78\x01\x72"+
+        "\x01\x74\x01\x67\x02\x6f\x01\x69\x01\x61\x02\x65\x01\x41\x01\x6c"+
+        "\x04\uffff\x01\x6e\x01\x50\x01\x72\x04\x41\x02\x74\x01\x73\x01\x6c"+
+        "\x02\x41\x01\uffff\x01\x65\x01\x41\x01\x6c\x01\x41\x04\uffff\x02"+
+        "\x41\x01\x54\x01\x65\x01\uffff\x01\x6c\x01\uffff\x01\x6f\x01\uffff"+
+        "\x01\x78\x01\x69\x01\x4d\x01\x66\x01\x74\x01\x69\x01\x74\x02\x6f"+
+        "\x01\x41\x01\x73\x01\x6c\x01\x64\x01\x72\x01\uffff\x01\x41\x02\x65"+
+        "\x01\x41\x01\uffff\x02\x41\x03\uffff";
     const string DFA6_maxS =
-        "\x01\x7d\x01\uffff\x01\x61\x03\uffff\x01\x65\x01\x3e\x01\x75\x01"+
+        "\x01\x7d\x02\uffff\x01\x61\x03\uffff\x01\x65\x01\x3e\x01\x75\x01"+
         "\x6f\x01\x72\x01\x59\x01\x6f\x01\x6e\x01\x6c\x02\x6f\x01\x4f\x01"+
-        "\x7a\x01\uffff\x01\x65\x03\x44\x01\uffff\x01\x6f\x01\uffff\x01\x3d"+
-        "\x03\uffff\x01\x39\x06\uffff\x02\x3d\x01\x74\x01\x63\x02\uffff\x01"+
-        "\x72\x01\x62\x01\x74\x01\x6c\x01\x75\x01\x69\x01\x72\x01\x6f\x01"+
-        "\x4e\x02\x7a\x01\x74\x01\x73\x01\x72\x01\x69\x01\x54\x01\uffff\x01"+
-        "\x74\x05\uffff\x01\x67\x01\x6e\x06\uffff\x01\x72\x01\x74\x01\x75"+
-        "\x01\x50\x01\x53\x01\x65\x01\x62\x01\x6e\x01\x61\x01\x74\x01\x43"+
-        "\x02\uffff\x01\x7a\x01\x65\x01\x7a\x01\x64\x01\x7a\x01\x75\x01\x65"+
-        "\x01\x7a\x01\x65\x01\x69\x01\x6f\x01\x63\x01\x6e\x02\x6c\x01\x78"+
-        "\x01\x63\x01\x74\x01\x6c\x01\x74\x01\x6c\x02\x7a\x01\uffff\x01\x7a"+
-        "\x01\uffff\x01\x7a\x01\uffff\x01\x72\x01\x74\x01\uffff\x01\x61\x01"+
-        "\x78\x01\x72\x01\x74\x01\x67\x02\x6f\x01\x69\x01\x61\x02\x65\x01"+
-        "\x7a\x01\x6c\x04\uffff\x01\x6e\x01\x50\x01\x72\x04\x7a\x02\x74\x01"+
-        "\x73\x01\x6c\x02\x7a\x01\uffff\x01\x65\x01\x7a\x01\x6c\x01\x7a\x04"+
-        "\uffff\x01\x7a\x01\x41\x01\x54\x01\x65\x01\uffff\x01\x6c\x01\uffff"+
-        "\x01\x6f\x01\uffff\x01\x78\x01\x69\x01\x4d\x01\x66\x01\x74\x01\x69"+
-        "\x01\x74\x02\x6f\x01\x7a\x01\x73\x01\x6c\x01\x64\x01\x72\x01\uffff"+
-        "\x01\x7a\x02\x65\x01\x7a\x01\uffff\x02\x7a\x03\uffff";
+        "\x7a\x01\x65\x03\x44\x01\uffff\x01\x6f\x01\uffff\x01\x3d\x03\uffff"+
+        "\x01\x39\x06\uffff\x02\x3d\x01\x74\x01\x63\x02\uffff\x01\x72\x01"+
+        "\x62\x01\x74\x01\x6c\x01\x75\x01\x69\x01\x72\x01\x6f\x01\x4e\x02"+
+        "\x7a\x01\x74\x01\x73\x01\x72\x01\x69\x01\x54\x01\uffff\x01\x74\x05"+
+        "\uffff\x01\x67\x01\x6e\x06\uffff\x01\x72\x01\x74\x01\x75\x01\x50"+
+        "\x01\x53\x01\x65\x01\x62\x01\x6e\x01\x61\x01\x74\x01\x43\x02\uffff"+
+        "\x01\x7a\x01\x65\x01\x7a\x01\x64\x01\x7a\x01\x75\x01\x65\x01\x7a"+
+        "\x01\x65\x01\x69\x01\x6f\x01\x63\x01\x6e\x02\x6c\x01\x78\x01\x63"+
+        "\x01\x74\x01\x6c\x01\x74\x01\x6c\x02\x7a\x01\uffff\x01\x7a\x01\uffff"+
+        "\x01\x7a\x01\uffff\x01\x72\x01\x74\x01\uffff\x01\x61\x01\x78\x01"+
+        "\x72\x01\x74\x01\x67\x02\x6f\x01\x69\x01\x61\x02\x65\x01\x7a\x01"+
+        "\x6c\x04\uffff\x01\x6e\x01\x50\x01\x72\x04\x7a\x02\x74\x01\x73\x01"+
+        "\x6c\x02\x7a\x01\uffff\x01\x65\x01\x7a\x01\x6c\x01\x7a\x04\uffff"+
+        "\x01\x7a\x01\x41\x01\x54\x01\x65\x01\uffff\x01\x6c\x01\uffff\x01"+
+        "\x6f\x01\uffff\x01\x78\x01\x69\x01\x4d\x01\x66\x01\x74\x01\x69\x01"+
+        "\x74\x02\x6f\x01\x7a\x01\x73\x01\x6c\x01\x64\x01\x72\x01\uffff\x01"+
+        "\x7a\x02\x65\x01\x7a\x01\uffff\x02\x7a\x03\uffff";
     const string DFA6_acceptS =
-        "\x01\uffff\x01\x01\x01\uffff\x01\x03\x01\x04\x01\x05\x0d\uffff"+
-        "\x01\x14\x04\uffff\x01\x1f\x01\uffff\x01\x23\x01\uffff\x01\x25\x01"+
-        "\x26\x01\x27\x01\uffff\x01\x2a\x01\x2b\x01\x2c\x01\x2d\x01\x2e\x01"+
-        "\x31\x04\uffff\x01\x2f\x01\x07\x10\uffff\x01\x13\x01\uffff\x01\x17"+
-        "\x01\x28\x01\x29\x01\x18\x01\x19\x02\uffff\x01\x30\x01\x24\x01\x33"+
-        "\x01\x32\x01\x35\x01\x34\x0b\uffff\x01\x0d\x01\x0e\x17\uffff\x01"+
-        "\x21\x01\uffff\x01\x10\x01\uffff\x01\x12\x02\uffff\x01\x20\x0d\uffff"+
-        "\x01\x1a\x01\x0c\x01\x0f\x01\x11\x0d\uffff\x01\x0a\x04\uffff\x01"+
-        "\x02\x01\x06\x01\x08\x01\x22\x04\uffff\x01\x09\x01\uffff\x01\x15"+
-        "\x01\uffff\x01\x16\x0e\uffff\x01\x1b\x04\uffff\x01\x1c\x02\uffff"+
-        "\x01\x0b\x01\x1d\x01\x1e";
+        "\x01\uffff\x01\x01\x01\x02\x01\uffff\x01\x04\x01\x05\x01\x06\x11"+
+        "\uffff\x01\x1f\x01\uffff\x01\x23\x01\uffff\x01\x25\x01\x26\x01\x27"+
+        "\x01\uffff\x01\x2a\x01\x2b\x01\x2c\x01\x2d\x01\x2e\x01\x31\x04\uffff"+
+        "\x01\x2f\x01\x08\x10\uffff\x01\x14\x01\uffff\x01\x17\x01\x28\x01"+
+        "\x29\x01\x18\x01\x19\x02\uffff\x01\x30\x01\x24\x01\x33\x01\x32\x01"+
+        "\x35\x01\x34\x0b\uffff\x01\x0e\x01\x0f\x17\uffff\x01\x21\x01\uffff"+
+        "\x01\x11\x01\uffff\x01\x13\x02\uffff\x01\x20\x0d\uffff\x01\x1a\x01"+
+        "\x0d\x01\x10\x01\x12\x0d\uffff\x01\x0b\x04\uffff\x01\x03\x01\x07"+
+        "\x01\x09\x01\x22\x04\uffff\x01\x0a\x01\uffff\x01\x15\x01\uffff\x01"+
+        "\x16\x0e\uffff\x01\x1b\x04\uffff\x01\x1c\x02\uffff\x01\x0c\x01\x1d"+
+        "\x01\x1e";
     const string DFA6_specialS =
         "\u00c0\uffff}>";
     static readonly string[] DFA6_transitionS = {
             "\x02\x20\x02\uffff\x01\x20\x12\uffff\x01\x20\x01\x25\x01\x01"+
-            "\x05\uffff\x01\x21\x01\x22\x01\x1d\x01\x1c\x01\x05\x01\x07\x01"+
-            "\x1a\x01\x13\x01\x1f\x01\x15\x01\x16\x01\x17\x06\x1f\x01\uffff"+
-            "\x01\x18\x01\x26\x01\x1b\x01\x27\x02\uffff\x03\x1e\x01\x11\x08"+
-            "\x1e\x01\x02\x05\x1e\x01\x0b\x01\x12\x01\x1e\x01\x06\x04\x1e"+
-            "\x01\x03\x01\uffff\x01\x04\x03\uffff\x03\x1e\x01\x09\x01\x0e"+
-            "\x01\x0f\x02\x1e\x01\x0d\x02\x1e\x01\x19\x03\x1e\x01\x0a\x01"+
-            "\x1e\x01\x14\x01\x08\x01\x0c\x01\x1e\x01\x10\x04\x1e\x01\x23"+
+            "\x05\uffff\x01\x21\x01\x22\x01\x1d\x01\x1c\x01\x06\x01\x08\x01"+
+            "\x1a\x01\x02\x01\x1f\x01\x15\x01\x16\x01\x17\x06\x1f\x01\uffff"+
+            "\x01\x18\x01\x26\x01\x1b\x01\x27\x02\uffff\x03\x1e\x01\x12\x08"+
+            "\x1e\x01\x03\x05\x1e\x01\x0c\x01\x13\x01\x1e\x01\x07\x04\x1e"+
+            "\x01\x04\x01\uffff\x01\x05\x03\uffff\x03\x1e\x01\x0a\x01\x0f"+
+            "\x01\x10\x02\x1e\x01\x0e\x02\x1e\x01\x19\x03\x1e\x01\x0b\x01"+
+            "\x1e\x01\x14\x01\x09\x01\x0d\x01\x1e\x01\x11\x04\x1e\x01\x23"+
             "\x01\uffff\x01\x24",
+            "",
             "",
             "\x01\x28",
             "",
@@ -2031,7 +2032,6 @@ public class spinachLexer : Lexer {
             "\x01\x3a",
             "\x01\x3b",
             "\x1a\x1e\x06\uffff\x1a\x1e",
-            "",
             "\x01\x3d",
             "\x01\x40\x01\uffff\x0a\x1f\x0a\uffff\x01\x3e",
             "\x01\x40\x01\uffff\x0a\x1f\x0a\uffff\x01\x41",

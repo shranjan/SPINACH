@@ -45,8 +45,6 @@ public class IfStatementElement : Element
     //List that contains else Body
     List<Element> ElseCode;
 
-    //Return Element
-    ReturnElement returnElem;
 
     public override void Accept(Visitor visitor)
     {
@@ -92,19 +90,6 @@ public class IfStatementElement : Element
         }
     }
 
-    //Sets and gets the Return Element
-    public ReturnElement IFSTATEMENTRETURN
-    {
-        get
-        {
-            return returnElem;
-        }
-        set
-        {
-            returnElem = value;
-        }
-    }
-
 }
 
 
@@ -137,12 +122,6 @@ class Test
         List<Element> ElseList = new List<Element>();
         ElseList.Add(int_elem);
         if_elem.ELSECODE = ElseList;
-        ReturnElement elem_ret = new ReturnElement();
-        VariableElement var_elem2 = new VariableElement();
-        var_elem.setText("a");
-        elem_ret.setreturnvariable(var_elem2);
-        VariableElement var_elem1 = new VariableElement();
-        var_elem1 = (VariableElement)elem_ret.getreturnvariable();
         Console.Write("IfStatement element " + var_elem1.GetType().ToString()+" "+ var_elem1.getText().ToString() + "\n");
         EqualityOperationElement eq_elem = new EqualityOperationElement();
         eq_elem = (EqualityOperationElement)if_elem.CONDITION;

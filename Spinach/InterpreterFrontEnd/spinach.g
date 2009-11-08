@@ -20,24 +20,25 @@ program returns [List<Element> ret]
 @init {
   retval.ret = new List<Element>();
 }
-  : (expr {retval.ret.Add($expr.ret); } )+;
+  : (expr {retval.ret.Add($expr.ret); })+;
   
   
   	
 expr returns [Element ret]
-  :expr1{retval.ret = $expr1.ret;}| parallelfor{retval.ret = $parallelfor.ret;}
+  :expr1{retval.ret = $expr1.ret;}| structdec {retval.ret = $structdec.ret;}     
+     | functiondefination{retval.ret = $functiondefination.ret;}
 ;
 
 expr1 returns [Element ret]
-   : expr2{retval.ret = $expr2.ret;}
-    | matrixvardec { retval.ret = $matrixvardec.ret;}
-     | structdec {retval.ret = $structdec.ret;}
-     | structobjdec { retval.ret = $structobjdec.ret;}
-     | functiondefination{retval.ret = $functiondefination.ret;}
-      | plotfunctions{retval.ret = $plotfunctions.ret;};
- 
-expr2 returns [Element ret]
-:  (el1=assignment {retval.ret = $el1.ret;}
+: matrixvardec { retval.ret = $matrixvardec.ret;} 
+  | structobjdec { retval.ret = $structobjdec.ret;}
+  | plotfunctions{retval.ret = $plotfunctions.ret;}
+  | parallelfor{retval.ret = $parallelfor.ret;} 
+  | expr2{retval.ret = $expr2.ret;}
+;
+
+expr2 returns [Element ret]	:
+   (el1=assignment {retval.ret = $el1.ret;}
   | el2=scalarvardec { retval.ret = $el2.ret;}
   | el3=vectorvardec { retval.ret = $el3.ret;} 
   | el4=deletionofvar { retval.ret = $el4.ret;} 
@@ -45,7 +46,23 @@ expr2 returns [Element ret]
   | el6=ifelse{retval.ret = $el6.ret;}
   | el7=functioncall{retval.ret=$el7.ret;}
   | el8=forstatement{retval.ret = $el8.ret;}
-  | el9=comment{retval.ret = $el9.ret;});
+  | el9=comment{retval.ret = $el9.ret;})
+;
+
+string_literal returns [StringElement ret]
+@init {
+ retval.ret = new StringElement();
+}
+ :
+ ('"'(el1=var_int_or_double_literal {retval.ret.setText($el1.ret);})*'"'{retval.ret.appendText();})
+	;
+
+comment returns [CommentElement ret]
+@init{
+retval.ret = new CommentElement();
+}
+:'//'var_int_or_double_literal*;
+
 
 var_int_or_double_literal returns [Element ret]
   :  (variable { retval.ret = $variable.ret; } 
@@ -70,11 +87,7 @@ double_literal returns [DoubleElement ret]
 	}
 	: el1=DOUBLE_LITERAL {retval.ret.setText($el1.text);};
 
-string_literal returns [StringElement ret]
-@init {
- retval.ret = new StringElement();
-}
- :('"'(el1=var_int_or_double_literal {retval.ret.setText($el1.ret);})*'"'{retval.ret.appendText();});
+
 
 matrixvardec returns [MatrixVariableDeclaration ret]
 @init {
@@ -124,38 +137,44 @@ assignment returns [AssignmentOperationElement ret]
     | e11 = matrixelem{retval.ret.setLhs($e11.ret);})
     ASSIGNMENT 
     ( subtractive_exp{retval.ret.setRhs($subtractive_exp.ret);}| dotproduct{retval.ret.setRhs($dotproduct.ret);}
-    | matrixtranspose {retval.ret.setRhs($matrixtranspose.ret);}|string_literal{retval.ret.setRhs($string_literal.ret);}
+    | matrixtranspose {retval.ret.setRhs($matrixtranspose.ret);}|string_literal{retval.ret.setRhs($string_literal.ret);}| functioncall{retval.ret.setRhs($functioncall.ret);}
     ))
      END_OF_STATEMENT
     ;
 
 additive_expression returns [AdditiveElement ret]
 @init{
-	retval.ret = new AdditiveElement();
+        retval.ret = new AdditiveElement();
 }
-	: ((e11 = multiplicative_expression{retval.ret.setLhs($e11.ret);}) ('+' e12 = multiplicative_expression{retval.ret.setRhs($e12.ret);})*)
-	;
+        : ((e11 = multiplicative_expression{retval.ret.setLhs($e11.ret);})
+('+' e12 = additive_expression{retval.ret.setRhs($e12.ret);})*)
+        ;
 
 multiplicative_expression returns [MultiplicationElement ret]
 @init{
-	retval.ret = new MultiplicationElement();
+        retval.ret = new MultiplicationElement();
 }
-	: (e11 = var_int_or_double_literal{retval.ret.setLhs($e11.ret);}
-	   | e12= bracket_exp{retval.ret.setLhs($e12.ret);}
-	   | el3 = matrixelem{retval.ret.setLhs($el3.ret);}
-	   | el4 = vectorelem{retval.ret.setLhs($el4.ret);})
-	   ('*'( e15 =var_int_or_double_literal{retval.ret.setRhs($e15.ret);}
-	   | e16=  bracket_exp{retval.ret.setRhs($e16.ret);}
-	   | el7 = vectorelem{retval.ret.setLhs($el7.ret);}
-	   | el8 = matrixelem{retval.ret.setLhs($el8.ret);}))*
-	  ;
-        
-    
+        : (e11 = var_int_or_double_literal{retval.ret.setLhs($e11.ret);}
+           | e12= bracket_exp{retval.ret.setLhs($e12.ret);}
+           | el3 = matrixelem{retval.ret.setLhs($el3.ret);}
+           | el4 = vectorelem{retval.ret.setLhs($el4.ret);})
+           ('*'
+         //  ( e15 =var_int_or_double_literal{retval.ret.setRhs($e15.ret);}
+         //  | e16=  bracket_exp{retval.ret.setRhs($e16.ret);}
+         //  | el7 = vectorelem{retval.ret.setLhs($el7.ret);}
+         //  | el8 = matrixelem{retval.ret.setLhs($el8.ret);})
+           el5 = multiplicative_expression{retval.ret.setRhs(el5.ret);}
+
+           )*
+          ;
+
+
 bracket_exp returns [BracketElement ret]
 @init{
-	retval.ret = new BracketElement();
+        retval.ret = new BracketElement();
 }
-: '('subtractive_exp{retval.ret.setbracketexpression($subtractive_exp.ret);}')' ;
+: '('subtractive_exp{retval.ret.setbracketexpression
+($subtractive_exp.ret);}')' ;
 
 
 
@@ -163,11 +182,11 @@ bracket_exp returns [BracketElement ret]
 
 subtractive_exp returns [SubtractionElement ret]
 @init{
-	retval.ret = new SubtractionElement();
+        retval.ret = new SubtractionElement();
 }
-:    (e11 = additive_expression{retval.ret.setLhs($e11.ret);}  ('-' e12 = additive_expression{retval.ret.setRhs($e12.ret);})*)
-	;
-    
+:    (e11 = additive_expression{retval.ret.setLhs($e11.ret);}  ('-'
+e12 = subtractive_exp{retval.ret.setRhs($e12.ret);})*)
+        ;
  
 structdec returns [StructDeclaration ret]
 @init {
@@ -239,7 +258,7 @@ ifloop returns [List<Element> ret]
 {
    retval.ret = new List<Element>();
 }
-: (expr{retval.ret.Add($expr.ret);}|functionreturn{retval.ret.Add($functionreturn.ret);})+
+: (expr1{retval.ret.Add($expr1.ret);}|functionreturn{retval.ret.Add($functionreturn.ret);})+
 ;
 
 
@@ -336,8 +355,6 @@ greaterthanequalto returns [GreaterThanEqualToElement ret]
 }
 : e11 = variable{retval.ret.setGreaterThanEqualToLhs($e11.ret);} GREATERTHANEQUALTOEXPRESSION e12 = var_int_or_double_literal{retval.ret.setGreaterThanEqualToRhs($e12.ret);}
 ;
-//In the function body according to this design it will return only one of the expression to function definition class. we need a list of all the valid SPINACH code inside the function body.
-//program will return the list of all the valid spinach code but that will include everything including parallelfor. if we need to support everything in a function then use that else use the bodyloop function.
 
 
 dotproduct returns [DotProductElement ret]
@@ -370,14 +387,6 @@ arguments returns [Element ret]
 | matrixreference {retval.ret = $matrixreference.ret; }
 | vectorreference {retval.ret = $vectorreference.ret;});
 
-//functiondeclaration returns [DeclarationElement ret]
-//@init { retval.ret = new DeclarationElement();
-//}
-//:((e11 =VARTYPE{retval.ret.settype($e11.text);}) e12 =variable
-//{retval.ret.setvariable($e12.ret); }
-//|('Matrix''<' el1=VARTYPE {retval.ret.settype($el1.text);}'>'
-//el2=variable {retval.ret.setvariable($el2.ret);}))
-//;
 
 scalarargument returns [ScalarArgument ret]
 @init{retval.ret = new ScalarArgument();
@@ -386,11 +395,6 @@ scalarargument returns [ScalarArgument ret]
 {retval.ret.setvariable($e12.ret); })
 ;
 
-comment returns [CommentElement ret]
-@init{
-retval.ret = new CommentElement();
-}
-:'//'var_int_or_double_literal*;
 
 
 

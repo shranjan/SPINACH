@@ -10,3 +10,8 @@ C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\Reso
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
+C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
+C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.pdb
+C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
+C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb

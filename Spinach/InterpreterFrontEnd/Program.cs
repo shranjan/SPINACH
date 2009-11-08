@@ -21,6 +21,7 @@ namespace Spinach
  public class Program :  spinachParser
    {
        static StringBuilder strBuilder = new StringBuilder();
+       private string exLine;
 
        public delegate void errorreport(int code, string errormessage);
        public event errorreport error;
@@ -31,21 +32,45 @@ namespace Spinach
        }
        public override void ReportError(RecognitionException e)
        {
-           
+         if (getEx() == null)
+         {
+
            string[] arr = TokenNames;
-           string str = GetErrorHeader(e);
-           string str1 = GetErrorMessage(e, arr);
-           strBuilder.Append(str +" "+ str1+"\n");
+           string str1 = GetErrorHeader(e);
+           string str2 = GetErrorMessage(e, arr);
+           strBuilder.Append(str1 + " " + str2 + "\n");
+           setException(e);
+         }
+         else
+         {
+           string str = e.Line.ToString() + e.CharPositionInLine.ToString();
+           if (str != getEx())
+           {
+             string[] arr = TokenNames;
+             string str1 = GetErrorHeader(e);
+             string str2 = GetErrorMessage(e, arr);
+             strBuilder.Append(str1 + " " + str2 + "\n");
+             setException(e);
+           }
+         }
        }
        public string returnError()
        {
            return strBuilder.ToString();
        }
 
-
+       public void setException(RecognitionException e)
+       {
+         exLine = e.Line.ToString() + e.CharPositionInLine.ToString();
+       }
+       public string getEx()
+       {
+         return exLine;
+       }
        public Program(CommonTokenStream str,String coreObject):base(str)
        {
            strBuilder = new StringBuilder();
+           exLine = "";
        }
 
       public void VisitLine(String line){
@@ -140,6 +165,7 @@ public class UI
     List<string> keywords = new List<string>();
     keywords = obj.getKeywords();
     obj.error_ += new Spinach.exec.errorreport(error);
+    obj.Visitline("int a");
     obj.Visitline("parallelfor(i->1to){Vector<int>[2] a =[1,2,3,4];}");
     obj.Visitline("subPlot(1,1,a,\"abc\",1D);plot(b,\"abcd\",1D);for(i->1to4){struct s{int a;}; s.a = 0;//this is a comment string s; s = \"This is a example\";}");
     obj.Visitline("if(a<=0){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;} return a;}else{double e; return e;}");
