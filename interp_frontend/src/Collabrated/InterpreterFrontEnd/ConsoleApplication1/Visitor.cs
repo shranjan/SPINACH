@@ -15,9 +15,12 @@ public abstract class Visitor {
   public abstract void VisitVariableElement(VariableElement element);
   public abstract void VisitStructDeclaration(StructDeclaration element);
   public abstract void VisitStructObject(StructObjectDeclaration element);
+  public abstract void VisitStructVar(ScalarVariableDeclaration element);
   public abstract void VisitStructAssignment(StructAssignDeclaration element);
   public abstract void VisitMatrixOperationElement(MatrixOperationElement element);
   public abstract void VisitMatrixElement(MatrixVariableDeclaration element);
+  public abstract void VisitVectorElement(VectorVariableDeclaration element);
+  public abstract void VisitDeleteElement(DeleteVariable element);
   public abstract void VisitIntegerElement(IntegerElement element);
   public abstract void VisitDoubleElement(DoubleElement element);
   public abstract void VisitAssignmentOperationElement(AssignmentOperationElement element);
@@ -33,10 +36,7 @@ public abstract class Visitor {
   public abstract void VisitDeclarationElement(DeclarationElement element);
   public abstract void VisitEqualityOperationElement(EqualityOperationElement element);
   public abstract void VisitReturnElement(ReturnElement element);
-  public abstract void VisitDeleteElement(DeleteVariable element);
   public abstract void VisitNonEqualityOperationElement(NonEqualityOperationElement element);
-  public abstract void VisitStructVar(ScalarVariableDeclaration element);
-  public abstract void VisitVectorElement(VectorVariableDeclaration element);
   public abstract void VisitPlotFunctionElement(PlotFunctionElement element);
     
 
