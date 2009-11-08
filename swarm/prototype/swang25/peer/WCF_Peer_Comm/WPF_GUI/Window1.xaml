@@ -23,7 +23,7 @@
     <TextBox Height="77" Margin="31,205,37,0" Name="textBox4" VerticalAlignment="Top" TextChanged="textBox4_TextChanged">a message</TextBox>
     <Label Height="28" Margin="21,75,0,0" Name="label4" VerticalAlignment="Top" HorizontalAlignment="Left" Width="270" HorizontalContentAlignment="Center" Background="Wheat">Swarm Info.</Label>
     <Button Height="23" HorizontalAlignment="Right" Margin="0,176.418,37,0" Name="button3" VerticalAlignment="Top" Width="270" Click="button3_Click">Send Message</Button>
-        <TextBox Height="23" Margin="21,125,279,0" Name="textBox5" VerticalAlignment="Top" TextChanged="textBox5_TextChanged">http://localhost</TextBox>
+        <TextBox Height="23" Margin="21,125,279,0" Name="textBox5" VerticalAlignment="Top" TextChanged="textBox5_TextChanged">127.0.0.1</TextBox>
         <TextBox Height="23" HorizontalContentAlignment="Center" Margin="0,46,229,0" Name="textBox6" VerticalAlignment="Top" HorizontalAlignment="Right" Width="78" TextChanged="textBox6_TextChanged">Alice</TextBox>
         <Button Height="23" HorizontalAlignment="Left" Margin="33,176.418,0,0" Name="button4" VerticalAlignment="Top" Width="270" Click="button4_Click">Generate Message</Button>
     </Grid>
