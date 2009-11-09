@@ -24,3 +24,5 @@ C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach_MarkupCo
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.g.resources
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.Properties.Resources.resources
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.csproj.GenerateResource.Cache
+I:\Course\CSE784_Software_engineering_studio\final_project\pinac\Spinach\Spinach\obj\Debug\Spinach.exe
+I:\Course\CSE784_Software_engineering_studio\final_project\pinac\Spinach\Spinach\obj\Debug\Spinach.pdb
