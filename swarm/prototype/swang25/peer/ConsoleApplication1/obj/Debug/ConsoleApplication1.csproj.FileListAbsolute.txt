@@ -1,7 +1,0 @@
-C:\Users\Shaonan Wang\Documents\Visual Studio 2008\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-C:\Users\Shaonan Wang\Documents\Visual Studio 2008\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-C:\Users\Shaonan Wang\Documents\Visual Studio 2008\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Shaonan Wang\Documents\Visual Studio 2008\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
-C:\Users\Shaonan Wang\Documents\Visual Studio 2008\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
-I:\Course\CSE784_Software_engineering_studio\final_project\pinac\swarm\prototype\swang25\peer\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
-I:\Course\CSE784_Software_engineering_studio\final_project\pinac\swarm\prototype\swang25\peer\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
