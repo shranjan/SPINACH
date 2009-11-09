@@ -56,7 +56,6 @@ namespace UserInterface
             err.ProgWinError += new ErrorNotification(ShowError);
             keywords = FE.getKeywords();
             err.SetFrontEndObject(FE);
-            
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -198,17 +197,21 @@ namespace UserInterface
                     text = text.Substring(0, index + keywords[s].Length);
                     txt = text.Split('\n');
                     int num = 0;
-                    for (int i = 0; i <txt.Length; i++)
+                    for (int i = 0; i < txt.Length; i++)
                         if (txt[i].Length > 1)
                             num = num + 1;
-                    if ((index == 0 || (index > 0 && (text[index - 1] == ' ' || text[index - 1] == '\n'))) && index + keywords[s].Length <= tr.Text.Length && (tr.Text[index + keywords[s].Length] == ' ' || tr.Text[index + keywords[s].Length] == '\r'))
+                        else if (txt[i].Length == 1 && keywords[s].Length == 1 && txt[i] == keywords[s])
+                            num = num + 1;
+                    if ((index==0 || (index >= 1 &&
+                        !((tr.Text[index - 1] >= 'a' && tr.Text[index - 1] <= 'z') || (tr.Text[index - 1] >= 'A' && tr.Text[index - 1] <= 'Z')))) &&
+                        !((tr.Text[index + keywords[s].Length] >= 'a' && tr.Text[index + keywords[s].Length] <= 'z') || (tr.Text[index + keywords[s].Length] >= 'A' && tr.Text[index + keywords[s].Length] <= 'Z')))
                     {
                         t.start = index+2*num;
                         t.size = keywords[s].Length;
                         m_tags.Add(t);
                     }
-                    text = text.Substring(0, index);
-                    index = text.LastIndexOf(keywords[s]);
+                        text = text.Substring(0, index);
+                        index = text.LastIndexOf(keywords[s]);
                 }
             }
             format();
@@ -301,10 +304,9 @@ namespace UserInterface
 
             public void loadProgram(int read, int write, string text)
             {
-                TextPointer tp = rtbInput.CaretPosition.GetPositionAtOffset(0, LogicalDirection.Forward);
-                rtbInput.CaretPosition.InsertTextInRun(text);
-                //rtbChat.CaretPosition.InsertParagraphBreak();
-                rtbInput.CaretPosition = tp;
+                rtbInput.AppendText(text);
+                syntax();
+                LineNumbers();
             }
 
             private void mnuSave_Click(object sender, RoutedEventArgs e)
@@ -320,7 +322,6 @@ namespace UserInterface
                             StreamWriter sw = new StreamWriter(saveFileDialog1.FileName,false);
                             using (sw)
                             {
-
                                 TextPointer start = rtbInput.Document.ContentStart;
                                 TextPointer end = rtbInput.Document.ContentEnd;
                                 TextRange tr = new TextRange(start, end);

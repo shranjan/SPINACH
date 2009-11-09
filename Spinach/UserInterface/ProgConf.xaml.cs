@@ -164,13 +164,22 @@ namespace UserInterface
                       using(sr)
                       {
                           string line;
-                          while ((line = sr.ReadLine()) != null)
-                              text = text + line + "\n";
+                          line = sr.ReadLine();
+                          while ((line) != null)
+                          {
+                              text = text + line;
+                              line = sr.ReadLine();
+                              if (line != null)
+                              {
+                                  text += "\n";
+                              }
+                          }
                       }
                   }
                   ProgWin editor = new ProgWin(ProgWin.editorType.owner);
-                  editor.Show();
+                  
                   editor.loadProgram(0, 0, text);
+                  editor.Show();
                   editor.setUserList(userList);
               }
               catch (Exception ex)
