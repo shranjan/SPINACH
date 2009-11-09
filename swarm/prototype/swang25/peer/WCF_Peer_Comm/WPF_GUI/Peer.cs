@@ -19,15 +19,16 @@ namespace WPF_GUI
         private String mCPU;
 
         //computation part
-        private int RunFlag;
+        private Hashtable RunFlag = new Hashtable();
 
         //shared infomation part
         private String Master;
         private String Backup;
+        private Stirng LastHeartBeatTime;
         private Hashtable IPtoName=new Hashtable();
         private Hashtable NametoIP=new Hashtable();
         private Hashtable IPtoCPU = new Hashtable();
-        private Hashtable IPtoTime = new Hashtable();
+        
 
         private ArrayList Program = new ArrayList(); //Use instance of ProgramInfo class as array member
 
@@ -38,7 +39,6 @@ namespace WPF_GUI
             mName = " ";
             mCPU = " ";
 
-            RunFlag = 0;
         }
 
         public void SetIP(String str) { mIP = str; }
@@ -53,8 +53,17 @@ namespace WPF_GUI
         public void SetCPU(String str) { mCPU = str; }
         public String GetCPU() { return mCPU; }
 
-        public void SetFlag(int flag) { RunFlag = flag; }
-        public int GetFlag() { return RunFlag; }
+        public void SetFlag(String pid,String flag) 
+        {
+            RunFlag[pid] = flag;
+        }
+        public String GetFlag(String pid) 
+        {
+            if(RunFlag.Contains(pid))
+                return RunFlag[pid].ToString();
+            else
+                return "-1";
+        }
 
         public void SetMaster(String str) { Master = str; }
         public String GetMaster() { return Master; }
