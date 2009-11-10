@@ -32,26 +32,25 @@ namespace WPF_GUI
                 IPandName.Add(a1);
                 IPandName.Add(a2);
                 IPandName.Add(a3);
-                //more attribute here to further data
                 temp.Add(IPandName);
             }
             string result = xml.ToString();
             return result;
         }
 
-        public String msgHeartBeatRequest()
+        public String msgHeartBeatRequest(String ipport)
         {
             XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", "yes"),
-                new XElement("root",new XAttribute("type","HeartBeatRequest"))
+                new XElement("root",new XAttribute("type","HeartBeatRequest"),ipport)
                 );
             string result = xml.ToString();
             return result;
         }
 
-        public String msgHeartBeatReply()
+        public String msgHeartBeatReply(String ipport)
         {
             XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", "yes"),
-                new XElement("root", new XAttribute("type", "HeartBeatReply"))
+                new XElement("root", new XAttribute("type", "HeartBeatReply"), ipport)
                 );
             string result = xml.ToString();
             return result;
@@ -75,15 +74,40 @@ namespace WPF_GUI
             return result;
         }
 
-        public String msgRun()
+        public String msgRun(String pid)
         {
             XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", "yes"),
-                new XElement("root", new XAttribute("type", "Run"))
+                new XElement("root", new XAttribute("type", "Run"), pid)
                 );
             string result = xml.ToString();
             return result;
         }
 
+        public String msgRunFail(String pid,String ipport)
+        {
+            XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", "yes"),
+                new XElement("root", new XAttribute("type", "RunFail"), new XAttribute("pid", ipport))
+                );
+            string result = xml.ToString();
+            return result;
+        }
+
+        public String msgRunSucess(String pid, String ipport)
+        {
+            XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", "yes"),
+                new XElement("root", new XAttribute("type", "RunSucess"), new XAttribute("pid", ipport))
+                );
+            string result = xml.ToString();
+            return result;
+        }
+        public String msgReRun(String pid)
+        {
+            XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", "yes"),
+                new XElement("root", new XAttribute("type", "ReRun"), pid)
+                );
+            string result = xml.ToString();
+            return result;
+        }
         public String msgChat(String chat)
         {
             XDocument xml = new XDocument(new XDeclaration("1.0", "utf-8", "yes"),

@@ -19,26 +19,24 @@ namespace WPF_GUI
         private String mCPU;
 
         //computation part
-        private int RunFlag;
+        private Hashtable RunFlag = new Hashtable();
+        private Hashtable Program = new Hashtable();
 
         //shared infomation part
         private String Master;
         private String Backup;
+        private String LastHeartBeatTime;
         private Hashtable IPtoName=new Hashtable();
         private Hashtable NametoIP=new Hashtable();
         private Hashtable IPtoCPU = new Hashtable();
-        private Hashtable IPtoTime = new Hashtable();
+        
 
-        private ArrayList Program = new ArrayList(); //Use instance of ProgramInfo class as array member
-
-        public Peer()
+        public Peer(String ip,String port,String name,String cpu)
         {
-            mIP = " ";
-            mPort = " ";
-            mName = " ";
-            mCPU = " ";
-
-            RunFlag = 0;
+            mIP = ip;
+            mPort = port;
+            mName = name;
+            mCPU = cpu;
         }
 
         public void SetIP(String str) { mIP = str; }
@@ -53,8 +51,17 @@ namespace WPF_GUI
         public void SetCPU(String str) { mCPU = str; }
         public String GetCPU() { return mCPU; }
 
-        public void SetFlag(int flag) { RunFlag = flag; }
-        public int GetFlag() { return RunFlag; }
+        public void SetFlag(String pid,String flag) 
+        {
+            RunFlag[pid] = flag;
+        }
+        public String GetFlag(String pid) 
+        {
+            if(RunFlag.Contains(pid))
+                return RunFlag[pid].ToString();
+            else
+                return "-1";
+        }
 
         public void SetMaster(String str) { Master = str; }
         public String GetMaster() { return Master; }
@@ -87,13 +94,19 @@ namespace WPF_GUI
         public Hashtable GetIPtoCPU() { return IPtoCPU; }
         public Hashtable GetNametoIP() { return NametoIP; }
 
-        public int InsertProg(int pid, ProgramInfo prog) { return 0; }
-        public int RemoveProg(int pid) { return 0; }
-        public int UpdateProg(int pid, ProgramInfo prog) { return 0; }
-        public ProgramInfo GetProg(int pid) { return null; }
+        public void InsertProg(String pid, ref ProgramInfo prog) 
+        {
+            Program[pid] = prog;
+        }
+        public int RemoveProg(String pid) { return 0; }
+        public ProgramInfo GetProg(String pid) { return null; }
+        public int CheckRun(String pid)
+        {
+            return 0;
+        }
 
-        public String ProgOwner(int pid) { return "owner"; }
-        public int ReadAccess(int pid) { return 0; }
-        public int WriteAccess(int pid) { return 0; }
+        public String ProgOwner(String pid) { return "owner"; }
+        public int ReadAccess(String pid) { return 0; }
+        public int WriteAccess(String pid) { return 0; }
     }
 }
