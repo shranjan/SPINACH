@@ -8,6 +8,11 @@
 // author:vinit mehta
 // language: C# .Net 3.5
 ////////////////////////////////////////////////////////////////////////
+//Version history:
+//
+//version 1.2: kuldeep made change to struct keyword. (version number correspondes to grammar file)
+
+
 
 //# define TEST_KEYWORDS
 
@@ -39,7 +44,7 @@ using System.Text;
             keys.Add("else");
             keys.Add("parallelfor");
             keys.Add("void");
-            keys.Add("Delete");
+            keys.Add("delete");
             keys.Add("subPlot");
             keys.Add("plot");
             keys.Add("resetPlot");
@@ -50,7 +55,7 @@ using System.Text;
             keys.Add("SYNC");
             keys.Add("to");
             keys.Add("print");
-            keys.Add("Struct");
+            keys.Add("struct");
             keys.Add("T");
             keys.Add("Vector");
             keys.Add("Matrix");

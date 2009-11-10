@@ -48,11 +48,19 @@ public class ParallelForElement : Element
     private IntegerElement EndingRange;
 
     //List of code.
-    private List<Element> Code = new List<Element>();
+    private List<Element> Code;
 
     //List that contains the code in the body of the loop.
-    private List<List<Element>> CodeList = new List<List<Element>>();
+    private List<List<Element>> CodeList;
     
+    //Constructor
+    public ParallelForElement()
+    {
+        Code = new List<Element>();
+        CodeList = new List<List<Element>>();
+    }
+
+
     public override void Accept(Visitor visitor)
     {
         visitor.VisitParallelForElement(this);
@@ -111,6 +119,7 @@ public class ParallelForElement : Element
     public void syncfunction()
     {
         CodeList.Add(Code);
+        chkForIf(Code);
         Code = new List<Element>();
     }
 
@@ -121,6 +130,24 @@ public class ParallelForElement : Element
         get
         {
             return CodeList;
+        }
+    }
+
+
+    public void chkForIf(List<Element> code)
+    {
+        for (int i = 0; i < code.Count; i++)
+        {
+            if (code[i] is IfStatementElement)
+            {
+                IfStatementElement if_elem = (IfStatementElement)code[i];
+                if_elem.ChkforParallel();
+            }
+            if (code[i] is ForStatementElement)
+            {
+                ForStatementElement for_elem = (ForStatementElement)code[i];
+                for_elem.ChkforParallel();
+            }
         }
     }
 }

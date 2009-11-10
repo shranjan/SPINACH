@@ -80,55 +80,62 @@ public class MatrixVariableDeclaration : Element
     }
     public void setValue()
     {
-        int row = int.Parse(getRow().getText());
-        int column = int.Parse(getColumn().getText());
-        if (getType() == "int")
+        try
         {
-            List<int> list = new List<int>();
-            for (int i = 0; i < mValue.Count; i++)
+            int row = int.Parse(getRow().getText());
+            int column = int.Parse(getColumn().getText());
+            if (getType() == "int")
             {
-                IntegerElement int_element = (IntegerElement)mValue[i];
-                int element = int.Parse(int_element.getText());
-                list.Add(element);
-            }
-            //mValue.Add(int.Parse(val.getText()));
-            intMatrix = new int[row, column];
-            int count = 0;
-            if ((row * column) == list.Count)
-            {
-                for (int i = 0; i < row; i++)
+                List<int> list = new List<int>();
+                for (int i = 0; i < mValue.Count; i++)
                 {
-                    for (int j = 0; j < column; j++)
+                    IntegerElement int_element = (IntegerElement)mValue[i];
+                    int element = int.Parse(int_element.getText());
+                    list.Add(element);
+                }
+                //mValue.Add(int.Parse(val.getText()));
+                intMatrix = new int[row, column];
+                int count = 0;
+                if ((row * column) == list.Count)
+                {
+                    for (int i = 0; i < row; i++)
                     {
-                        intMatrix[i, j] = list[count];
-                        count++;
+                        for (int j = 0; j < column; j++)
+                        {
+                            intMatrix[i, j] = list[count];
+                            count++;
+                        }
+                    }
+                }
+            }
+            else if (getType() == "double")
+            {
+                List<double> list = new List<double>();
+                for (int i = 0; i < mValue.Count; i++)
+                {
+                    DoubleElement double_element = (DoubleElement)mValue[i];
+                    double element = double.Parse(double_element.getText());
+                    list.Add(element);
+                }
+                //mValue.Add(int.Parse(val.getText()));
+                doubleMatrix = new double[row, column];
+                int count = 0;
+                if ((row * column) == list.Count)
+                {
+                    for (int i = 0; i < row; i++)
+                    {
+                        for (int j = 0; j < column; j++)
+                        {
+                            doubleMatrix[i, j] = list[count];
+                            count++;
+                        }
                     }
                 }
             }
         }
-        else if (getType() == "double")
+        catch (Exception e)
         {
-            List<double> list = new List<double>();
-            for (int i = 0; i < mValue.Count; i++)
-            {
-                DoubleElement double_element = (DoubleElement)mValue[i];
-                double element = double.Parse(double_element.getText());
-                list.Add(element);
-            }
-            //mValue.Add(int.Parse(val.getText()));
-            doubleMatrix = new double[row, column];
-            int count = 0;
-            if ((row * column) == list.Count)
-            {
-                for (int i = 0; i < row; i++)
-                {
-                    for (int j = 0; j < column; j++)
-                    {
-                        doubleMatrix[i, j] = list[count];
-                        count++;
-                    }
-                }
-            }
+            string s = e.Message;
         }
     }
     public void setintValueat(int r, int c,int value)
@@ -148,6 +155,50 @@ public class MatrixVariableDeclaration : Element
     {
         double val = (double)intMatrix.GetValue(r, c);
         return val;
+    }
+    public bool setIntMatrix(int[,] matrix)
+    {
+        try
+        {
+            int row = int.Parse(getRow().getText());
+            int column = int.Parse(getColumn().getText());
+            intMatrix = new int[row, column];
+            for (int i = 0; i < row; i++)
+            {
+                for (int k = 0; k < column; k++)
+                {
+                    intMatrix[i, k] = matrix[i, k];
+                }
+            }
+            return true;
+        }
+        catch (Exception e)
+        {
+            string s = e.Message;
+            return false;
+        }
+    }
+    public bool setDoubleMatrix(double[,] matrix)
+    {
+        try
+        {
+            int row = int.Parse(getRow().getText());
+            int column = int.Parse(getColumn().getText());
+            doubleMatrix = new double[row, column];
+            for (int i = 0; i < row; i++)
+            {
+                for (int k = 0; k < column; k++)
+                {
+                    doubleMatrix[i, k] = matrix[i, k];
+                }
+            }
+            return true;
+        }
+        catch (Exception e)
+        {
+            string s = e.Message;
+            return false;
+        }
     }
 
 #if(Test_Matrix)

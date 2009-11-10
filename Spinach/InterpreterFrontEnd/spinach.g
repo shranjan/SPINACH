@@ -1,5 +1,7 @@
-
+///-- Interpreter Front End team.
 ///-- version 1.1  Date: 11/08/09
+///-- version 1.2  Date: 11/09/09  -- Updated vectorelem, matrixelem, plot grammar, struct propertices Name changed, removed commented code, modified for and if-else body loop
+
 
 grammar spinach;
 
@@ -28,27 +30,26 @@ program returns [List<Element> ret]
   
   	
 expr returns [Element ret]
-  :expr1{retval.ret = $expr1.ret;}| parallelfor{retval.ret = $parallelfor.ret;}
+  :expr1{retval.ret = $expr1.ret;}| parallelfor{retval.ret = $parallelfor.ret;}| structdec {retval.ret = $structdec.ret;}
+     | structobjdec { retval.ret = $structobjdec.ret;}
+     | functiondefination{retval.ret = $functiondefination.ret;}
 ;
 
 expr1 returns [Element ret]
    : expr2{retval.ret = $expr2.ret;}
     | matrixvardec { retval.ret = $matrixvardec.ret;}
-     | structdec {retval.ret = $structdec.ret;}
-     | structobjdec { retval.ret = $structobjdec.ret;}
-     | functiondefination{retval.ret = $functiondefination.ret;}
-      | plotfunctions{retval.ret = $plotfunctions.ret;};
+    | plotfunctions{retval.ret = $plotfunctions.ret;}
+    | deletionofvar{retval.ret = $deletionofvar.ret;}  
+    | print { retval.ret = $print.ret; }
+    | functioncall{retval.ret=$functioncall.ret;}
+    | scalarvardec { retval.ret = $scalarvardec.ret;}
+    | vectorvardec { retval.ret = $vectorvardec.ret;} ;
  
 expr2 returns [Element ret]
 :  (el1=assignment {retval.ret = $el1.ret;}
-  | el2=scalarvardec { retval.ret = $el2.ret;}
-  | el3=vectorvardec { retval.ret = $el3.ret;} 
-  | el4=deletionofvar { retval.ret = $el4.ret;} 
-  | el5=print { retval.ret = $el5.ret; }
-  | el6=ifelse{retval.ret = $el6.ret;}
-  | el7=functioncall{retval.ret=$el7.ret;}
-  | el8=forstatement{retval.ret = $el8.ret;}
-  | el9=comment{retval.ret = $el9.ret;});
+  | el4=ifelse{retval.ret = $el4.ret;} 
+  | el5=forstatement{retval.ret = $el5.ret;}
+  | el6=comment{retval.ret = $el6.ret;});
 
 var_int_or_double_literal returns [Element ret]
   :   (int_literal {retval.ret = $int_literal.ret; }
@@ -112,14 +113,16 @@ matrixelem returns [MatrixElement ret]
 @init {
  retval.ret = new MatrixElement();
  }
- :(el1=variable {retval.ret.setVar($el1.ret);}'['el2=int_literal{retval.ret.setRow($el2.ret);}']'
- '['el3=int_literal{retval.ret.setColumn($el3.ret);}']');
+ :(el1=variable {retval.ret.setVar($el1.ret);}
+  '['(el2=int_literal{retval.ret.setRow($el2.ret);}|el4=variable{retval.ret.setRow($el4.ret);})']'
+ '['(el3=int_literal{retval.ret.setColumn($el3.ret);}|el5=variable{retval.ret.setColumn($el5.ret);})']');
  
 vectorelem returns [VectorElement ret]
 @init {
  retval.ret = new VectorElement();
  }
- :(el1=variable {retval.ret.setVar($el1.ret);}'['el2=int_literal {retval.ret.setRange($el2.ret);}']'); 
+ :(el1=variable {retval.ret.setVar($el1.ret);}
+  '['(el2=int_literal {retval.ret.setRange($el2.ret);}|el3=variable{retval.ret.setRange($el3.ret);})']'); 
 
 assignment returns [AssignmentOperationElement ret]
 @init {
@@ -152,10 +155,6 @@ multiplicative_expression returns [MultiplicationElement ret]
 	   | el3 = matrixelem{retval.ret.setLhs($el3.ret);}
 	   | el4 = vectorelem{retval.ret.setLhs($el4.ret);})
 	   ('*'
-	 //  ( e15 =var_int_or_double_literal{retval.ret.setRhs($e15.ret);}
-	 //  | e16=  bracket_exp{retval.ret.setRhs($e16.ret);}
-	 //  | el7 = vectorelem{retval.ret.setLhs($el7.ret);}
-	 //  | el8 = matrixelem{retval.ret.setLhs($el8.ret);})
 	   el5 = multiplicative_expression{retval.ret.setRhs(el5.ret);}
 	   
 	   )*
@@ -204,12 +203,12 @@ retval.ret = new StructObjectDeclaration();
 : (el1=variable { retval.ret.setStructName($el1.ret);}
  el2=variable { retval.ret.setObjName($el2.ret);})
  END_OF_STATEMENT;
- 
-structassign returns [StructAssignDeclaration ret]
+ structassign returns [StructAssignDeclaration ret]
 @init {
 retval.ret = new StructAssignDeclaration();
 }
-:(el1=variable {retval.ret.setName($el1.ret);}'.'el2=variable {retval.ret.setObj($el2.ret);});
+:(el1=variable {retval.ret.setObjName($el1.ret);}'.'el2=variable {retval.ret.setDataMember($el2.ret);})
+;
 
 deletionofvar returns [DeleteVariable ret]
 @init {
@@ -254,14 +253,14 @@ ifloop returns [List<Element> ret]
 {
    retval.ret = new List<Element>();
 }
-: (expr{retval.ret.Add($expr.ret);}|functionreturn{retval.ret.Add($functionreturn.ret);})+
+: (expr1{retval.ret.Add($expr1.ret);}|functionreturn{retval.ret.Add($functionreturn.ret);})+
 ;
 
 
 forstatement returns [ForStatementElement ret]
 @init{
    retval.ret = new ForStatementElement();
-}:'for' r11 = variable{retval.ret.RANGEVARIABLE = $r11.ret;} POINT r12 = int_literal{retval.ret.STARTINGRANGE = $r12.ret;} 'to' r13= int_literal{retval.ret.ENDINGRANGE = $r13.ret;} RIGHTBRACE LEFTPARANTHESIS (e11=expr1{retval.ret.ADDCODE =$e11.ret;})+ RIGHTPARANTHESIS;
+}:'for' LEFTBRACE r11 = variable{retval.ret.RANGEVARIABLE = $r11.ret;} POINT r12 = int_literal{retval.ret.STARTINGRANGE = $r12.ret;} 'to' r13= int_literal{retval.ret.ENDINGRANGE = $r13.ret;} RIGHTBRACE LEFTPARANTHESIS (e11=expr2{retval.ret.ADDCODE =$e11.ret;})+ RIGHTPARANTHESIS;
 
    functioncall returns [FunctionCallElement ret]
  @init{ retval.ret = new FunctionCallElement();
@@ -372,8 +371,7 @@ plotfunctions returns [PlotFunctionElement ret]
 @init { retval.ret = new PlotFunctionElement();
 }
 : ('subPlot'{retval.ret.setPlotFunction("subPlot");} '('
-(el1 = int_literal {retval.ret.setRow($el1.ret);}) ','
-(el2 = int_literal {retval.ret.setColumn($el2.ret);}) ','
+(el1 = int_literal {retval.ret.setPeno($el1.ret);}) ','
 (vll1 = variable {retval.ret.setData($vll1.ret);}) ','
 (vll2 = string_literal {retval.ret.setTitle($vll2.ret);})','
 (('1D'{retval.ret.setPlotType("1D");})|('2D'{retval.ret.setPlotType("2D");})|('3D'{retval.ret.setPlotType("3D");}(','(el3 = int_literal{retval.ret.setMode($el3.ret);}))?))

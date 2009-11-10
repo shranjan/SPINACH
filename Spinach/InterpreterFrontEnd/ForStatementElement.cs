@@ -47,7 +47,17 @@ public class ForStatementElement : Element
     private IntegerElement EndingRange;
 
     //List that contains the code in the body of the loop.
-    private List<Element> CodeList = new List<Element>();
+    private List<Element> CodeList;
+
+    //Boolean to check if its parallelizable
+    bool IsParallelizable;
+
+    //Constructor
+    public ForStatementElement()
+    {
+        CodeList = new List<Element>();
+        IsParallelizable = true;
+    }
 
     public override void Accept(Visitor visitor)
     {
@@ -112,6 +122,50 @@ public class ForStatementElement : Element
         }
     }
 
+
+    //set and get the isParallelizable boolean
+    public bool IsParallel
+    {
+        get
+        {
+            return IsParallelizable;
+        }
+        set
+        {
+            IsParallelizable = value;
+        }
+    }
+
+    public void ChkforParallel()
+    {
+        for (int i = 0; i < CodeList.Count; i++)
+        {
+            if (CodeList[i] is MatrixVariableDeclaration)
+            {
+                MatrixVariableDeclaration mat_elem = (MatrixVariableDeclaration)CodeList[i];
+                IsParallel = false;
+            }
+            if (CodeList[i] is PlotFunctionElement)
+            {
+                PlotFunctionElement plot_elem = (PlotFunctionElement)CodeList[i];
+                IsParallel = false;
+            }
+            if (CodeList[i] is DeleteVariable)
+            {
+                DeleteVariable delete_elem = (DeleteVariable)CodeList[i];
+                IsParallel = false;
+            }
+            if (CodeList[i] is PrintOperationElement)
+            {
+                PrintOperationElement print_elem = (PrintOperationElement)CodeList[i];
+                IsParallel = false;
+            }
+            if (CodeList[i] is FunctionCallElement)
+            {
+                FunctionCallElement func_elem = (FunctionCallElement)CodeList[i];
+            }
+        }
+    }
 }
 
 

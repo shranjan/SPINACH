@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g 2009-11-08 18:42:57
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g 2009-11-09 22:36:05
 
 
 using System.Collections.Generic;
@@ -809,8 +809,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = END_OF_STATEMENT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:420:17: ( ';' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:420:19: ';'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:422:17: ( ';' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:422:19: ';'
             {
             	Match(';'); 
 
@@ -832,7 +832,7 @@ public class spinachLexer : Lexer {
     		{
             int _type = SCALEMODE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:421:10: ( 'log' | 'linear' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:423:10: ( 'log' | 'linear' )
             int alt1 = 2;
             int LA1_0 = input.LA(1);
 
@@ -866,7 +866,7 @@ public class spinachLexer : Lexer {
             switch (alt1) 
             {
                 case 1 :
-                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:421:12: 'log'
+                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:423:12: 'log'
                     {
                     	Match("log"); 
 
@@ -874,7 +874,7 @@ public class spinachLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:421:20: 'linear'
+                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:423:20: 'linear'
                     {
                     	Match("linear"); 
 
@@ -899,7 +899,7 @@ public class spinachLexer : Lexer {
     		{
             int _type = VARTYPE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:422:9: ( 'int' | 'double' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:424:9: ( 'int' | 'double' )
             int alt2 = 2;
             int LA2_0 = input.LA(1);
 
@@ -921,7 +921,7 @@ public class spinachLexer : Lexer {
             switch (alt2) 
             {
                 case 1 :
-                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:422:11: 'int'
+                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:424:11: 'int'
                     {
                     	Match("int"); 
 
@@ -929,7 +929,7 @@ public class spinachLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:422:19: 'double'
+                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:424:19: 'double'
                     {
                     	Match("double"); 
 
@@ -954,8 +954,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = STRINGTYPE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:423:12: ( 'string' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:423:14: 'string'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:425:12: ( 'string' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:425:14: 'string'
             {
             	Match("string"); 
 
@@ -978,8 +978,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = DOT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:424:5: ( '.' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:424:6: '.'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:426:5: ( '.' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:426:6: '.'
             {
             	Match('.'); 
 
@@ -1001,8 +1001,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = ASSIGNMENT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:425:11: ( '=' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:425:13: '='
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:427:11: ( '=' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:427:13: '='
             {
             	Match('='); 
 
@@ -1024,8 +1024,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = PLUS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:426:5: ( '+' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:426:7: '+'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:428:5: ( '+' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:428:7: '+'
             {
             	Match('+'); 
 
@@ -1047,8 +1047,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = MULTIPLY;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:427:9: ( '*' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:427:10: '*'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:429:9: ( '*' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:429:10: '*'
             {
             	Match('*'); 
 
@@ -1070,10 +1070,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = VARIABLE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:428:9: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:428:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:9: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
             {
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:428:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
             	int cnt3 = 0;
             	do 
             	{
@@ -1137,10 +1137,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = INT_LITERAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:429:12: ( ( '0' .. '9' )+ )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:429:14: ( '0' .. '9' )+
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:12: ( ( '0' .. '9' )+ )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:14: ( '0' .. '9' )+
             {
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:429:14: ( '0' .. '9' )+
+            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:14: ( '0' .. '9' )+
             	int cnt4 = 0;
             	do 
             	{
@@ -1156,7 +1156,7 @@ public class spinachLexer : Lexer {
             	    switch (alt4) 
             		{
             			case 1 :
-            			    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:429:15: '0' .. '9'
+            			    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:15: '0' .. '9'
             			    {
             			    	MatchRange('0','9'); 
 
@@ -1194,11 +1194,11 @@ public class spinachLexer : Lexer {
     		{
             int _type = DOUBLE_LITERAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:15: ( ( INT_LITERAL DOT INT_LITERAL ) )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:16: ( INT_LITERAL DOT INT_LITERAL )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:15: ( ( INT_LITERAL DOT INT_LITERAL ) )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:16: ( INT_LITERAL DOT INT_LITERAL )
             {
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:16: ( INT_LITERAL DOT INT_LITERAL )
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:17: INT_LITERAL DOT INT_LITERAL
+            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:16: ( INT_LITERAL DOT INT_LITERAL )
+            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:17: INT_LITERAL DOT INT_LITERAL
             	{
             		mINT_LITERAL(); 
             		mDOT(); 
@@ -1225,10 +1225,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = WHITESPACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:12: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:433:12: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:433:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
             {
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:433:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
             	int cnt5 = 0;
             	do 
             	{
@@ -1293,8 +1293,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LEFTBRACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:11: ( '(' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:12: '('
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:434:11: ( '(' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:434:12: '('
             {
             	Match('('); 
 
@@ -1316,8 +1316,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = RIGHTBRACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:433:11: ( ')' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:433:12: ')'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:435:11: ( ')' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:435:12: ')'
             {
             	Match(')'); 
 
@@ -1339,8 +1339,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LEFTPARANTHESIS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:434:16: ( '{' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:434:17: '{'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:436:16: ( '{' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:436:17: '{'
             {
             	Match('{'); 
 
@@ -1362,8 +1362,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = RIGHTPARANTHESIS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:435:17: ( '}' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:435:18: '}'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:437:17: ( '}' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:437:18: '}'
             {
             	Match('}'); 
 
@@ -1385,8 +1385,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = POINT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:436:6: ( '->' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:436:8: '->'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:438:6: ( '->' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:438:8: '->'
             {
             	Match("->"); 
 
@@ -1409,8 +1409,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = EQUALITYEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:437:19: ( '==' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:437:21: '=='
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:439:19: ( '==' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:439:21: '=='
             {
             	Match("=="); 
 
@@ -1433,8 +1433,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = NONEQUALITYEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:438:22: ( '!=' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:438:24: '!='
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:440:22: ( '!=' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:440:24: '!='
             {
             	Match("!="); 
 
@@ -1457,8 +1457,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LESSTHANEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:439:20: ( '<' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:439:21: '<'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:441:20: ( '<' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:441:21: '<'
             {
             	Match('<'); 
 
@@ -1480,8 +1480,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LESSTHANEQUALTOEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:440:26: ( '<=' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:440:27: '<='
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:442:26: ( '<=' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:442:27: '<='
             {
             	Match("<="); 
 
@@ -1504,8 +1504,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = GREATERTHANEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:441:23: ( '>' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:441:24: '>'
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:443:23: ( '>' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:443:24: '>'
             {
             	Match('>'); 
 
@@ -1527,8 +1527,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = GREATERTHANEQUALTOEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:442:29: ( '>=' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:442:30: '>='
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:444:29: ( '>=' )
+            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:444:30: '>='
             {
             	Match(">="); 
 

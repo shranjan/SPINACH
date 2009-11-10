@@ -14,15 +14,15 @@ public class StructAssignDeclaration : Element
 {
 
     Element mName;
-    Element mObj;
+    Element mdata;
 
     public override void Accept(Visitor visitor)
     {
         visitor.VisitStructAssignment(this);
     }
 
-    public Element getName() { return mName; }
-    public void setName(Element text) { mName = text; }
-    public Element getObj() { return mObj; }
-    public void setObj(Element obj) { mObj = obj; }
+    public Element getObjName() { return mName; }
+    public void setObjName(Element text) { mName = text; }
+    public Element getDataMember() { return mdata; }
+    public void setDataMember(Element data) { mdata = data; }
 }
