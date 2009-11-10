@@ -25,7 +25,7 @@ using System.Windows.Forms;
 using System.IO;
 using Spinach;
 
-namespace UserInterface
+namespace Spinach
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
@@ -33,6 +33,7 @@ namespace UserInterface
     public partial class ProgWin : Window
     {
         private ErrorModule err = new ErrorModule();
+        //private PlotReceiver plot = new PlotReceiver();
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
@@ -42,18 +43,19 @@ namespace UserInterface
 
         //this is to know the type of invocation
 
-        public ProgWin()
-        {
-            InitializeComponent();
-            err.ProgWinError+=new ErrorNotification(ShowError);
-            keywords = FE.getKeywords();
-        }
+        //public ProgWin()
+        //{
+        //    InitializeComponent();
+        //    err.ProgWinError+=new ErrorNotification(ShowError);
+        //    keywords = FE.getKeywords();
+        //}
 
         public ProgWin(editorType e)
         {
             InitializeComponent();
             et = e;
             err.ProgWinError += new ErrorNotification(ShowError);
+            //plot.plotevent += new plotdelegate(EnablePlot);
             keywords = FE.getKeywords();
             err.SetFrontEndObject(FE);
         }
@@ -114,9 +116,15 @@ namespace UserInterface
             mnuEdit.Visibility = Visibility.Visible;
         }
        
+        /// <summary>
+        /// This will show the plot window with the plot image in it.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnuPlot_Click(object sender, RoutedEventArgs e)
         {
-            
+            ProgPlot frmPlot = new ProgPlot();
+            frmPlot.ShowDialog();
         }
 
         private void mnuAdd_Click(object sender, RoutedEventArgs e)
@@ -335,6 +343,11 @@ namespace UserInterface
                     }
                 }
 
+            }
+
+            private void EnablePlot(PngBitmapEncoder encoder)
+            {
+                mnuPlot.IsEnabled = true;
             }
     }
 }

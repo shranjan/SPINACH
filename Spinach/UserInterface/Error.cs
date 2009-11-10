@@ -19,7 +19,7 @@ using System;
 using System.Collections.Generic;
 using Spinach;
 
-namespace UserInterface
+namespace Spinach
 {
     /// <summary>
     /// 
