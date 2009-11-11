@@ -11,3 +11,8 @@ C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterExec\bin\Debug\Interpre
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterExec\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterExec\obj\Debug\InterpreterExec.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterExec\obj\Debug\InterpreterExec.pdb
+C:\Users\Rajika\Desktop\pinac\pinac\Spinach\InterpreterExec\bin\Debug\InterpreterExec.dll
+C:\Users\Rajika\Desktop\pinac\pinac\Spinach\InterpreterExec\bin\Debug\InterpreterExec.pdb
+C:\Users\Rajika\Desktop\pinac\pinac\Spinach\InterpreterExec\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rajika\Desktop\pinac\pinac\Spinach\InterpreterExec\obj\Debug\InterpreterExec.dll
+C:\Users\Rajika\Desktop\pinac\pinac\Spinach\InterpreterExec\obj\Debug\InterpreterExec.pdb

@@ -9,7 +9,6 @@
 // language: C# .Net 3.5
 ////////////////////////////////////////////////////////////////////////
 
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +18,7 @@ using Antlr.Runtime;
 
 namespace Spinach
 {
+  /*
     public class Test_Core : spinachParser
     {
         static StringBuilder strBuilder = new StringBuilder();
@@ -122,7 +122,7 @@ namespace Spinach
             }
         }
     }
-
+*/
 #if(Test_Core)
     /// <summary>
     /// -- Executor Class.... 

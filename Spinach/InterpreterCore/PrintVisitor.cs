@@ -39,7 +39,7 @@
  * 
  */
 
-
+/*
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -151,8 +151,8 @@ namespace Spinach
             {
                 Console.Write("Structure:" + element.getStructName().getText());
                 Console.Write("Element:" + element.getObjName().getText());
-                interp.sendres(114, "Structure:" + element.getStructName().getText());
-                interp.sendres(114, "Element:" + element.getObjName().getText());
+                interp.result("Structure:" + element.getStructName().getText());
+                interp.result("Element:" + element.getObjName().getText());
             }
             else
                 Console.Write("Null Structure element\n");
@@ -184,7 +184,7 @@ namespace Spinach
             //throw new NotImplementedException();
         }*/
 
-        //Delete  from symbol table
+   /*     //Delete  from symbol table
         public override void VisitDeleteElement(DeleteVariable element)
         {
 
@@ -210,7 +210,7 @@ namespace Spinach
         {
             //throw new NotImplementedException();
             Console.Write("String Value:" + element.getText());
-            interp.sendres(114, "String Value:" + element.getText());
+            interp.result( "String Value:" + element.getText());
         }
         public override void VisitVectorReference(VectorReference element)
         {
@@ -225,7 +225,7 @@ namespace Spinach
             if (element != null)
             {
                 Console.Write("Double Value:" + element.getText());
-                interp.sendres(114, "Double Value:" + element.getText());
+                interp.result( "Double Value:" + element.getText());
             }
         }
         
@@ -255,45 +255,45 @@ namespace Spinach
             Console.Write(type); Console.Write("\n");
             Console.Write(" Rows : "); Console.Write(row); Console.Write("\n");
             Console.Write(" Columns : "); Console.Write(col);
-            interp.sendres(114,"\nMatrix Type : " + type + "\n" + "Rows:" + row.ToString() + "\n" + "Columns:" + col.ToString());
+            interp.result("\nMatrix Type : " + type + "\n" + "Rows:" + row.ToString() + "\n" + "Columns:" + col.ToString());
             string mat_type = element.getType();
             if (mat_type == "int")
             {
                 int[,] elements = element.getintValue();
                 Console.Write("\nMatrix Elements are : \n");
-                interp.sendres(114, "\nMatrix Elements are : \n");
+                interp.result("\nMatrix Elements are : \n");
                 for (int i = 0; i < row; i++)
                 {
                     for (int j = 0; j < col; j++)
                     {
                         Console.Write(elements[i, j]);
                         Console.Write("\t");
-                        interp.sendres(114, elements[i,j].ToString() + "\t");
+                        interp.result(elements[i,j].ToString() + "\t");
                     }
                     Console.Write("\n");
-                    interp.sendres(114, "\n");
+                    interp.result( "\n");
                 }
             }
             else if (mat_type == "double")
             {
                 double[,] elemenets = element.getdoubleValue();
                 Console.Write("\n Matrix Elements are : \n");
-                interp.sendres(114, "\nMatrix Elements are : \n");
+                interp.result("\nMatrix Elements are : \n");
                 for (int i = 0; i < row; i++)
                 {
                     for (int j = 0; j < col; j++)
                     {
                         Console.Write(elemenets[i, j]);
-                        interp.sendres(114, elemenets[i,j].ToString());
+                        interp.result(elemenets[i,j].ToString());
                         Console.Write("\t");
-                        interp.sendres(114, "\t");
+                        interp.result( "\t");
                     }
                     Console.Write("\n");
-                    interp.sendres(114, "\n");
+                    interp.result( "\n");
                 }
             }
             Console.Write("\n");
-            interp.sendres(114, "\n");
+            interp.result("\n");
 
             //throw new NotImplementedException();
         }
@@ -331,7 +331,7 @@ namespace Spinach
         public override void VisitIntegerElement(IntegerElement element)
         {
             Console.Write("Int Value:" + element.getText());
-            interp.sendres(114, "Int Value:" + element.getText());
+            interp.result( "Int Value:" + element.getText());
         }
         public override void VisitAssignmentOperationElement(AssignmentOperationElement element)
         {
@@ -350,4 +350,4 @@ namespace Spinach
         }
     }
 
-}
+}*/
