@@ -36,7 +36,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
 
-namespace UserInterface
+namespace Spinach
 {
   /// <summary>
   /// Interaction logic for Connection.xaml

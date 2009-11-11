@@ -25,7 +25,7 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.IO;
 
-namespace UserInterface
+namespace Spinach
 {
     /// <summary>
     /// Interaction logic for Window1.xaml

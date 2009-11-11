@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace UserInterface
+namespace Spinach
 {
     /// <summary>
     /// Interaction logic for App.xaml
