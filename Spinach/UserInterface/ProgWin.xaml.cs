@@ -33,12 +33,14 @@ namespace Spinach
     public partial class ProgWin : Window
     {
         private ErrorModule err = new ErrorModule();
-        //private PlotReceiver plot = new PlotReceiver();
         //private Core core = new Core();
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
+        PngBitmapEncoder PBE = new PngBitmapEncoder();
+
         private Spinach.exec FE = new exec();
+        private PlotReceiver plot = new PlotReceiver();
 
         public enum editorType { owner, collaborator };
 
@@ -56,9 +58,10 @@ namespace Spinach
             InitializeComponent();
             et = e;
             err.ProgWinError += new ErrorNotification(ShowError);
-            //plot.plotevent += new plotdelegate(EnablePlot);
+            plot.image +=new PlotReceiver.BmpImage(EnablePlot);
             keywords = FE.getKeywords();
             err.SetFrontEndObject(FE);
+            err.SetPlotObject(plot);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -115,17 +118,6 @@ namespace Spinach
             mnuAdd.Visibility = Visibility.Visible;
             mnuDelete.Visibility = Visibility.Visible;
             mnuEdit.Visibility = Visibility.Visible;
-        }
-       
-        /// <summary>
-        /// This will show the plot window with the plot image in it.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void mnuPlot_Click(object sender, RoutedEventArgs e)
-        {
-            ProgPlot frmPlot = new ProgPlot();
-            frmPlot.ShowDialog();
         }
 
         private void mnuAdd_Click(object sender, RoutedEventArgs e)
@@ -349,11 +341,44 @@ namespace Spinach
             private void EnablePlot(PngBitmapEncoder encoder)
             {
                 mnuPlot.IsEnabled = true;
+                PBE = encoder;
             }
             
             private void Display(string res)
-	    {
-	    	rtbResult.AppendText(res);
+	        {
+	    	    rtbResult.AppendText(res);
+            }
+
+            private void mnuShowPlot_Click(object sender, RoutedEventArgs e)
+            {
+                ProgPlot frmPlot = new ProgPlot(PBE);
+                frmPlot.ShowDialog();
+            }
+
+            private void mnuSavePlot_Click(object sender, RoutedEventArgs e)
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "png files (*.png)|*.png";
+                saveFileDialog1.FilterIndex = 1;
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    try
+                    {
+                        String tempPath = saveFileDialog1.FileName;
+
+                        // create a file stream for saving image
+                        using (FileStream outStream = new FileStream(tempPath, FileMode.Create))
+                        {
+                            PBE.Save(outStream);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.MessageBox.Show("Error: Could not Write file to disk. Original error: " + ex.Message);
+                    }
+                }
             }
     }
 }
