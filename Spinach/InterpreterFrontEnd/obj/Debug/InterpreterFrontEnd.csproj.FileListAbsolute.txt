@@ -5,22 +5,25 @@ C:\Users\KULDEEP GANDHI\Desktop\FrontEndTeamIntegration1\ConsoleApplication1\bin
 C:\Users\KULDEEP GANDHI\Desktop\FrontEndTeamIntegration1\ConsoleApplication1\bin\Debug\Antlr3.Runtime.xml
 C:\Users\KULDEEP GANDHI\Desktop\FrontEndTeamIntegration1\ConsoleApplication1\obj\Debug\InterpreterFrontEnd.dll
 C:\Users\KULDEEP GANDHI\Desktop\FrontEndTeamIntegration1\ConsoleApplication1\obj\Debug\InterpreterFrontEnd.pdb
-C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.pdb
-C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb
 C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
 C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.pdb
 C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
 C:\Documents and Settings\ssunda04\test\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.pdb
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\antlr.runtime.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\Antlr3.Runtime.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\Antlr3.Utility.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\StringTemplate.dll
-C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
+<<<<<<< HEAD
 C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
 C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.pdb
 C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
 C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb
+=======
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb
+>>>>>>> f52024d32789498d672dffe4d92fb5d584d2eede
