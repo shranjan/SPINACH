@@ -34,6 +34,7 @@ namespace Spinach
     {
         private ErrorModule err = new ErrorModule();
         //private PlotReceiver plot = new PlotReceiver();
+        //private Core core = new Core();
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
@@ -348,6 +349,11 @@ namespace Spinach
             private void EnablePlot(PngBitmapEncoder encoder)
             {
                 mnuPlot.IsEnabled = true;
+            }
+            
+            private void Display(string res)
+	    {
+	    	rtbResult.AppendText(res);
             }
     }
 }
