@@ -3,8 +3,3 @@ C:\Users\JAGADISH PRADEEP\Desktop\Integration\Spinach\Plot\bin\Debug\Plot.dll
 C:\Users\JAGADISH PRADEEP\Desktop\Integration\Spinach\Plot\bin\Debug\Plot.pdb
 C:\Users\JAGADISH PRADEEP\Desktop\Integration\Spinach\Plot\obj\Debug\Plot.dll
 C:\Users\JAGADISH PRADEEP\Desktop\Integration\Spinach\Plot\obj\Debug\Plot.pdb
-C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\Plot\bin\Debug\Plot.dll
-C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\Plot\bin\Debug\Plot.pdb
-C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\Plot\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\Plot\obj\Debug\Plot.dll
-C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\Plot\obj\Debug\Plot.pdb

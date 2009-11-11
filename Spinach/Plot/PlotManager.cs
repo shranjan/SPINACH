@@ -58,7 +58,7 @@ namespace Spinach
 
         }
 
-
+        // Converts to Bitmap Image
         public void Convert_to_Image(Canvas can, int pane_number)
         {
 
