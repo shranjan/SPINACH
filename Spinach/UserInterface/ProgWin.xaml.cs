@@ -37,9 +37,10 @@ namespace Spinach
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
-        PngBitmapEncoder PBE = new PngBitmapEncoder();
 
-        private Spinach.exec FE = new exec();
+        PngBitmapEncoder PBE = new PngBitmapEncoder();
+        private executor Controller = new executor();
+        //private Spinach.exec FE = new exec();
         private PlotReceiver plot = new PlotReceiver();
 
         public enum editorType { owner, collaborator };
@@ -59,8 +60,8 @@ namespace Spinach
             et = e;
             err.ProgWinError += new ErrorNotification(ShowError);
             plot.image +=new PlotReceiver.BmpImage(EnablePlot);
-            keywords = FE.getKeywords();
-            err.SetFrontEndObject(FE);
+            keywords = Controller.frontEnd.getKeywords();
+            err.SetExecutorObject(Controller);
             err.SetPlotObject(plot);
         }
 
@@ -300,7 +301,7 @@ namespace Spinach
                 TextPointer start = rtbInput.Document.ContentStart;
                 TextPointer end = rtbInput.Document.ContentEnd;
                 TextRange tr = new TextRange(start, end);
-                FE.Visitline(tr.Text.ToString());
+                Controller.VisitLine(tr.Text.ToString());
             }
 
             public void loadProgram(int read, int write, string text)

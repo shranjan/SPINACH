@@ -31,8 +31,8 @@ namespace Spinach
         public event ErrorNotification ConnError;
         public event ErrorNotification ProgConfError;
         public event ErrorNotification ProgWinError;
-        private exec FEND;
-        //private InterpreterVisitor CORE;
+        
+        private executor Ex;
         private PlotReceiver plot;
 
         private Dictionary<int, string> ErrorDict = new Dictionary<int, string>();
@@ -64,16 +64,12 @@ namespace Spinach
               ProgWinError(ErrMsg);
         }
 
-        public void SetFrontEndObject(exec fe)
+        public void SetExecutorObject(executor E)
         {
-            FEND = fe;
-            FEND.error_ += new exec.errorreport(ErrorMsg);
+            Ex = E;
+            Ex.errEvent +=new executor.err(ErrorMsg);
         }
-/*        public void SetCoreObject(InterpreterVisitor c)
-        {
-            CORE = c;
-            CORE.error_ += new InterpreterVisitor.errorreport(ErrorMsg);
-        }*/
+
         public void SetPlotObject(PlotReceiver p)
         {
             plot = p;

@@ -158,6 +158,20 @@
     <Resource Include="Icon.JPG" />
     <Resource Include="SPINACH_logo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InterpreterCore\InterpreterCore.csproj">
+      <Project>{B3D75F06-4B39-4ADF-9AA3-FBCE00999600}</Project>
+      <Name>InterpreterCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InterpreterExec\InterpreterExec.csproj">
+      <Project>{03078AB8-5AA2-4478-93AC-2B090B13150C}</Project>
+      <Name>InterpreterExec</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plot\Plot.csproj">
+      <Project>{82C7B14D-6F1B-4353-A457-66885DC960E3}</Project>
+      <Name>Plot</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

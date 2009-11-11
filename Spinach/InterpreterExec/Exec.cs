@@ -19,8 +19,8 @@ namespace Spinach
 {
     public class executor
     {
-        private Core coreObject;
-        private exec frontEnd;
+        public Core coreObject;
+        public exec frontEnd;
         public delegate void err(int code, string message);
         public event err errEvent;
         public void Onerror(int code, string message)
@@ -32,12 +32,14 @@ namespace Spinach
         {
             coreObject = new Core();
             frontEnd = new exec();
+            frontEnd.error_ +=new exec.errorreport(Onerror);
+            coreObject.errorcore_ +=new Core.errorcoremsg(Onerror);
         }
         public void VisitLine(string args)
         {
             List<string> keywords = new List<string>();
             keywords = frontEnd.getKeywords();
-            frontEnd.error_ += new Spinach.exec.errorreport(Onerror);
+            //frontEnd.error_ += new Spinach.exec.errorreport(Onerror);
             frontEnd.astEvent += new Spinach.exec.ast(AST);
             frontEnd.Visitline(args);
         }
