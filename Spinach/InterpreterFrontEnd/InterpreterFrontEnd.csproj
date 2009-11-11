@@ -45,6 +45,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Desktop\Interp_CSharp\Interp_CSharp\Interp_CSharp\DOT-NET-runtime-3.1.3\bin\net-2.0\Antlr3.Utility.dll</HintPath>
     </Reference>
+    <Reference Include="InterpreterCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="StringTemplate, Version=3.0.1.6846, Culture=neutral, PublicKeyToken=beee492b52c41e85, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Desktop\Interp_CSharp\Interp_CSharp\Interp_CSharp\DOT-NET-runtime-3.1.3\bin\net-2.0\StringTemplate.dll</HintPath>

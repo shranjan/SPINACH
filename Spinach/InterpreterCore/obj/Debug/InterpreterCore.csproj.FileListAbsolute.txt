@@ -25,3 +25,14 @@ C:\Users\Rajika\Desktop\pinac\pinac\Spinach\InterpreterCore\bin\Debug\Interprete
 C:\Users\Rajika\Desktop\pinac\pinac\Spinach\InterpreterCore\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Rajika\Desktop\pinac\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.dll
 C:\Users\Rajika\Desktop\pinac\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.pdb
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterCore.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterCore.pdb
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\antlr.runtime.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\Antlr3.Runtime.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\Antlr3.Utility.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterFrontEnd.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\StringTemplate.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterFrontEnd.pdb
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.dll
+C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.pdb

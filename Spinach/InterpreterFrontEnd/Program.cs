@@ -178,43 +178,45 @@ namespace Spinach
  * 
  */
 
-
-
-public class UI
+namespace Spinach
 {
-  public static void Main(string[] args)
-  {
-      Core coreObj = new Core();
-    Spinach.exec obj = new Spinach.exec(coreObj);
-    List<string> keywords = new List<string>();
-    keywords = obj.getKeywords();
-    obj.error_ += new Spinach.exec.errorreport(error);
-    //obj.Visitline("string s;  s =\"int\";");
-  // obj.Visitline("parallelfor(i->1to10){Vector<int>[2] a =[1,2,3,4];}");
-  //  obj.Visitline("subPlot(1,a,\"abc\",1D);plot(b,\"abcd\",1D);for(i->1to4){struct s{int a;}; s.a = 0;//this is a comment string s; s = \"This is a example\";}");
-  // obj.Visitline("if(a<=0){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;} return a;}else{double e; return e;}");
-   // obj.Visitline("int copy(Matrix<int> a,Vector<double> b , int a){ int h; int l; for(i->1to100){a=9; if(a==9){ return mat;}} return a; int j; h= (l+j)*h*l+l-h;}");
-   //obj.Visitline("if(a>=0){int a; vecotor<int>[] = [];}"); 
-   // obj.Visitline("struct s{int a;int b; string s;};s sObj;sObj.a = 10;print sObj.a;print \"hello\";"); ///-- string should be there in struct.
-    obj.Visitline("setPlotAxis(1.8);");
-    //  obj.Visitline("string s; s = \"hello\"; if(s == \"hello\"){} parallelfor(q->1to10){int a;} s = fuun(a);int func(){} print a[1]; print a[2][2];");
-    obj.Visitline("subPlot(1,a,\"abc\",1D);vec[i]=i + 2;mat[i][j] = i + 2;");
-  }
-  public static void error(int code, string message)
-  {
-    Console.Write(code + " ");
-    Console.Write(message);
-  }
+
+    public class UI
+    {
+        public static void Main(string[] args)
+        {
+            Core coreObj = new Core();
+            Spinach.exec obj = new Spinach.exec(coreObj);
+            List<string> keywords = new List<string>();
+            keywords = obj.getKeywords();
+            obj.error_ += new Spinach.exec.errorreport(error);
+            //obj.Visitline("string s;  s =\"int\";");
+            // obj.Visitline("parallelfor(i->1to10){Vector<int>[2] a =[1,2,3,4];}");
+            //  obj.Visitline("subPlot(1,a,\"abc\",1D);plot(b,\"abcd\",1D);for(i->1to4){struct s{int a;}; s.a = 0;//this is a comment string s; s = \"This is a example\";}");
+            // obj.Visitline("if(a<=0){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;} return a;}else{double e; return e;}");
+            // obj.Visitline("int copy(Matrix<int> a,Vector<double> b , int a){ int h; int l; for(i->1to100){a=9; if(a==9){ return mat;}} return a; int j; h= (l+j)*h*l+l-h;}");
+            //obj.Visitline("if(a>=0){int a; vecotor<int>[] = [];}"); 
+            // obj.Visitline("struct s{int a;int b; string s;};s sObj;sObj.a = 10;print sObj.a;print \"hello\";"); ///-- string should be there in struct.
+            obj.Visitline("setPlotAxis(1.8);");
+            //  obj.Visitline("string s; s = \"hello\"; if(s == \"hello\"){} parallelfor(q->1to10){int a;} s = fuun(a);int func(){} print a[1]; print a[2][2];");
+            obj.Visitline("subPlot(1,a,\"abc\",1D);vec[i]=i + 2;mat[i][j] = i + 2;");
+        }
+        public static void error(int code, string message)
+        {
+            Console.Write(code + " ");
+            Console.Write(message);
+        }
+    }
 }
 
 ///-- InterpreterVisitor class of core team, for testing.. kg. 
 ///-- 
 ///
-
+/*
 public class Core
 {
     public void setAST(List<Element> ele)
     {
         Console.WriteLine("Best luck core team...!!!!");
     }
-}
+}*/
