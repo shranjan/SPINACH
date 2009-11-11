@@ -37,10 +37,11 @@ namespace Spinach
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
-        PngBitmapEncoder PBE = new PngBitmapEncoder();
 
-        private Spinach.exec FE = new exec();
-       // private PlotReceiver plot = new PlotReceiver();
+        private PlotReceiver plot = new PlotReceiver();
+        PngBitmapEncoder PBE = new PngBitmapEncoder();
+        private executor Controller;
+        //private Spinach.exec FE = new exec();
 
         public enum editorType { owner, collaborator };
 
@@ -55,13 +56,15 @@ namespace Spinach
 
         public ProgWin(editorType e)
         {
-            //InitializeComponent();
-            //et = e;
-            //err.ProgWinError += new ErrorNotification(ShowError);
-            //plot.image +=new PlotReceiver.BmpImage(EnablePlot);
-            //keywords = FE.getKeywords();
-            //err.SetFrontEndObject(FE);
-            //err.SetPlotObject(plot);
+            InitializeComponent();
+            et = e;
+            err.ProgWinError += new ErrorNotification(ShowError);
+            plot.image +=new PlotReceiver.BmpImage(EnablePlot);
+            Controller = new executor(plot);
+            Controller.resEvent +=new executor.result(Display);
+            keywords = Controller.frontEnd.getKeywords();
+            err.SetExecutorObject(Controller);
+            err.SetPlotObject(plot);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -300,7 +303,8 @@ namespace Spinach
                 TextPointer start = rtbInput.Document.ContentStart;
                 TextPointer end = rtbInput.Document.ContentEnd;
                 TextRange tr = new TextRange(start, end);
-                FE.Visitline(tr.Text.ToString());
+                Controller.VisitLine(tr.Text.ToString());
+                mnuPlot.IsEnabled = true;
             }
 
             public void loadProgram(int read, int write, string text)

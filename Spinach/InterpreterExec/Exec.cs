@@ -19,25 +19,37 @@ namespace Spinach
 {
     public class executor
     {
-        private Core coreObject;
-        private exec frontEnd;
+        public Core coreObject;
+        public exec frontEnd;
         public delegate void err(int code, string message);
         public event err errEvent;
+        public delegate void result(string message);
+        public event result resEvent;
         public void Onerror(int code, string message)
         {
             if (errEvent != null)
                 errEvent(code, message);
         }
-        public executor()
+        public executor(PlotReceiver plot)
         {
-            coreObject = new Core();
+            coreObject = new Core(plot);
             frontEnd = new exec();
+            frontEnd.error_ +=new exec.errorreport(Onerror);
+            coreObject.errorcore_ +=new Core.errorcoremsg(Onerror);
+            coreObject.rescore_ += new Core.resultcore(coreObject_rescore_);
         }
+
+        void coreObject_rescore_(string coremsg)
+        {
+            if (resEvent != null)
+                resEvent(coremsg);
+        }
+
         public void VisitLine(string args)
         {
             List<string> keywords = new List<string>();
             keywords = frontEnd.getKeywords();
-            frontEnd.error_ += new Spinach.exec.errorreport(Onerror);
+            //frontEnd.error_ += new Spinach.exec.errorreport(Onerror);
             frontEnd.astEvent += new Spinach.exec.ast(AST);
             frontEnd.Visitline(args);
         }
@@ -60,8 +72,9 @@ namespace Spinach
     {
         public static void Main(string[] args)
         {
-            Core obj = new Core();
-            executor obj1 = new executor();
+            PlotReceiver plot = new PlotReceiver();
+            Core obj = new Core(plot);
+            executor obj1 = new executor(plot);
             obj1.errEvent += new executor.err(error);
             obj1.VisitLine("ubPlot(1,a,\"abc\",1D);vec[i]=i + 2;mat[i][j] = i + 2;");
         }

@@ -45,7 +45,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SPINACH_DLLS\Antlr3.Utility.dll</HintPath>
     </Reference>
-    <Reference Include="InterpreterFrontEnd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="InterpreterFrontEnd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SPINACH_DLLS\InterpreterFrontEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="Plot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SPINACH_DLLS\Plot.dll</HintPath>
+    </Reference>
     <Reference Include="StringTemplate, Version=3.0.1.6846, Culture=neutral, PublicKeyToken=beee492b52c41e85, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SPINACH_DLLS\StringTemplate.dll</HintPath>
@@ -65,8 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
-    <Compile Include="PrintVisitor.cs" />
-    <Compile Include="Test_Core.cs" />
+    <Compile Include="InterpreterVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

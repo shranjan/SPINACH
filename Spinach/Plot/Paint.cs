@@ -21,6 +21,7 @@ using System.Windows.Media.Media3D;
 
 namespace Spinach
 {
+    // Paints the canvas
     class Paint
     {   //Private data members
         private int numPanes;

@@ -24,3 +24,8 @@ C:\Users\shashi\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterF
 C:\Users\shashi\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\shashi\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
 C:\Users\shashi\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb
+H:\EarlyMorning\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.pdb
+H:\EarlyMorning\pinac\Spinach\InterpreterFrontEnd\obj\Debug\ResolveAssemblyReference.cache
+H:\EarlyMorning\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb
