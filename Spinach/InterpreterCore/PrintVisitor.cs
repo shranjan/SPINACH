@@ -1,4 +1,46 @@
-﻿using System;
+﻿////////////////////////////////////////////////////////////////////////
+// PrintVisitor.cs: demonstrates printing the syntax tree in a
+//  difference source language than the input for the Interp language.
+// 
+// version: 1.0
+// Description: part of the interpreter example for the visitor design
+//  pattern.
+// Language:    C++/CLI, Visual Studio 2008 .Net Framework 3.5             
+// Platform:    Dell Inspiron 1525, Windows Vista Business, SP 1       
+// Application: Pr#2, CSE 784, Spring 2009                              
+// Authors:     Rajika Tandon (ratandon@syr.edu)
+//              Sushma Thimmappa (skyasara@syr.edu)
+//              Rucha Bapat (rmbapat@syr.edu)            
+// Source:      Phil Pratt-Szeliga (pcpratts@syr.edu)
+////////////////////////////////////////////////////////////////////////
+/*
+ * Module Operations
+ * ================= 
+ * This file provides functions to print the various functions (addition, multiplication,
+ * matrices, for-loop) as well as variables/integers involved in the input.
+ *
+ * 
+ * Public Interface
+ * ================
+ * PrintVisitor print_visitor = new PrintVisitor();  
+ *                       // will create an instance of this class and allocate memory
+ * 
+ */
+/*
+ * Build Process
+ * =============
+ * Required Files:
+ *   Front End Dlls
+ * 
+ * Maintenance History
+ * ===================
+ * ver 1.0 : 10 Nov 09
+ *   - first release
+ * 
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

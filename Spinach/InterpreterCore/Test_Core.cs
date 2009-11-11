@@ -1,11 +1,11 @@
-﻿
-////////////////////////////////////////////////////////////////////////
-// Program.cs: demonstrates the interpreter for the Spinach language.
+﻿////////////////////////////////////////////////////////////////////////
+// Test_Core.cs: demonstrates the interpreter for the Spinach language.
 // 
 // version: 1.0
 // description: part of the interpreter example for the visitor design
 //  pattern.
-// author: Srinivasan Sundararajan (ssunda04@syr.edu)
+// author: Rajika Tandon, Sushma Thimmappa
+// source: Srinivasan Sundararajan (ssunda04@syr.edu)
 // language: C# .Net 3.5
 ////////////////////////////////////////////////////////////////////////
 
@@ -123,15 +123,14 @@ namespace Spinach
         }
     }
 
-
-
+#if(Test_Core)
     /// <summary>
     /// -- Executor Class.... 
     /// </summary>
 
-    public class exec
+    public class executive
     {
-        public exec()
+        public executive()
         {
         }
         public void Visitline(string args)
@@ -156,17 +155,13 @@ namespace Spinach
         }
     }
 }
-
-
+    
 /*
  * Test class
- * Entery point for console application.
+ * Entry point for console application.
  * 
  * 
  */
-
-
-
 public class UI
 {
     public static void Main(string[] args)
@@ -180,11 +175,14 @@ public class UI
         obj.Visitline("subPlot(1,1,a,\"abc\",1D);plot(b,\"abcd\",1D);for(i->1to4){struct s{int a;}; s.a = 0;//this is a comment string s; s = \"This is a example\";}");
         obj.Visitline("if(a<=0){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;} return a;}else{double e; return e;}");
         obj.Visitline("int copy(Matrix<int> a,Vector<double> b , int c ){ int h; int l ; for(i->1to100){int a; a =9; double c; Vector<double>[2] vec=[1.1,2.2]; if(a==9){Matrix<int>[2][2] mat= [1,2,3,4];int d; return mat;}} return a; int j; h= (l+j)*h*l+l-h;}");
-
+        obj.Visitline("int a; a=10; int b; b=20; if(a==b) { print a; } else { print b; }");
     }
     public static void error(int code, string message)
     {
         Console.Write(code + " ");
         Console.Write(message);
     }
+
+#endif
+
 }
