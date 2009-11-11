@@ -1,8 +1,0 @@
-﻿<Window x:Class="Spinach.ProgPlot"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="ProgPlot" Height="314" Width="533" Name="frmPlot" Loaded="frmPlot_Loaded">
-    <Grid>
-        <Image Margin="10,10,13,9" Name="imgPlot" Stretch="Fill" />
-    </Grid>
-</Window>
