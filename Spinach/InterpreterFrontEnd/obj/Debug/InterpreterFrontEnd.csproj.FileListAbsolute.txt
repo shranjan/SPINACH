@@ -19,3 +19,8 @@ C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\Antl
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\StringTemplate.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
+C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll
+C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.pdb
+C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
+C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb

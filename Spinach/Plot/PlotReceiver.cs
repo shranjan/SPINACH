@@ -48,7 +48,9 @@ public partial class PlotReceiver
     {
         if (image != null)
             image(pnbencoder);
-    } 
+    }
+
+  
 
     public void writetolist(Plot p)
     {
