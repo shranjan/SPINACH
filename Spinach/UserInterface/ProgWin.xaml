@@ -31,8 +31,9 @@
                 <MenuItem  Name="mnuWrap" Header="_Wrap" IsCheckable="True" IsChecked="True" Click="mnuWrap_Click"></MenuItem>
                 <MenuItem  Name="mnuHighlight" Header="_User Highlight" IsCheckable="True" Click="MenuItem_Click"></MenuItem>
             </MenuItem>
-            <MenuItem Name="mnuPlot" Header="_Plot" Click="mnuPlot_Click" IsEnabled="True">
-                
+            <MenuItem Name="mnuPlot" Header="_Plot" IsEnabled="False">
+                <MenuItem Header="Show P_lot" Name="mnuShowPlot" Click="mnuShowPlot_Click"/>
+                <MenuItem Header="_Save Plot" Name="mnuSavePlot" Click="mnuSavePlot_Click"/>
             </MenuItem>
         </Menu>
             <RichTextBox Margin="28,81,21,71" Name="rtbInput" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" KeyUp="rtbInput_KeyUp" Grid.RowSpan="2" Padding="0" AcceptsTab="True" FontSize="14">

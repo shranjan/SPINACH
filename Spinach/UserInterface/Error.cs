@@ -33,7 +33,7 @@ namespace Spinach
         public event ErrorNotification ProgWinError;
         private exec FEND;
         //private InterpreterVisitor CORE;
-        //private PlotReceiver PLOT;
+        private PlotReceiver plot;
 
         private Dictionary<int, string> ErrorDict = new Dictionary<int, string>();
 
@@ -44,11 +44,11 @@ namespace Spinach
             ErrorDict.Add(101, "Syntax Error: ");
             ErrorDict.Add(102, "Exception: ");
             // CoreTeam Error Messages
-            ErrorDict.Add(110, "");
-            ErrorDict.Add(111, "");
+            ErrorDict.Add(112, "Semantic Error: ");
             // PlotTeam Error Messages
-            ErrorDict.Add(120, "");
-            ErrorDict.Add(121, "");
+            ErrorDict.Add(121, "Plotting Error: ");
+            ErrorDict.Add(122, "Plotting Error: ");
+            ErrorDict.Add(123, "Plotting Error: ");
 
         }
 
@@ -73,12 +73,12 @@ namespace Spinach
         {
             CORE = c;
             CORE.error_ += new InterpreterVisitor.errorreport(ErrorMsg);
-        }
+        }*/
         public void SetPlotObject(PlotReceiver p)
         {
-            PLOT = p;
-            PLOT.error_ += new PlotReceiver.errorreport(ErrorMsg);
+            plot = p;
+            plot.error +=new PlotReceiver.PlotError(ErrorMsg);
         }
-        */
+        
     }
 }
