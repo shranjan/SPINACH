@@ -40,7 +40,7 @@ namespace Spinach
         PngBitmapEncoder PBE = new PngBitmapEncoder();
 
         private Spinach.exec FE = new exec();
-        private PlotReceiver plot = new PlotReceiver();
+       // private PlotReceiver plot = new PlotReceiver();
 
         public enum editorType { owner, collaborator };
 
@@ -55,13 +55,13 @@ namespace Spinach
 
         public ProgWin(editorType e)
         {
-            InitializeComponent();
-            et = e;
-            err.ProgWinError += new ErrorNotification(ShowError);
-            plot.image +=new PlotReceiver.BmpImage(EnablePlot);
-            keywords = FE.getKeywords();
-            err.SetFrontEndObject(FE);
-            err.SetPlotObject(plot);
+            //InitializeComponent();
+            //et = e;
+            //err.ProgWinError += new ErrorNotification(ShowError);
+            //plot.image +=new PlotReceiver.BmpImage(EnablePlot);
+            //keywords = FE.getKeywords();
+            //err.SetFrontEndObject(FE);
+            //err.SetPlotObject(plot);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

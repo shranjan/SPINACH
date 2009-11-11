@@ -33,7 +33,7 @@ namespace Spinach
         public event ErrorNotification ProgWinError;
         private exec FEND;
         //private InterpreterVisitor CORE;
-        private PlotReceiver plot;
+  //      private PlotReceiver plot;
 
         private Dictionary<int, string> ErrorDict = new Dictionary<int, string>();
 
@@ -74,11 +74,11 @@ namespace Spinach
             CORE = c;
             CORE.error_ += new InterpreterVisitor.errorreport(ErrorMsg);
         }*/
-        public void SetPlotObject(PlotReceiver p)
-        {
-            plot = p;
-            plot.error +=new PlotReceiver.PlotError(ErrorMsg);
-        }
+        //public void SetPlotObject(PlotReceiver p)
+        //{
+        //    plot = p;
+        //    plot.error +=new PlotReceiver.PlotError(ErrorMsg);
+        //}
         
     }
 }
