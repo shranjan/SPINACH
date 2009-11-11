@@ -99,7 +99,7 @@ namespace Spinach
                     returnEncoderImage();
 
                     // create image to return
-                    Image returnImage = new Image();
+                   /* Image returnImage = new Image();
                     // set source of image as frame
                     returnImage.Source = encoder.Frames[0];
 
@@ -117,7 +117,7 @@ namespace Spinach
                     using (FileStream outStream = new FileStream(tempPath, FileMode.Create))
                     {
                         encoder.Save(outStream);
-                    }
+                    } */
 
                 }
                 catch (Exception e)
@@ -183,7 +183,7 @@ namespace Spinach
                 returnEncoderImage();
 
                 // create image to return
-                Image returnImage = new Image();
+                /*Image returnImage = new Image();
                 // set source of image as frame
                 returnImage.Source = encoder.Frames[0];
 
@@ -201,7 +201,7 @@ namespace Spinach
                 using (FileStream outStream = new FileStream(tempPath, FileMode.Create))
                 {
                     encoder.Save(outStream);
-                }
+                }*/
                 
 
 

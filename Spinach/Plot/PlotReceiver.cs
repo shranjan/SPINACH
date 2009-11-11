@@ -19,7 +19,7 @@ using System.Windows.Media.Media3D;
 namespace Spinach
 {
 
-partial class PlotReceiver
+public partial class PlotReceiver
 {
     List<Plot> list = new List<Plot>();
     bool readerFlag = false;  // State flag

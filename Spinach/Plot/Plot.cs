@@ -7,7 +7,7 @@
 // language: Visual C#
 ////////////////////////////////////////////////////////////////////////
 
-partial class Plot
+public partial class Plot
 {
     private int paneno;
     private double[,] data;
