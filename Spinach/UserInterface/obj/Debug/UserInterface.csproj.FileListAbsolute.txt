@@ -102,3 +102,5 @@ H:\EarlyMorning\pinac\Spinach\UserInterface\bin\Debug\InterpreterExec.pdb
 H:\EarlyMorning\pinac\Spinach\UserInterface\bin\Debug\InterpreterCore.pdb
 H:\EarlyMorning\pinac\Spinach\UserInterface\obj\Debug\Spinach.exe
 H:\EarlyMorning\pinac\Spinach\UserInterface\obj\Debug\Spinach.pdb
+C:\Users\Rajika\Desktop\pinac\pinac\Spinach\UserInterface\obj\Debug\Spinach.exe
+C:\Users\Rajika\Desktop\pinac\pinac\Spinach\UserInterface\obj\Debug\Spinach.pdb

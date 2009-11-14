@@ -1,4 +1,4 @@
-﻿
+
 ////////////////////////////////////////////////////////////////////////
 // Core.cs: Implements a vistor that interprets the syntax tree.
 // 
@@ -149,13 +149,13 @@ namespace Spinach
             //struct s{int a;};
             if (element != null)
             {
-                if (mVariableMap.ContainsKey(element.getName()))
+                if (mVariableMap.ContainsKey(element.getName().getText()))
                 {
                     sendres(112, "Variable declared\n");
                     Console.Write("Variable declared\n");
                 }
                 else
-                    mVariableMap.Add(element.getName(), element);
+                    mVariableMap.Add(element.getName().getText(), element);
             }
             else
                 Console.Write("Null Structure element\n");
@@ -186,12 +186,14 @@ namespace Spinach
                         {
                             Console.Write("Variable name used\n");
                             sendres(112, "Variable name used\n");
-                                               }
+                        }
                     }
                     else
-                    
+
                         Console.Write("Object not of type struct\n");
                 }
+                else
+                    sendres(112, "Structure not found\n");
             }
             else
                 Console.Write("Null struct object\n");
@@ -217,6 +219,7 @@ namespace Spinach
                 //Object result = new Object();
                 MatrixVariableDeclaration mat = (MatrixVariableDeclaration)(obj_rhs);
                 MatrixVariableDeclaration transpose = new MatrixVariableDeclaration();
+                transpose.setType(mat.getType());
                 int rhs_type = GetTypeOfElement((Element)obj_rhs);
                 if (rhs_type == 3)
                 {
@@ -314,14 +317,11 @@ namespace Spinach
         //Delete  from symbol table
         public override void VisitDeleteElement(DeleteVariable element)
         {
-            if (mVariableMap.ContainsKey(element.getVar().getText()))
-            {
-                mVariableMap.Remove(element.getVar().getText());
-            }
+            if(mVariableMap.ContainsKey(element.getVar().getText()))
+                    mVariableMap.Remove(element.getVar().getText());
             else
             {
-                Console.Write("Variable not declared, cannot be deleted\n");
-                sendres(112, "Variable not declared, cannot be deleted\n");
+                sendres(112, "Variable not declared, cannot be deleted\n");  
             }
         }
 
@@ -731,8 +731,8 @@ namespace Spinach
             {
                 if (map_contains_matrix(int_name))
                 {
-                    Console.Write("Semantic Error Int Already Declared\n");
-                    sendres(112, "Semantic Error Int Already Declared\n");
+                    Console.Write("Variable Already Declared\n");
+                    sendres(112, "Variable Already Declared\n");
                 }
                 else
                     mVariableMap.Add(int_name, element);
@@ -895,24 +895,34 @@ namespace Spinach
         public override void VisitAssignmentOperationElement(AssignmentOperationElement element)
         {
             StructAssignDeclaration temp;
-            StructDeclaration structTemp;
+            StructDeclaration structTemp=null;
             int flag = -1;
 
             //Handle struct
             if (GetTypeOfElement(element.getLhs()) == 4)
             {
                 temp = (StructAssignDeclaration)(element.getLhs());
-                if (mVariableMap.ContainsKey(temp.getObjName())) //getName()))
+                if (mVariableMap.ContainsKey(((VariableElement)(temp.getObjName())).getText())) //getName()))
                 {
-                    structTemp = (StructDeclaration)mVariableMap[temp.getObjName()]; //.getName()];
+                    structTemp = (StructDeclaration)mVariableMap[((VariableElement)(temp.getObjName())).getText()]; //.getName()];
                     flag = 1;
                 }
+                else
+                    sendres(112,"Structure " + ((VariableElement)(temp.getObjName())).getText()+" not found\n");
+                    
                 Element rhs = element.getRhs();
                 VisitElement(rhs);
                 if (mat_stack.Count > 0 && flag == 1)
                 {
                     Object obj = getTopOfStack_Matrix();
-                    temp.setObjName((Element)(obj));  //.setObj((Element)(obj));
+                    List<ScalarVariableDeclaration> l1 = structTemp.getVarType();
+                    for(int i=0;i<l1.Count;i++)
+                        if (l1[i].getVar().getText() == ((VariableElement)temp.getDataMember()).getText())
+                        {
+                            if (obj is IntegerElement)
+                                result("Struct member set:" + ((IntegerElement)obj).getText());
+                        }
+                    //temp.setObjName((Element)(obj));  //.setObj((Element)(obj));
                 }
             }
             else if (GetTypeOfElement(element.getLhs()) == 5)
@@ -1032,6 +1042,14 @@ namespace Spinach
             {
                 return (int)datatypes.Struct;
             }
+            else if (elem is StructObjectDeclaration)
+            {
+                return (int)datatypes.Struct;
+            }
+            else if (elem is StructDeclaration)
+            {
+                return (int)datatypes.Struct;
+            }
             else if (elem is MatrixElement)
             {
                 return (int)datatypes.MatrixElement;
@@ -1056,9 +1074,13 @@ namespace Spinach
                     return (int)datatypes.IntElement;
                 else if (((ScalarVariableDeclaration)(elem)).getType() == "double")
                     return (int)datatypes.DoubleElement;
+                else if (((ScalarVariableDeclaration)(elem)).getType() == "string")
+                    return 7;
                 else
                     return 0;
             }
+            else if (elem is StringElement)
+                return (int)datatypes.Strings;
             else
                 return 0;
         }
@@ -1216,12 +1238,13 @@ namespace Spinach
             {
                 if (mat_stack.Count > 0)
                 {
+                    string s=((VariableElement)(element.getChildElement())).getText();
                     Object obj = getTopOfStack_Matrix();
                     int a = GetTypeOfElement((Element)obj);
                     if (a == 1)
-                        result("Int Value:" + ((IntegerElement)obj).getText());
+                        result( s + ":" + ((IntegerElement)obj).getText()+"\n");
                     else if (a == 2)
-                        result("Double Value:" + ((DoubleElement)obj).getText());
+                        result(s + ":" + ((DoubleElement)obj).getText() + "\n");
                     else if (a == 3)
                     {
                         MatrixVariableDeclaration elem = (MatrixVariableDeclaration)(obj);
@@ -1273,9 +1296,25 @@ namespace Spinach
                         result("\n");
 
                     }
+                    else if (a == (int)datatypes.Struct)
+                    {
+                        result("Struct name:" + ((StructDeclaration)obj).getName().getText()+ "\n");
+                        List<ScalarVariableDeclaration> ls = new List<ScalarVariableDeclaration>();
+                        if(mVariableMap.ContainsKey(((StructDeclaration)obj).getName().getText()))
+                        {
+                            StructDeclaration s1=(StructDeclaration)mVariableMap[((StructDeclaration)obj).getName().getText()];
+                            if(s1!=null)
+                            {
+                                ls=s1.getVarType();
+                                for(int i=0;i<ls.Count;i++)
+                                    result("Members:"+ls[i].getVar().getText()+" ");
+                                result("\n");
+                            }
+                        }
+                    }
                     else if (a == 7)
                     {
-                        result("String Value:" + ((StringElement)obj).getText());
+                        result(s+ ":" + ((StringElement)obj).getText() +"\n");
                     }
 
                 }
