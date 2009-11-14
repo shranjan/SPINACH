@@ -1,4 +1,4 @@
-﻿////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 // Core.cs: Implements a vistor that interprets the syntax tree.
 // 
 // version: 1.0
@@ -60,11 +60,15 @@ namespace Spinach
         public delegate void resultcore(string coremsg);
         public event resultcore rescore_;
 
+        private int flag = -1;
  
         public void sendres(int code, string errormsg)
         {
             if (errorcore_ != null)
+            {
                 errorcore_(code, errormsg);
+                flag = 1;
+            }
 
         }
 
@@ -84,12 +88,12 @@ namespace Spinach
         public void setAST(List<Element> elements)
         {
             //  element = ele;
-            for (int i = 0; i < elements.Count; i++)
+            for (int i = 0; i < elements.Count && flag!=1; i++)
             {
                 Element curr = elements[i];
                // curr.Accept(print_visitor);
                 curr.Accept(interp_visitor);
-            }
+            }  
         }
       
 
