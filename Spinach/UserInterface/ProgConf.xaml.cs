@@ -34,16 +34,21 @@ namespace Spinach
     {
         private bool connected = false;                         //Specifies the state of the connection
         private string username = "";
+        private string IP = "";
+        private string Port = "";
         private List<string> userList;
         private ErrorModule err = new ErrorModule();
+        //private SwarmConnection SC;
+        //private ChatModule Chat = new ChatModule(SC);
         
         /// <summary>
         /// Default constructor - Initializing the intial things
         /// </summary>
         // TODO check all the initializations
-        public ProgConf()
+        public ProgConf(/*SwarmConnection SConn*/)
         {
             InitializeComponent();
+            //SC = SConn;
             mnuProg.Visibility = Visibility.Visible;
             txtMessage.Focus();
             err.ProgConfError += new ErrorNotification(ShowError);
@@ -70,7 +75,8 @@ namespace Spinach
             result = System.Windows.MessageBox.Show("Do you really want to disconnect from the swarm?", "Disconnect?", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
             if (result == MessageBoxResult.Yes)
             {
-                //Code for disconnecting from thw swarm
+              //Code for disconnecting from the swarm
+              //SC.Disconnect(IP, Port);
               Connection conn = new Connection();
               conn.Show();
               frmProgConf.Close();
@@ -92,10 +98,10 @@ namespace Spinach
             {
                 int size = username.Length;
 
-                TextPointer tp = rtbChat.CaretPosition.GetPositionAtOffset(0, LogicalDirection.Forward);
-                rtbChat.CaretPosition.InsertTextInRun(username + ": " + txtMessage.Text + "\n");
+                //--TextPointer tp = rtbChat.CaretPosition.GetPositionAtOffset(0, LogicalDirection.Forward);
+                //--rtbChat.CaretPosition.InsertTextInRun(username + ": " + txtMessage.Text + "\n");
                 //rtbChat.CaretPosition.InsertParagraphBreak();
-                rtbChat.CaretPosition = tp;
+                //--rtbChat.CaretPosition = tp;
 
                 //rtbChat.BeginChange();
                 //rtbChat.FontWeight = FontWeights.Bold;
@@ -103,6 +109,7 @@ namespace Spinach
                 //rtbChat.EndChange();
 
                 //rtbChat.AppendText(txtMessage.Text + "\n");
+                //-----------SC.sendChat(username ,txtMessage.Text);
                 txtMessage.Text = "";
                 rtbChat.ScrollToEnd();
             }
@@ -113,8 +120,10 @@ namespace Spinach
       /// This is sent by the connection module.
       /// </summary>
       /// <param name="user">username which was accepted by the swarm while connecting</param>
-      public void setUsername(string user)
+      public void setDetails(string SelfIP, string SelfPort, string user)
       {
+        IP = SelfIP;
+        Port = SelfPort;
         username = user;
       }
 
@@ -128,7 +137,14 @@ namespace Spinach
         userList = list;
       }
 
-      private void submnuNew_Click(object sender, RoutedEventArgs e)
+      public void DisplayChat(string Uname, string Msg)
+      {
+          TextPointer tp = rtbChat.CaretPosition.GetPositionAtOffset(0, LogicalDirection.Forward);
+          rtbChat.CaretPosition.InsertTextInRun(Uname + ": " + Msg + "\n");
+          rtbChat.CaretPosition = tp;
+      }
+
+        private void submnuNew_Click(object sender, RoutedEventArgs e)
       {
         ProgWin editor = new ProgWin(ProgWin.editorType.owner);
         //owner is the user itself. so pass the username here
