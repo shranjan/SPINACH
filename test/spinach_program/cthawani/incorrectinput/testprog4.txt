@@ -1,0 +1,51 @@
+Sample program involving 3D input for testing plot functions:--
+
+// Author: Chetan Thawani
+
+// I think this is an incorrect program because dataset plist1 is created dynamically with an order of 4x4 but the dimensions should be defined beforehand. 
+
+int a; // declare an integer variable
+
+a = 2; // define an integer variable
+
+int b; // declare an integer variable
+
+b = 3; // define an integer variable
+
+int c; // declare an integer variable
+
+c = a - b; // substraction computation
+
+Matrix <int> [2][2] m1 = [4,5,6,7]; // definition of matrix variable m1
+
+Matrix <int> [2][2] m2 = [8,9,10,11]; // definition of matrix variable m2
+
+Matrix <int> [2][2] m3 = m1 + m2; // definition of matrix variable m3
+
+Matrix <int> [2][2] m4 = m3 * m1; // definition of matrix variable m4
+
+double[] plist = { a,b,c }; // 2D dataset containing of scalars (integers).
+
+double[][] plist1 = { m1,m2,m3,m4 }; // 3D dataset containing of matrices with integer values.
+
+plot(plist,"abc",'2D'); // checking if the plot function works by taking arguments plist as a 2D dataset, abc as the title of the plot and 2D as the type of the plot. 
+
+plot(plist1,"xyz",'3D', 1); // checking if the plot function works by taking arguments plist1 as a 3D dataset, xyz as the title, 3D as the type of the plot and 1 as some type of mode such as terrain, vector field, etc.
+
+subplot(2,plist,"a",'2D'); // checking if the subplot function works by taking arguments 2 as the pane number, plist as the dataset, a as the title of the subplot and 2D as the type of the subplot.
+
+subplot(4,plist1,"x",'3D', 2); // checking if the subplot function works by taking arguments 4 as the pane number, plist1 as the dataset, x as the title of the subplot, 3D as the type of the subplot and 2 as the mode of the subplot.
+
+resetplot(); // function to reset the plot drawn on the panel (canvas).
+
+subplot(3,plist,"y",'2D'); // checking if the subplot function works by taking arguments 3 as the pane number, plist as the dataset, y as the title of the subplot and 2D as the type of the subplot.
+
+setplotaxis(a,b); // checking the setplotaxis function which takes x-factor and y-factor as an argument. x-factor and y-factor is the amount by which the plot resizes itself either by shrinking or expanding depending on the space left on the canvas.
+
+setplotaxis(c); // checking the setplotaxis function which takes only x-factor as an argument.
+
+setaxistitle("xyz","abc"); // checking the setaxistitle function which takes the x-axis title name and y-axis title name as arguments.
+
+setscalemode(linear); // checking the setscalemode function which takes either linear or log as an argument. if it is linear, then the plot would be straight in shape and if it is logarithmic, then it would be curved in shape.
+
+setscalemode(log); // checking the setscalemode function which takes either linear or log as an argument. if it is linear, then the plot would be straight in shape and if it is logarithmic, then it would be curved in shape.
