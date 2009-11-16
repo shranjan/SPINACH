@@ -35,10 +35,12 @@ namespace Spinach
             coreObject = new Core(plot);
             frontEnd = new exec();
             frontEnd.error_ +=new exec.errorreport(Onerror);
+            frontEnd.astEvent += new Spinach.exec.ast(AST);
             coreObject.errorcore_ +=new Core.errorcoremsg(Onerror);
             coreObject.rescore_ += new Core.resultcore(coreObject_rescore_);
         }
 
+        
         void coreObject_rescore_(string coremsg)
         {
             if (resEvent != null)
@@ -50,11 +52,13 @@ namespace Spinach
             List<string> keywords = new List<string>();
             keywords = frontEnd.getKeywords();
             //frontEnd.error_ += new Spinach.exec.errorreport(Onerror);
-            frontEnd.astEvent += new Spinach.exec.ast(AST);
+            
+            
             frontEnd.Visitline(args);
         }
         public void AST(List<Element> elements)
         {
+            coreObject.clearVarMap();
             coreObject.setAST(elements);
         }
     }
