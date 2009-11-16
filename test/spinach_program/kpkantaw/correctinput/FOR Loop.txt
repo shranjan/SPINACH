@@ -1,0 +1,86 @@
+
+///////////simple for
+for ( a -> 1 to 30 ) 
+{
+ a = a + b ;
+} ;
+
+for (x-> 2 to 20)
+{
+int a;
+a=10;
+double b;
+b=3.0;
+int c;
+if(a==10){a=11;int x;return 10;}
+if(a==11){if(b<3.0){}else{return 1;}}else{return 0;}
+};
+
+////basic parallel-for with assignments inside for
+for(y-> 1 to 13)
+{
+vector<A>[5]=[1,1,1,1,1];
+vector<B>[5]=[10,10,10,10,10];
+
+parallelfor(x->0to5)
+{B[x]=A[x];A[x]=A[x]+100;}
+
+for(x->0to4){print A[x];}
+
+for(x->0to4){print B[x];}
+
+};
+
+
+/////////parallel-for SYNC inside for
+for(z-> 1 to 10)
+{
+parallelfor(x->0to3)
+{
+B[x]=500+x;
+SYNC;
+A[x]=B[x+1]+100;
+}
+
+for(x->0to4){print A[x];}
+
+
+for(x->0to4){print A[x];}
+
+
+};
+
+//matrix declaration, parallel for with a for inside it performing matrix operation
+for(t-> 1 to 12)
+{
+
+Matrix<int>[3][3]M=[1,2,3,4,5,6];
+
+parallelfor(i->0to2)
+{
+for(j->0to2)
+{
+M[i][j]=i+j;
+}
+}
+
+};
+
+// checking for loop with parallel-for having 'if' inside it 
+for(q-> 1 to 15)
+{
+parallelfor(i->0to4)
+{
+	if(A[i]==B[i])
+	{A[i]=100;}
+	else
+	{A[i]=B[i];}
+}
+};
+
+
+// for loop with function call inside
+for(r->1 to 15)
+{
+return func(r);
+};

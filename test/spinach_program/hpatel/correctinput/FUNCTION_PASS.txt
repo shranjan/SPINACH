@@ -1,3 +1,10 @@
+
+int funcf(int x)
+{
+x=x*5;
+return x;
+}
+
 int funca(int x)
 {
 x=x/5;
@@ -5,11 +12,6 @@ x=funcf(x);
 return x;
 }
 
-int funcf(int x)
-{
-x=x*5;
-return x;
-}
 
 void funcb(int x,double d)
 {
