@@ -41,7 +41,8 @@ namespace Spinach
         private PlotReceiver plot = new PlotReceiver();
         PngBitmapEncoder PBE = new PngBitmapEncoder();
         private executor Controller;
-        //private Spinach.exec FE = new exec();
+        private string plotpath = "";
+        private int isplotReady = 0;
 
         public enum editorType { owner, collaborator };
 
@@ -300,6 +301,9 @@ namespace Spinach
 
             private void btnCompute_Click(object sender, RoutedEventArgs e)
             {
+                isplotReady = 0;
+                plotpath = Title;
+                plotpath += ".png";
                 TextPointer start = rtbInput.Document.ContentStart;
                 TextPointer end = rtbInput.Document.ContentEnd;
                 TextRange tr = new TextRange(start, end);
@@ -344,8 +348,22 @@ namespace Spinach
 
             private void EnablePlot(PngBitmapEncoder encoder)
             {
-                mnuPlot.IsEnabled = true;
-                PBE = encoder;
+                try
+                {
+                    if (encoder != null)
+                    {
+                        PBE = new PngBitmapEncoder();
+                        PBE.Frames.Add(BitmapFrame.Create(encoder.Frames[0].Clone()));
+                        isplotReady = 1;
+                        System.IO.FileStream outStream = new System.IO.FileStream(plotpath, System.IO.FileMode.Create);
+                        PBE.Save(outStream);
+                        outStream.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.Windows.MessageBox.Show("Error in enable plot:" + e.Message);
+                }
             }
             
             private void Display(string res)
@@ -355,8 +373,13 @@ namespace Spinach
 
             private void mnuShowPlot_Click(object sender, RoutedEventArgs e)
             {
-                ProgPlot frmPlot = new ProgPlot(PBE);
-                frmPlot.ShowDialog();
+                if (isplotReady == 1)
+                {
+                    ProgPlot frmPlot = new ProgPlot(plotpath);
+                    frmPlot.ShowDialog();
+                }
+                else
+                    System.Windows.MessageBox.Show("No Plot");
             }
 
             private void mnuSavePlot_Click(object sender, RoutedEventArgs e)
