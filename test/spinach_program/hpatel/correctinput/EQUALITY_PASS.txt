@@ -1,0 +1,38 @@
+void equalitytest(int a,int b)
+{
+if(a==b)
+{
+print "a equals b";
+}
+if(a!=b)
+{
+print "a is not equal to b";
+}
+if(a>b)
+{
+print "a is greater than b"
+}
+if(a<b)
+{
+print "a is smaller than b"
+}
+if(a>=b)
+{
+print "a is greater or equal to b"
+}
+if(a<=b)
+{
+print "a is smaller or equal to b"
+}
+}
+
+
+
+int a;
+a=5;
+int b;
+b=5;
+
+equalitytest(a,b);
+b=a+a;
+equalitytest(a,b);

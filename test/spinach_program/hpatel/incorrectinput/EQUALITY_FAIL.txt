@@ -1,0 +1,33 @@
+int a;
+a=5;
+int b;
+b=5;
+
+if(a>>b)
+{
+print "true";
+}
+
+if(a===b)
+{
+print "true";
+}
+
+if(a=>b)
+{
+print "true"
+}
+
+if(a!!=b)
+{
+print "true";
+}
+
+if(a<>b)
+{
+print "true";
+}
+
+
+
+

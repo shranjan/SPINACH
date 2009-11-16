@@ -1,0 +1,54 @@
+int funcA(int x)
+{
+	x=x*5;
+	return x;
+}
+
+int funcB(int x)
+{
+x=x/5;
+return x;
+}
+
+double funcC()
+{
+	funcA(10);
+}
+
+int funcD(int x,int y)
+{{
+	if(x==5)
+	{
+	int a=funcA(x);
+	}
+	else
+	{
+	int a=funcB(x);
+	}
+}
+
+
+int funcE())int x;x=4;
+{
+}
+
+double funcB(doulbe x)
+{
+}
+
+print x;
+int a=funcA(5);
+print a;
+int b=funcB(5);
+print b;
+double c=funcB(double 5.0);
+print c;
+double d=funcC();
+print d;
+a=d;
+print a,x;
+
+
+
+
+
