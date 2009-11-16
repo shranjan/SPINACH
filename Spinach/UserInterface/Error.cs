@@ -27,7 +27,6 @@ namespace Spinach
     public delegate void ErrorNotification(string Msg);
     public class ErrorModule
     {
-        //FEO fo;
         public event ErrorNotification ConnError;
         public event ErrorNotification ProgConfError;
         public event ErrorNotification ProgWinError;
