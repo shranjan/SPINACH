@@ -655,7 +655,7 @@ namespace Spinach
                     int pane = int.Parse(element.getPeno().getText()); //.getPane().getText());
                     string plotType = element.getPlotType();
 
-                    if (pane >= 4 || pane <= 0)
+                    if (pane > 4 || pane <= 0)
                     {
                         Console.Write("pane no. is not valid.. it lies between 1 to 4.. Try again..");
                         sendres(112, "pane no. is not valid.. it lies between 1 to 4.. Try again..");
