@@ -35,6 +35,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
+using System.Net.Sockets;
 
 namespace Spinach
 {
@@ -68,10 +69,16 @@ namespace Spinach
     private string GetIP()
     {
       string strHostName = "";
+      string ipAddr = "";
       strHostName = System.Net.Dns.GetHostName();
       IPHostEntry ipEntry = System.Net.Dns.GetHostEntry(strHostName);
-      IPAddress[] addr = ipEntry.AddressList;
-      return addr[addr.Length-1].ToString();
+      //IPAddress[] addr = ipEntry.AddressList;
+      foreach (IPAddress ip in ipEntry.AddressList)
+      {
+          if (ip.AddressFamily.ToString() == ProtocolFamily.InterNetwork.ToString())
+              ipAddr = ip.ToString();
+      }
+      return ipAddr;
     }
 
     //----< Join Swarm Radio Button Checked Event >----

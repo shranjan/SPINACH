@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -23,6 +24,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
+using System.Threading;
 using System.IO;
 
 namespace Spinach
@@ -36,8 +38,11 @@ namespace Spinach
         private string username = "";
         private string IP = "";
         private string Port = "";
+        private Dictionary<string, ArrayList> AccessControlList = new Dictionary<string,ArrayList>();
         private List<string> userList;
         private ErrorModule err = new ErrorModule();
+        bool disconnectClick = false;                //Checks whether the diconnect button was pressed
+        String programText = "";
         //private SwarmConnection SC;
         //private ChatModule Chat = new ChatModule(SC);
         
@@ -52,11 +57,6 @@ namespace Spinach
             mnuProg.Visibility = Visibility.Visible;
             txtMessage.Focus();
             err.ProgConfError += new ErrorNotification(ShowError);
-        }
-
-        private void mnuFile_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         //Runs on Exit Button being clicked
@@ -79,8 +79,9 @@ namespace Spinach
               //SC.Disconnect(IP, Port);
               Connection conn = new Connection();
               conn.Show();
-              frmProgConf.Close();
               connected = false;
+              disconnectClick = true;
+              frmProgConf.Close();
             }
         }
 
@@ -144,14 +145,35 @@ namespace Spinach
           rtbChat.CaretPosition = tp;
       }
 
-        private void submnuNew_Click(object sender, RoutedEventArgs e)
+      private void submnuNew_Click(object sender, RoutedEventArgs e)
       {
-        ProgWin editor = new ProgWin(ProgWin.editorType.owner);
-        //owner is the user itself. so pass the username here
-        //list of the users in swarm
-        //take the program name and send the program name
-        editor.Show();
-        editor.setUserList(userList);
+        Thread newWindowThread =
+                        new Thread(
+                             new ThreadStart(
+                                  OwnerThreadStartingPoint));
+        newWindowThread.SetApartmentState(ApartmentState.STA);
+        newWindowThread.IsBackground = true;
+        newWindowThread.Start();
+      }
+
+      private void OwnerThreadStartingPoint()
+      {
+          ProgWin editor = new ProgWin(ProgWin.editorType.owner);
+          //owner is the user itself. so pass the username here
+          //list of the users in swarm
+          //take the program name and send the program name
+          editor.setUserList(userList);
+          editor.setPermissions("RW");
+          editor.loadProgram(programText);
+          string pid;
+          pid = Guid.NewGuid().ToString();
+          ArrayList list = new ArrayList();
+          list.Add("RW");
+          list.Add(editor);
+          AccessControlList.Add(pid, list);
+          editor.Show();
+
+          System.Windows.Threading.Dispatcher.Run();
       }
 
       /// <summary>
@@ -168,7 +190,6 @@ namespace Spinach
           openFileDialog1.Filter = "ssf files (*.ssf)|*.ssf|All files (*.*)|*.*";
           openFileDialog1.FilterIndex = 1;
           openFileDialog1.RestoreDirectory = true;
-          String text = "";
 
           if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
           {
@@ -183,20 +204,36 @@ namespace Spinach
                           line = sr.ReadLine();
                           while ((line) != null)
                           {
-                              text = text + line;
+                              programText = programText + line;
                               line = sr.ReadLine();
                               if (line != null)
                               {
-                                  text += "\n";
+                                  programText += "\n";
                               }
                           }
                       }
                   }
-                  ProgWin editor = new ProgWin(ProgWin.editorType.owner);
+
+                  Thread newWindowThread =
+                        new Thread(
+                             new ThreadStart(
+                                  OwnerThreadStartingPoint));
+                  newWindowThread.SetApartmentState(ApartmentState.STA);
+                  newWindowThread.IsBackground = true;
+                  newWindowThread.Start();
+
+                  //ProgWin editor = new ProgWin(ProgWin.editorType.owner);
                   
-                  editor.loadProgram(0, 0, text);
-                  editor.Show();
-                  editor.setUserList(userList);
+                  //editor.loadProgram(text);
+                  //editor.Show();
+                  //editor.setUserList(userList);
+                  //editor.setPermissions("RW");
+                  //string pid;
+                  //pid = Guid.NewGuid().ToString();
+                  //ArrayList list = new ArrayList();
+                  //list.Add("RW");
+                  //list.Add(editor);
+                  //AccessControlList.Add(pid, list);
               }
               catch (Exception ex)
               {
@@ -206,8 +243,38 @@ namespace Spinach
 
       }
 
-      private void NewAccessPermission(int read, int write, string text)
+      private void NewAccessPermission(string guid, int read, int write, string text)
       {
+          if (AccessControlList[guid] != null)
+          {
+              string permission = "";
+              if (read == 1)
+                  permission += "R";
+              if (write == 1)
+                  permission += "W";
+              if (read == 0 && write == 0)
+              {
+                  ProgWin temp = (ProgWin)AccessControlList[guid][1];
+                  temp.Close();
+              }
+              AccessControlList[guid][0] = permission;
+          }
+          else
+          {
+              ProgWin editor = new ProgWin(ProgWin.editorType.collaborator);
+              ArrayList list = new ArrayList();
+              string permission = "";
+              if (read == 1)
+                  permission += "R";
+              if (write == 1)
+                  permission += "W";
+              list.Add(permission);
+              list.Add(editor);
+              AccessControlList.Add(guid, list);
+              editor.loadProgram(text);
+              editor.Show();
+              editor.setPermissions(permission);
+          }
       }
 
       private void ShowError(string errorMsg)
@@ -222,5 +289,19 @@ namespace Spinach
       private void updateList(List<string> userList)
       {
       }
+
+      private void frmProgConf_Closed(object sender, EventArgs e)
+      {
+          if (!disconnectClick)
+          {
+              if (connected == true)
+              {
+                  //submnuDisconnect_Click(sender, e);
+                  //SC.Disconnect(IP, Port);
+              }
+              Environment.Exit(1);
+          }
+      }
+
     }
 }

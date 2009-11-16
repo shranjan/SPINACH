@@ -23,6 +23,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 using Spinach;
 
 namespace Spinach
@@ -37,6 +38,7 @@ namespace Spinach
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
+        bool read, write;
 
         private PlotReceiver plot = new PlotReceiver();
         PngBitmapEncoder PBE = new PngBitmapEncoder();
@@ -66,11 +68,6 @@ namespace Spinach
             keywords = Controller.frontEnd.getKeywords();
             err.SetExecutorObject(Controller);
             err.SetPlotObject(plot);
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void mnuFile_Click(object sender, RoutedEventArgs e)
@@ -166,6 +163,9 @@ namespace Spinach
                 {
                     lstUsers.Items.Add(progUserList[i]);
                 }
+
+                //This will disable the Access Control menu
+                mnuAccess.IsEnabled = false;
             }
             //keywords.Add("int");
             //keywords.Add("double");
@@ -311,7 +311,7 @@ namespace Spinach
                 mnuPlot.IsEnabled = true;
             }
 
-            public void loadProgram(int read, int write, string text)
+            public void loadProgram(string text)
             {
                 rtbInput.AppendText(text);
                 syntax();
@@ -406,6 +406,30 @@ namespace Spinach
                         System.Windows.MessageBox.Show("Error: Could not Write file to disk. Original error: " + ex.Message);
                     }
                 }
+            }
+
+            public void setPermissions(string perm)
+            {
+                if (perm == "RW")
+                {
+                    read = true;
+                    write = true;
+                }
+                else if (perm == "R")
+                {
+                    read = true;
+                    write = false;
+                }
+                else if (perm == "W")
+                {
+                    read = false;
+                    write = true;
+                }
+
+                if (write)
+                    rtbInput.IsEnabled = true;
+                else
+                    rtbInput.IsEnabled = false;
             }
     }
 }
