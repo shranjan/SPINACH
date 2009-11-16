@@ -95,8 +95,12 @@ namespace Spinach
                 curr.Accept(interp_visitor);
             }  
         }
-      
 
+        public void clearVarMap()
+        {
+            interp_visitor.clearMap();
+
+        }
 
 
         }

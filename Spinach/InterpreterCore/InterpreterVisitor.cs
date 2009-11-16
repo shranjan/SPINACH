@@ -88,7 +88,10 @@ namespace Spinach
        // PrintVisitor print_visitor=new PrintVisitor(this);
         //List<Element> elements;
 
-  
+        public void clearMap()
+        {
+            mVariableMap.Clear();
+        }
         public Hashtable getMap()
         {
             return mVariableMap;
@@ -398,7 +401,7 @@ namespace Spinach
                     mVariableMap.Add(variable_name, element);
                 }
             }
-            int row = int.Parse(element.getRow().getText());
+            /*int row = int.Parse(element.getRow().getText());
             int col = int.Parse(element.getColumn().getText());
             Console.Write("\n Matrix name : ");
             Console.Write(variable_name);
@@ -424,18 +427,21 @@ namespace Spinach
             else if (mat_type == "double")
             {
                 double[,] elemenets = element.getdoubleValue();
-                Console.Write("\n Matrix Elements are : \n");
-                for (int i = 0; i < row; i++)
+                if (elemenets != null)
                 {
-                    for (int j = 0; j < col; j++)
+                    Console.Write("\n Matrix Elements are : \n");
+                    for (int i = 0; i < row; i++)
                     {
-                        Console.Write(elemenets[i, j]);
-                        Console.Write("\t");
+                        for (int j = 0; j < col; j++)
+                        {
+                            Console.Write(elemenets[i, j]);
+                            Console.Write("\t");
+                        }
+                        Console.Write("\n");
                     }
-                    Console.Write("\n");
                 }
             }
-            Console.Write("\n");
+            Console.Write("\n");*/
 
             //throw new NotImplementedException();
         }
@@ -574,34 +580,42 @@ namespace Spinach
 
         private void PerformIntMultiplication(Object obj_rhs, Object obj_lhs)
         {
-            IntegerElement stk_rhs = (IntegerElement)(obj_rhs);
-            IntegerElement stk_lhs = (IntegerElement)(obj_lhs);
-            IntegerElement final = new IntegerElement();
-            if (stk_lhs != null && stk_rhs != null)
+            try
             {
-                int temp_lhs = int.Parse(stk_lhs.getText());
-                int temp_rhs = int.Parse(stk_rhs.getText());
-                final.setText((temp_lhs * temp_rhs).ToString());
-                Object result = (Object)(final);
-                mat_stack.Push(result);
-                Console.Write("Product: " + final.getText());
+                IntegerElement stk_rhs = (IntegerElement)(obj_rhs);
+                IntegerElement stk_lhs = (IntegerElement)(obj_lhs);
+                IntegerElement final = new IntegerElement();
+                if (stk_lhs != null && stk_rhs != null)
+                {
+                    int temp_lhs = int.Parse(stk_lhs.getText());
+                    int temp_rhs = int.Parse(stk_rhs.getText());
+                    final.setText((temp_lhs * temp_rhs).ToString());
+                    Object result = (Object)(final);
+                    mat_stack.Push(result);
+                    Console.Write("Product: " + final.getText());
+                }
             }
+            catch (Exception e) { sendres(112, "Unassigned variables\n"); e.GetType(); };
         }
 
         private void PerformDoubleMultiplication(Object obj_rhs, Object obj_lhs)
         {
-            DoubleElement stk_rhs = (DoubleElement)(obj_rhs);
-            DoubleElement stk_lhs = (DoubleElement)(obj_lhs);
-            DoubleElement final = new DoubleElement();
-            if (stk_lhs != null && stk_rhs != null)
+            try
             {
-                double temp_lhs = double.Parse(stk_lhs.getText());
-                double temp_rhs = double.Parse(stk_rhs.getText());
-                final.setText((temp_lhs * temp_rhs).ToString());
-                Object result = (Object)(final);
-                mat_stack.Push(result);
-                Console.Write("Product: " + final.getText());
+                DoubleElement stk_rhs = (DoubleElement)(obj_rhs);
+                DoubleElement stk_lhs = (DoubleElement)(obj_lhs);
+                DoubleElement final = new DoubleElement();
+                if (stk_lhs != null && stk_rhs != null)
+                {
+                    double temp_lhs = double.Parse(stk_lhs.getText());
+                    double temp_rhs = double.Parse(stk_rhs.getText());
+                    final.setText((temp_lhs * temp_rhs).ToString());
+                    Object result = (Object)(final);
+                    mat_stack.Push(result);
+                    Console.Write("Product: " + final.getText());
+                }
             }
+            catch (Exception e) { sendres(112, "Unassigned variables\n"); e.GetType(); };
         }
 
         public override void VisitParallelForElement(ParallelForElement element)
@@ -850,35 +864,43 @@ namespace Spinach
 
         private void PerformDoubleSubtraction(Object obj_rhs, Object obj_lhs)
         {
-            DoubleElement stk_rhs = (DoubleElement)(obj_rhs);
-            DoubleElement stk_lhs = (DoubleElement)(obj_lhs);
-            DoubleElement final = new DoubleElement();
-            if (stk_lhs != null && stk_rhs != null)
+            try
             {
-                double temp_lhs = double.Parse(stk_lhs.getText());
-                double temp_rhs = double.Parse(stk_rhs.getText());
-                final.setText((temp_lhs - temp_rhs).ToString());
-                Object result = (Object)(final);
-                mat_stack.Push(result);
-                Console.Write("Difference: " + final.getText());
+                DoubleElement stk_rhs = (DoubleElement)(obj_rhs);
+                DoubleElement stk_lhs = (DoubleElement)(obj_lhs);
+                DoubleElement final = new DoubleElement();
+                if (stk_lhs != null && stk_rhs != null)
+                {
+                    double temp_lhs = double.Parse(stk_lhs.getText());
+                    double temp_rhs = double.Parse(stk_rhs.getText());
+                    final.setText((temp_lhs - temp_rhs).ToString());
+                    Object result = (Object)(final);
+                    mat_stack.Push(result);
+                    Console.Write("Difference: " + final.getText());
+                }
             }
+            catch (Exception e) { sendres(112, "Unassigned variables\n"); e.GetType(); };
 
         }
 
         private void PerformIntSubtraction(Object obj_rhs, Object obj_lhs)
         {
-            IntegerElement stk_rhs = (IntegerElement)(obj_rhs);
-            IntegerElement stk_lhs = (IntegerElement)(obj_lhs);
-            IntegerElement final = new IntegerElement();
-            if (stk_lhs != null && stk_rhs != null)
+            try
             {
-                int temp_lhs = int.Parse(stk_lhs.getText());
-                int temp_rhs = int.Parse(stk_rhs.getText());
-                final.setText((temp_lhs - temp_rhs).ToString());
-                Object result = (Object)(final);
-                mat_stack.Push(result);
-                Console.Write("Difference: " + final.getText());
+                IntegerElement stk_rhs = (IntegerElement)(obj_rhs);
+                IntegerElement stk_lhs = (IntegerElement)(obj_lhs);
+                IntegerElement final = new IntegerElement();
+                if (stk_lhs != null && stk_rhs != null)
+                {
+                    int temp_lhs = int.Parse(stk_lhs.getText());
+                    int temp_rhs = int.Parse(stk_rhs.getText());
+                    final.setText((temp_lhs - temp_rhs).ToString());
+                    Object result = (Object)(final);
+                    mat_stack.Push(result);
+                    Console.Write("Difference: " + final.getText());
+                }
             }
+            catch (Exception e) { sendres(112, "Unassigned variables\n"); e.GetType(); };
 
         }
         public override void VisitVectorElement(VectorVariableDeclaration element)
@@ -1200,128 +1222,177 @@ namespace Spinach
 
         private void PerformIntAddition(Object obj_rhs, Object obj_lhs)
         {
-            IntegerElement stk_rhs = (IntegerElement)(obj_rhs);
-            IntegerElement stk_lhs = (IntegerElement)(obj_lhs);
-            IntegerElement final = new IntegerElement();
-            if (stk_lhs != null && stk_rhs != null)
+            try
             {
-                int temp_lhs = int.Parse(stk_lhs.getText());
-                int temp_rhs = int.Parse(stk_rhs.getText());
-                final.setText((temp_lhs + temp_rhs).ToString());
-                Object result = (Object)(final);
-                mat_stack.Push(result);
-                Console.Write("Sum: " + final.getText());
+                IntegerElement stk_rhs = (IntegerElement)(obj_rhs);
+                IntegerElement stk_lhs = (IntegerElement)(obj_lhs);
+                IntegerElement final = new IntegerElement();
+                if (stk_lhs != null && stk_rhs != null)
+                {
+                    int temp_lhs = int.Parse(stk_lhs.getText());
+                    int temp_rhs = int.Parse(stk_rhs.getText());
+                    final.setText((temp_lhs + temp_rhs).ToString());
+                    Object result = (Object)(final);
+                    mat_stack.Push(result);
+                    Console.Write("Sum: " + final.getText());
+                }
             }
+            catch (Exception e) { sendres(112, "Unassigned variables\n"); e.GetType(); };
         }
 
         private void PerformDoubleAddition(Object obj_rhs, Object obj_lhs)
         {
-            DoubleElement stk_rhs = (DoubleElement)(obj_rhs);
-            DoubleElement stk_lhs = (DoubleElement)(obj_lhs);
-            DoubleElement final = new DoubleElement();
-            if (stk_lhs != null && stk_rhs != null)
+            try
             {
-                double temp_lhs = double.Parse(stk_lhs.getText());
-                double temp_rhs = double.Parse(stk_rhs.getText());
-                final.setText((temp_lhs + temp_rhs).ToString());
-                Object result = (Object)(final);
-                mat_stack.Push(result);
-                Console.Write("Sum: " + final.getText());
+                DoubleElement stk_rhs = (DoubleElement)(obj_rhs);
+                DoubleElement stk_lhs = (DoubleElement)(obj_lhs);
+                DoubleElement final = new DoubleElement();
+                if (stk_lhs != null && stk_rhs != null)
+                {
+                    double temp_lhs = double.Parse(stk_lhs.getText());
+                    double temp_rhs = double.Parse(stk_rhs.getText());
+                    final.setText((temp_lhs + temp_rhs).ToString());
+                    Object result = (Object)(final);
+                    mat_stack.Push(result);
+                    Console.Write("Sum: " + final.getText());
+                }
             }
+            catch (Exception e) { sendres(112, "Unassigned variables\n"); e.GetType(); };
         }
 
         public override void VisitPrintOperationElement(PrintOperationElement element)
         {
             Console.Write("Printing..\n");
             VisitElement(element.getChildElement());
-            if (mVariableMap.ContainsKey(((VariableElement)(element.getChildElement())).getText()))
+            try
+            {
+                if (element.getChildElement() is VariableElement)
+                    PrintVariable(element.getChildElement());
+                else if(element.getChildElement() is IntegerElement)
+                    result(((IntegerElement)element.getChildElement()).getText() + "\n");
+                else if(element.getChildElement() is DoubleElement)
+                    result(((DoubleElement)element.getChildElement()).getText() + "\n");
+                else if(element.getChildElement() is StringElement)
+                    result(((StringElement)element.getChildElement()).getText() + "\n");
+            }
+            catch (Exception e) { sendres(112, "Invalid variable\n"); e.GetType(); }
+        }
+
+        private void PrintVariable(Element elem)
+        {
+            if (mVariableMap.ContainsKey(((VariableElement)elem).getText()))
             {
                 if (mat_stack.Count > 0)
                 {
-                    string s=((VariableElement)(element.getChildElement())).getText();
-                    Object obj = getTopOfStack_Matrix();
-                    int a = GetTypeOfElement((Element)obj);
-                    if (a == 1)
-                        result( s + ":" + ((IntegerElement)obj).getText()+"\n");
-                    else if (a == 2)
-                        result(s + ":" + ((DoubleElement)obj).getText() + "\n");
-                    else if (a == 3)
+                    try
                     {
-                        MatrixVariableDeclaration elem = (MatrixVariableDeclaration)(obj);
-                        string type = elem.getType();
-                        int row = int.Parse(elem.getRow().getText());
-                        int col = int.Parse(elem.getColumn().getText());
-                        Console.Write("\nMatrix Type : ");
-                        Console.Write(type); Console.Write("\n");
-                        Console.Write(" Rows : "); Console.Write(row); Console.Write("\n");
-                        Console.Write(" Columns : "); Console.Write(col);
-                        result("\nMatrix Type : " + type + "\n" + "Rows:" + row.ToString() + "\n" + "Columns:" + col.ToString());
-                        string mat_type = elem.getType();
-                        if (mat_type == "int")
+                        string s = ((VariableElement)elem).getText();
+                        Object obj = getTopOfStack_Matrix();
+                        int a = GetTypeOfElement((Element)obj);
+                        if (a == 1)
+                            result(s + ":" + ((IntegerElement)obj).getText() + "\n");
+                        else if (a == 2)
+                            result(s + ":" + ((DoubleElement)obj).getText() + "\n");
+                        else if (a == 3)
                         {
-                            int[,] elements = elem.getintValue();
-                            Console.Write("\nMatrix Elements are : \n");
-                            result("\nMatrix Elements are : \n");
-                            for (int i = 0; i < row; i++)
-                            {
-                                for (int j = 0; j < col; j++)
-                                {
-                                    Console.Write(elements[i, j]);
-                                    Console.Write("\t");
-                                    result(elements[i, j].ToString() + "\t");
-                                }
-                                Console.Write("\n");
-                                result("\n");
-                            }
+                            PrintMatrix(obj);
                         }
-                        else if (mat_type == "double")
+                        else if (a == (int)datatypes.Struct)
                         {
-                            double[,] elemenets = elem.getdoubleValue();
-                            Console.Write("\n Matrix Elements are : \n");
-                            result("\nMatrix Elements are : \n");
-                            for (int i = 0; i < row; i++)
-                            {
-                                for (int j = 0; j < col; j++)
-                                {
-                                    Console.Write(elemenets[i, j]);
-                                    result(elemenets[i, j].ToString());
-                                    Console.Write("\t");
-                                    result("\t");
-                                }
-                                Console.Write("\n");
-                                result("\n");
-                            }
+                            PrintStruct(obj);
                         }
-                        Console.Write("\n");
-                        result("\n");
+                        else if (a == 7)
+                        {
+                            result(s + ":" + ((StringElement)obj).getText() + "\n");
+                        }
 
                     }
-                    else if (a == (int)datatypes.Struct)
-                    {
-                        result("Struct name:" + ((StructDeclaration)obj).getName().getText()+ "\n");
-                        List<ScalarVariableDeclaration> ls = new List<ScalarVariableDeclaration>();
-                        if(mVariableMap.ContainsKey(((StructDeclaration)obj).getName().getText()))
-                        {
-                            StructDeclaration s1=(StructDeclaration)mVariableMap[((StructDeclaration)obj).getName().getText()];
-                            if(s1!=null)
-                            {
-                                ls=s1.getVarType();
-                                for(int i=0;i<ls.Count;i++)
-                                    result("Members:"+ls[i].getVar().getText()+" ");
-                                result("\n");
-                            }
-                        }
-                    }
-                    else if (a == 7)
-                    {
-                        result(s+ ":" + ((StringElement)obj).getText() +"\n");
-                    }
-
+                    catch (Exception e) { sendres(112, "Variable not assigned\n"); e.GetType(); }
                 }
             }
-            else sendres(112, "Variable not declared\n");
-        }
 
+            else sendres(112, "Variable not declared\n");
+  
+        }
+        private void PrintStruct(Object obj)
+        {
+            try
+            {
+                result("Struct name:" + ((StructDeclaration)obj).getName().getText() + "\n");
+                List<ScalarVariableDeclaration> ls = new List<ScalarVariableDeclaration>();
+                if (mVariableMap.ContainsKey(((StructDeclaration)obj).getName().getText()))
+                {
+                    StructDeclaration s1 = (StructDeclaration)mVariableMap[((StructDeclaration)obj).getName().getText()];
+                    if (s1 != null)
+                    {
+                        ls = s1.getVarType();
+                        for (int i = 0; i < ls.Count; i++)
+                            result("Members:" + ls[i].getVar().getText() + " ");
+                        result("\n");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                sendres(112, "Structure not found\n");
+                e.GetType();
+            }
+        }
+        private void PrintMatrix(Object obj)
+        {
+                            MatrixVariableDeclaration elem = (MatrixVariableDeclaration)(obj);
+                            string type = elem.getType();
+                            int row = int.Parse(elem.getRow().getText());
+                            int col = int.Parse(elem.getColumn().getText());
+                            Console.Write("\nMatrix Type : ");
+                            Console.Write(type); Console.Write("\n");
+                            Console.Write(" Rows : "); Console.Write(row); Console.Write("\n");
+                            Console.Write(" Columns : "); Console.Write(col);
+                            result("\nMatrix Type : " + type + "\n" + "Rows:" + row.ToString() + "\n" + "Columns:" + col.ToString());
+                            string mat_type = elem.getType();
+                            if (mat_type == "int")
+                            {
+                                int[,] elements = elem.getintValue();
+                                if (elements != null)
+                                {
+                                    result("\nMatrix Elements are : \n");
+                                    for (int i = 0; i < row; i++)
+                                    {
+                                        for (int j = 0; j < col; j++)
+                                        {
+                                            Console.Write(elements[i, j]);
+                                            Console.Write("\t");
+                                            result(elements[i, j].ToString() + "\t");
+                                        }
+                                        Console.Write("\n");
+                                        result("\n");
+                                    }
+                                }
+                            }
+                            else if (mat_type == "double")
+                            {
+                                double[,] elemenets = elem.getdoubleValue();
+                                if (elemenets != null)
+                                {
+                                    result("\nMatrix Elements are : \n");
+                                    for (int i = 0; i < row; i++)
+                                    {
+                                        for (int j = 0; j < col; j++)
+                                        {
+                                            Console.Write(elemenets[i, j]);
+                                            result(elemenets[i, j].ToString());
+                                            Console.Write("\t");
+                                            result("\t");
+                                        }
+                                        Console.Write("\n");
+                                        result("\n");
+                                    }
+                                }
+                            }
+                            Console.Write("\n");
+                            result("\n");
+
+        }
         public String getIfElement(Element element)
         {
             if (element is IntegerElement)
