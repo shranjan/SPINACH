@@ -1,5 +1,0 @@
-C:\Users\Owner\Downloads\Desktop\ses\SwarmMemory\xml demo\xml demo\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Owner\Downloads\Desktop\ses\SwarmMemory\xml demo\xml demo\bin\Debug\xml demo.exe
-C:\Users\Owner\Downloads\Desktop\ses\SwarmMemory\xml demo\xml demo\bin\Debug\xml demo.pdb
-C:\Users\Owner\Downloads\Desktop\ses\SwarmMemory\xml demo\xml demo\obj\Debug\xml demo.exe
-C:\Users\Owner\Downloads\Desktop\ses\SwarmMemory\xml demo\xml demo\obj\Debug\xml demo.pdb
