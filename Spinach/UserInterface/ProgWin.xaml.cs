@@ -116,8 +116,8 @@ namespace Spinach
 
         private void mnuAccess_Click(object sender, RoutedEventArgs e)
         {
-            mnuAdd.Visibility = Visibility.Visible;
-            mnuDelete.Visibility = Visibility.Visible;
+            //mnuAdd.Visibility = Visibility.Visible;
+            //mnuDelete.Visibility = Visibility.Visible;
             mnuEdit.Visibility = Visibility.Visible;
         }
 
