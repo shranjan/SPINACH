@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-H:\EarlyMorning\pinac\Spinach\UserInterface\obj\Debug\
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\UserInterface\obj\Debug\
 Spinach
 none
 false
 DEBUG;TRACE
-H:\EarlyMorning\pinac\Spinach\UserInterface\App.xaml
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\UserInterface\App.xaml
 7-386250845
 
 121569973137
-14822073344
+14-1615544494
 AddUser.xaml;Connection.xaml;DeleteUser.xaml;EditPermissions.xaml;ProgConf.xaml;ProgPlot.xaml;ProgWin.xaml;
 

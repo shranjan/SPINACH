@@ -27,3 +27,8 @@ H:\EarlyMorning\pinac\Spinach\InterpreterExec\bin\Debug\Plot.pdb
 H:\EarlyMorning\pinac\Spinach\InterpreterExec\obj\Debug\ResolveAssemblyReference.cache
 H:\EarlyMorning\pinac\Spinach\InterpreterExec\obj\Debug\InterpreterExec.dll
 H:\EarlyMorning\pinac\Spinach\InterpreterExec\obj\Debug\InterpreterExec.pdb
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\SPINACH_DLLS\InterpreterExec.dll
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\SPINACH_DLLS\InterpreterExec.pdb
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\InterpreterExec\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\InterpreterExec\obj\Debug\InterpreterExec.dll
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\InterpreterExec\obj\Debug\InterpreterExec.pdb
