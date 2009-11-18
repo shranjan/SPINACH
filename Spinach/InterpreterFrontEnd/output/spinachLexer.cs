@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g 2009-11-09 22:36:05
+// $ANTLR 3.1.2 C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g 2009-11-17 16:47:19
 
 
 using System.Collections.Generic;
@@ -85,7 +85,7 @@ public class spinachLexer : Lexer {
     
     override public string GrammarFileName
     {
-    	get { return "C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g";} 
+    	get { return "C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g";} 
     }
 
     // $ANTLR start "T__27"
@@ -95,8 +95,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__27;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:11:7: ( '\"' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:11:9: '\"'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:11:7: ( '\"' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:11:9: '\"'
             {
             	Match('\"'); 
 
@@ -118,8 +118,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__28;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:12:7: ( 'Matrix' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:12:9: 'Matrix'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:12:7: ( 'Matrix' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:12:9: 'Matrix'
             {
             	Match("Matrix"); 
 
@@ -142,8 +142,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__29;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:13:7: ( '[' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:13:9: '['
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:13:7: ( '[' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:13:9: '['
             {
             	Match('['); 
 
@@ -165,8 +165,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__30;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:14:7: ( ']' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:14:9: ']'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:14:7: ( ']' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:14:9: ']'
             {
             	Match(']'); 
 
@@ -188,8 +188,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__31;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:15:7: ( ',' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:15:9: ','
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:15:7: ( ',' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:15:9: ','
             {
             	Match(','); 
 
@@ -211,8 +211,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__32;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:16:7: ( 'Vector' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:16:9: 'Vector'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:16:7: ( 'Vector' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:16:9: 'Vector'
             {
             	Match("Vector"); 
 
@@ -235,8 +235,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__33;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:17:7: ( '-' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:17:9: '-'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:17:7: ( '-' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:17:9: '-'
             {
             	Match('-'); 
 
@@ -258,8 +258,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__34;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:18:7: ( 'struct' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:18:9: 'struct'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:18:7: ( 'struct' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:18:9: 'struct'
             {
             	Match("struct"); 
 
@@ -282,8 +282,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__35;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:19:7: ( 'delete' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:19:9: 'delete'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:19:7: ( 'delete' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:19:9: 'delete'
             {
             	Match("delete"); 
 
@@ -306,8 +306,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__36;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:20:7: ( 'print' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:20:9: 'print'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:20:7: ( 'print' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:20:9: 'print'
             {
             	Match("print"); 
 
@@ -330,8 +330,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__37;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:21:7: ( 'parallelfor' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:21:9: 'parallelfor'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:21:7: ( 'parallelfor' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:21:9: 'parallelfor'
             {
             	Match("parallelfor"); 
 
@@ -354,8 +354,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__38;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:22:7: ( 'to' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:22:9: 'to'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:22:7: ( 'to' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:22:9: 'to'
             {
             	Match("to"); 
 
@@ -378,8 +378,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__39;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:23:7: ( 'SYNC' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:23:9: 'SYNC'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:23:7: ( 'SYNC' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:23:9: 'SYNC'
             {
             	Match("SYNC"); 
 
@@ -402,8 +402,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__40;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:24:7: ( 'if' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:24:9: 'if'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:24:7: ( 'if' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:24:9: 'if'
             {
             	Match("if"); 
 
@@ -426,8 +426,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__41;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:25:7: ( 'else' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:25:9: 'else'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:25:7: ( 'else' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:25:9: 'else'
             {
             	Match("else"); 
 
@@ -450,8 +450,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__42;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:26:7: ( 'for' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:26:9: 'for'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:26:7: ( 'for' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:26:9: 'for'
             {
             	Match("for"); 
 
@@ -474,8 +474,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__43;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:27:7: ( 'void' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:27:9: 'void'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:27:7: ( 'void' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:27:9: 'void'
             {
             	Match("void"); 
 
@@ -498,8 +498,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__44;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:28:7: ( 'DOT' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:28:9: 'DOT'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:28:7: ( 'DOT' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:28:9: 'DOT'
             {
             	Match("DOT"); 
 
@@ -522,8 +522,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__45;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:29:7: ( 'T' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:29:9: 'T'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:29:7: ( 'T' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:29:9: 'T'
             {
             	Match('T'); 
 
@@ -545,8 +545,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__46;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:30:7: ( '//' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:30:9: '//'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:30:7: ( '//' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:30:9: '//'
             {
             	Match("//"); 
 
@@ -569,8 +569,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__47;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:31:7: ( 'return' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:31:9: 'return'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:31:7: ( 'return' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:31:9: 'return'
             {
             	Match("return"); 
 
@@ -593,8 +593,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__48;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:32:7: ( 'subPlot' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:32:9: 'subPlot'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:32:7: ( 'subPlot' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:32:9: 'subPlot'
             {
             	Match("subPlot"); 
 
@@ -617,8 +617,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__49;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:33:7: ( '1D' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:33:9: '1D'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:33:7: ( '1D' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:33:9: '1D'
             {
             	Match("1D"); 
 
@@ -641,8 +641,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__50;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:34:7: ( '2D' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:34:9: '2D'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:34:7: ( '2D' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:34:9: '2D'
             {
             	Match("2D"); 
 
@@ -665,8 +665,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__51;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:35:7: ( '3D' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:35:9: '3D'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:35:7: ( '3D' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:35:9: '3D'
             {
             	Match("3D"); 
 
@@ -689,8 +689,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__52;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:36:7: ( 'plot' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:36:9: 'plot'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:36:7: ( 'plot' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:36:9: 'plot'
             {
             	Match("plot"); 
 
@@ -713,8 +713,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__53;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:37:7: ( 'resetPlot' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:37:9: 'resetPlot'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:37:7: ( 'resetPlot' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:37:9: 'resetPlot'
             {
             	Match("resetPlot"); 
 
@@ -737,8 +737,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__54;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:38:7: ( 'setPlotAxis' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:38:9: 'setPlotAxis'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:38:7: ( 'setPlotAxis' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:38:9: 'setPlotAxis'
             {
             	Match("setPlotAxis"); 
 
@@ -761,8 +761,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__55;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:39:7: ( 'setAxisTitle' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:39:9: 'setAxisTitle'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:39:7: ( 'setAxisTitle' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:39:9: 'setAxisTitle'
             {
             	Match("setAxisTitle"); 
 
@@ -785,8 +785,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = T__56;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:40:7: ( 'setScaleMode' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:40:9: 'setScaleMode'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:40:7: ( 'setScaleMode' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:40:9: 'setScaleMode'
             {
             	Match("setScaleMode"); 
 
@@ -809,8 +809,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = END_OF_STATEMENT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:422:17: ( ';' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:422:19: ';'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:431:17: ( ';' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:431:19: ';'
             {
             	Match(';'); 
 
@@ -832,7 +832,7 @@ public class spinachLexer : Lexer {
     		{
             int _type = SCALEMODE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:423:10: ( 'log' | 'linear' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:432:10: ( 'log' | 'linear' )
             int alt1 = 2;
             int LA1_0 = input.LA(1);
 
@@ -866,7 +866,7 @@ public class spinachLexer : Lexer {
             switch (alt1) 
             {
                 case 1 :
-                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:423:12: 'log'
+                    // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:432:12: 'log'
                     {
                     	Match("log"); 
 
@@ -874,7 +874,7 @@ public class spinachLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:423:20: 'linear'
+                    // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:432:20: 'linear'
                     {
                     	Match("linear"); 
 
@@ -899,7 +899,7 @@ public class spinachLexer : Lexer {
     		{
             int _type = VARTYPE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:424:9: ( 'int' | 'double' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:433:9: ( 'int' | 'double' )
             int alt2 = 2;
             int LA2_0 = input.LA(1);
 
@@ -921,7 +921,7 @@ public class spinachLexer : Lexer {
             switch (alt2) 
             {
                 case 1 :
-                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:424:11: 'int'
+                    // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:433:11: 'int'
                     {
                     	Match("int"); 
 
@@ -929,7 +929,7 @@ public class spinachLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:424:19: 'double'
+                    // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:433:19: 'double'
                     {
                     	Match("double"); 
 
@@ -954,8 +954,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = STRINGTYPE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:425:12: ( 'string' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:425:14: 'string'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:434:12: ( 'string' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:434:14: 'string'
             {
             	Match("string"); 
 
@@ -978,8 +978,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = DOT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:426:5: ( '.' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:426:6: '.'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:435:5: ( '.' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:435:6: '.'
             {
             	Match('.'); 
 
@@ -1001,8 +1001,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = ASSIGNMENT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:427:11: ( '=' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:427:13: '='
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:436:11: ( '=' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:436:13: '='
             {
             	Match('='); 
 
@@ -1024,8 +1024,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = PLUS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:428:5: ( '+' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:428:7: '+'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:437:5: ( '+' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:437:7: '+'
             {
             	Match('+'); 
 
@@ -1047,8 +1047,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = MULTIPLY;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:429:9: ( '*' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:429:10: '*'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:438:9: ( '*' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:438:10: '*'
             {
             	Match('*'); 
 
@@ -1070,10 +1070,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = VARIABLE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:9: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:439:9: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:439:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
             {
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:430:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            	// C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:439:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
             	int cnt3 = 0;
             	do 
             	{
@@ -1089,7 +1089,7 @@ public class spinachLexer : Lexer {
             	    switch (alt3) 
             		{
             			case 1 :
-            			    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:
+            			    // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:
             			    {
             			    	if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z') || (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) 
             			    	{
@@ -1116,7 +1116,7 @@ public class spinachLexer : Lexer {
             	} while (true);
 
             	loop3:
-            		;	// Stops C# compiler whining that label 'loop3' has no statements
+            		;	// Stops C# compiler whinging that label 'loop3' has no statements
 
 
             }
@@ -1137,10 +1137,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = INT_LITERAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:12: ( ( '0' .. '9' )+ )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:14: ( '0' .. '9' )+
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:440:12: ( ( '0' .. '9' )+ )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:440:14: ( '0' .. '9' )+
             {
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:14: ( '0' .. '9' )+
+            	// C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:440:14: ( '0' .. '9' )+
             	int cnt4 = 0;
             	do 
             	{
@@ -1156,7 +1156,7 @@ public class spinachLexer : Lexer {
             	    switch (alt4) 
             		{
             			case 1 :
-            			    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:431:15: '0' .. '9'
+            			    // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:440:15: '0' .. '9'
             			    {
             			    	MatchRange('0','9'); 
 
@@ -1173,7 +1173,7 @@ public class spinachLexer : Lexer {
             	} while (true);
 
             	loop4:
-            		;	// Stops C# compiler whining that label 'loop4' has no statements
+            		;	// Stops C# compiler whinging that label 'loop4' has no statements
 
 
             }
@@ -1194,11 +1194,11 @@ public class spinachLexer : Lexer {
     		{
             int _type = DOUBLE_LITERAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:15: ( ( INT_LITERAL DOT INT_LITERAL ) )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:16: ( INT_LITERAL DOT INT_LITERAL )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:441:15: ( ( INT_LITERAL DOT INT_LITERAL ) )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:441:16: ( INT_LITERAL DOT INT_LITERAL )
             {
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:16: ( INT_LITERAL DOT INT_LITERAL )
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:432:17: INT_LITERAL DOT INT_LITERAL
+            	// C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:441:16: ( INT_LITERAL DOT INT_LITERAL )
+            	// C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:441:17: INT_LITERAL DOT INT_LITERAL
             	{
             		mINT_LITERAL(); 
             		mDOT(); 
@@ -1225,10 +1225,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = WHITESPACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:433:12: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:433:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:442:12: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:442:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
             {
-            	// C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:433:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            	// C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:442:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
             	int cnt5 = 0;
             	do 
             	{
@@ -1244,7 +1244,7 @@ public class spinachLexer : Lexer {
             	    switch (alt5) 
             		{
             			case 1 :
-            			    // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:
+            			    // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:
             			    {
             			    	if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n') || input.LA(1) == '\r' || input.LA(1) == ' ' ) 
             			    	{
@@ -1271,7 +1271,7 @@ public class spinachLexer : Lexer {
             	} while (true);
 
             	loop5:
-            		;	// Stops C# compiler whining that label 'loop5' has no statements
+            		;	// Stops C# compiler whinging that label 'loop5' has no statements
 
             	_channel = HIDDEN; 
 
@@ -1293,8 +1293,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LEFTBRACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:434:11: ( '(' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:434:12: '('
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:443:11: ( '(' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:443:12: '('
             {
             	Match('('); 
 
@@ -1316,8 +1316,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = RIGHTBRACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:435:11: ( ')' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:435:12: ')'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:444:11: ( ')' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:444:12: ')'
             {
             	Match(')'); 
 
@@ -1339,8 +1339,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LEFTPARANTHESIS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:436:16: ( '{' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:436:17: '{'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:445:16: ( '{' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:445:17: '{'
             {
             	Match('{'); 
 
@@ -1362,8 +1362,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = RIGHTPARANTHESIS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:437:17: ( '}' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:437:18: '}'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:446:17: ( '}' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:446:18: '}'
             {
             	Match('}'); 
 
@@ -1385,8 +1385,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = POINT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:438:6: ( '->' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:438:8: '->'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:447:6: ( '->' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:447:8: '->'
             {
             	Match("->"); 
 
@@ -1409,8 +1409,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = EQUALITYEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:439:19: ( '==' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:439:21: '=='
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:448:19: ( '==' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:448:21: '=='
             {
             	Match("=="); 
 
@@ -1433,8 +1433,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = NONEQUALITYEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:440:22: ( '!=' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:440:24: '!='
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:449:22: ( '!=' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:449:24: '!='
             {
             	Match("!="); 
 
@@ -1457,8 +1457,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LESSTHANEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:441:20: ( '<' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:441:21: '<'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:450:20: ( '<' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:450:21: '<'
             {
             	Match('<'); 
 
@@ -1480,8 +1480,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LESSTHANEQUALTOEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:442:26: ( '<=' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:442:27: '<='
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:451:26: ( '<=' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:451:27: '<='
             {
             	Match("<="); 
 
@@ -1504,8 +1504,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = GREATERTHANEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:443:23: ( '>' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:443:24: '>'
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:452:23: ( '>' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:452:24: '>'
             {
             	Match('>'); 
 
@@ -1527,8 +1527,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = GREATERTHANEQUALTOEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:444:29: ( '>=' )
-            // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:444:30: '>='
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:453:29: ( '>=' )
+            // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:453:30: '>='
             {
             	Match(">="); 
 
@@ -1546,377 +1546,377 @@ public class spinachLexer : Lexer {
 
     override public void mTokens() // throws RecognitionException 
     {
-        // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:8: ( T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | END_OF_STATEMENT | SCALEMODE | VARTYPE | STRINGTYPE | DOT | ASSIGNMENT | PLUS | MULTIPLY | VARIABLE | INT_LITERAL | DOUBLE_LITERAL | WHITESPACE | LEFTBRACE | RIGHTBRACE | LEFTPARANTHESIS | RIGHTPARANTHESIS | POINT | EQUALITYEXPRESSION | NONEQUALITYEXPRESSION | LESSTHANEXPRESSION | LESSTHANEQUALTOEXPRESSION | GREATERTHANEXPRESSION | GREATERTHANEQUALTOEXPRESSION )
+        // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:8: ( T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | END_OF_STATEMENT | SCALEMODE | VARTYPE | STRINGTYPE | DOT | ASSIGNMENT | PLUS | MULTIPLY | VARIABLE | INT_LITERAL | DOUBLE_LITERAL | WHITESPACE | LEFTBRACE | RIGHTBRACE | LEFTPARANTHESIS | RIGHTPARANTHESIS | POINT | EQUALITYEXPRESSION | NONEQUALITYEXPRESSION | LESSTHANEXPRESSION | LESSTHANEQUALTOEXPRESSION | GREATERTHANEXPRESSION | GREATERTHANEQUALTOEXPRESSION )
         int alt6 = 53;
         alt6 = dfa6.Predict(input);
         switch (alt6) 
         {
             case 1 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:10: T__27
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:10: T__27
                 {
                 	mT__27(); 
 
                 }
                 break;
             case 2 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:16: T__28
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:16: T__28
                 {
                 	mT__28(); 
 
                 }
                 break;
             case 3 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:22: T__29
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:22: T__29
                 {
                 	mT__29(); 
 
                 }
                 break;
             case 4 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:28: T__30
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:28: T__30
                 {
                 	mT__30(); 
 
                 }
                 break;
             case 5 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:34: T__31
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:34: T__31
                 {
                 	mT__31(); 
 
                 }
                 break;
             case 6 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:40: T__32
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:40: T__32
                 {
                 	mT__32(); 
 
                 }
                 break;
             case 7 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:46: T__33
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:46: T__33
                 {
                 	mT__33(); 
 
                 }
                 break;
             case 8 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:52: T__34
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:52: T__34
                 {
                 	mT__34(); 
 
                 }
                 break;
             case 9 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:58: T__35
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:58: T__35
                 {
                 	mT__35(); 
 
                 }
                 break;
             case 10 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:64: T__36
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:64: T__36
                 {
                 	mT__36(); 
 
                 }
                 break;
             case 11 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:70: T__37
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:70: T__37
                 {
                 	mT__37(); 
 
                 }
                 break;
             case 12 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:76: T__38
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:76: T__38
                 {
                 	mT__38(); 
 
                 }
                 break;
             case 13 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:82: T__39
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:82: T__39
                 {
                 	mT__39(); 
 
                 }
                 break;
             case 14 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:88: T__40
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:88: T__40
                 {
                 	mT__40(); 
 
                 }
                 break;
             case 15 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:94: T__41
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:94: T__41
                 {
                 	mT__41(); 
 
                 }
                 break;
             case 16 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:100: T__42
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:100: T__42
                 {
                 	mT__42(); 
 
                 }
                 break;
             case 17 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:106: T__43
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:106: T__43
                 {
                 	mT__43(); 
 
                 }
                 break;
             case 18 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:112: T__44
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:112: T__44
                 {
                 	mT__44(); 
 
                 }
                 break;
             case 19 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:118: T__45
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:118: T__45
                 {
                 	mT__45(); 
 
                 }
                 break;
             case 20 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:124: T__46
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:124: T__46
                 {
                 	mT__46(); 
 
                 }
                 break;
             case 21 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:130: T__47
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:130: T__47
                 {
                 	mT__47(); 
 
                 }
                 break;
             case 22 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:136: T__48
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:136: T__48
                 {
                 	mT__48(); 
 
                 }
                 break;
             case 23 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:142: T__49
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:142: T__49
                 {
                 	mT__49(); 
 
                 }
                 break;
             case 24 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:148: T__50
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:148: T__50
                 {
                 	mT__50(); 
 
                 }
                 break;
             case 25 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:154: T__51
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:154: T__51
                 {
                 	mT__51(); 
 
                 }
                 break;
             case 26 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:160: T__52
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:160: T__52
                 {
                 	mT__52(); 
 
                 }
                 break;
             case 27 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:166: T__53
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:166: T__53
                 {
                 	mT__53(); 
 
                 }
                 break;
             case 28 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:172: T__54
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:172: T__54
                 {
                 	mT__54(); 
 
                 }
                 break;
             case 29 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:178: T__55
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:178: T__55
                 {
                 	mT__55(); 
 
                 }
                 break;
             case 30 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:184: T__56
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:184: T__56
                 {
                 	mT__56(); 
 
                 }
                 break;
             case 31 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:190: END_OF_STATEMENT
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:190: END_OF_STATEMENT
                 {
                 	mEND_OF_STATEMENT(); 
 
                 }
                 break;
             case 32 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:207: SCALEMODE
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:207: SCALEMODE
                 {
                 	mSCALEMODE(); 
 
                 }
                 break;
             case 33 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:217: VARTYPE
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:217: VARTYPE
                 {
                 	mVARTYPE(); 
 
                 }
                 break;
             case 34 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:225: STRINGTYPE
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:225: STRINGTYPE
                 {
                 	mSTRINGTYPE(); 
 
                 }
                 break;
             case 35 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:236: DOT
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:236: DOT
                 {
                 	mDOT(); 
 
                 }
                 break;
             case 36 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:240: ASSIGNMENT
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:240: ASSIGNMENT
                 {
                 	mASSIGNMENT(); 
 
                 }
                 break;
             case 37 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:251: PLUS
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:251: PLUS
                 {
                 	mPLUS(); 
 
                 }
                 break;
             case 38 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:256: MULTIPLY
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:256: MULTIPLY
                 {
                 	mMULTIPLY(); 
 
                 }
                 break;
             case 39 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:265: VARIABLE
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:265: VARIABLE
                 {
                 	mVARIABLE(); 
 
                 }
                 break;
             case 40 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:274: INT_LITERAL
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:274: INT_LITERAL
                 {
                 	mINT_LITERAL(); 
 
                 }
                 break;
             case 41 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:286: DOUBLE_LITERAL
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:286: DOUBLE_LITERAL
                 {
                 	mDOUBLE_LITERAL(); 
 
                 }
                 break;
             case 42 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:301: WHITESPACE
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:301: WHITESPACE
                 {
                 	mWHITESPACE(); 
 
                 }
                 break;
             case 43 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:312: LEFTBRACE
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:312: LEFTBRACE
                 {
                 	mLEFTBRACE(); 
 
                 }
                 break;
             case 44 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:322: RIGHTBRACE
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:322: RIGHTBRACE
                 {
                 	mRIGHTBRACE(); 
 
                 }
                 break;
             case 45 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:333: LEFTPARANTHESIS
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:333: LEFTPARANTHESIS
                 {
                 	mLEFTPARANTHESIS(); 
 
                 }
                 break;
             case 46 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:349: RIGHTPARANTHESIS
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:349: RIGHTPARANTHESIS
                 {
                 	mRIGHTPARANTHESIS(); 
 
                 }
                 break;
             case 47 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:366: POINT
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:366: POINT
                 {
                 	mPOINT(); 
 
                 }
                 break;
             case 48 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:372: EQUALITYEXPRESSION
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:372: EQUALITYEXPRESSION
                 {
                 	mEQUALITYEXPRESSION(); 
 
                 }
                 break;
             case 49 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:391: NONEQUALITYEXPRESSION
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:391: NONEQUALITYEXPRESSION
                 {
                 	mNONEQUALITYEXPRESSION(); 
 
                 }
                 break;
             case 50 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:413: LESSTHANEXPRESSION
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:413: LESSTHANEXPRESSION
                 {
                 	mLESSTHANEXPRESSION(); 
 
                 }
                 break;
             case 51 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:432: LESSTHANEQUALTOEXPRESSION
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:432: LESSTHANEQUALTOEXPRESSION
                 {
                 	mLESSTHANEQUALTOEXPRESSION(); 
 
                 }
                 break;
             case 52 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:458: GREATERTHANEXPRESSION
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:458: GREATERTHANEXPRESSION
                 {
                 	mGREATERTHANEXPRESSION(); 
 
                 }
                 break;
             case 53 :
-                // C:\\Users\\KULDEEP GANDHI\\Desktop\\pinac\\Spinach\\InterpreterFrontEnd\\spinach.g:1:480: GREATERTHANEQUALTOEXPRESSION
+                // C:\\Documents and Settings\\Administrator\\Desktop\\Spinach\\InterpreterFrontEnd\\spinach.g:1:480: GREATERTHANEQUALTOEXPRESSION
                 {
                 	mGREATERTHANEQUALTOEXPRESSION(); 
 

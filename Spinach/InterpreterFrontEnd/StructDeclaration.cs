@@ -9,13 +9,16 @@
 // language: C# .Net 3.5
 ////////////////////////////////////////////////////////////////////////
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 public class StructDeclaration : Element
 {
 
     VariableElement mName;
     List<ScalarVariableDeclaration> mVar=new List<ScalarVariableDeclaration>();
+    Hashtable hash = new Hashtable();
     //StructVariableDeclaration Vartype;
     //String mType;
 
@@ -27,10 +30,21 @@ public class StructDeclaration : Element
     public VariableElement getName() { return mName; }
     public void setName(VariableElement text) { mName = text; }
     public List<ScalarVariableDeclaration> getVarType() { return mVar; }
+    public Hashtable getVar() { return hash; }
     public void setVarType(ScalarVariableDeclaration var) 
     {
    
         mVar.Add(var); 
+    }
+    public void setVar()
+    {
+        if(mVar.Count!=0)
+        {
+            for (int i = 0; i < mVar.Count; i++)
+            {
+                hash[mVar[i].getVar()] = null;
+            }
+        }
     }
     //public VariableElement getVar() { return mVar; }
     //public void setVar(VariableElement var) { mVar = var; }

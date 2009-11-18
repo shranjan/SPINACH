@@ -1,5 +1,0 @@
-C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\SPINACH_DLLS\InterpreterFrontEnd.dll
-C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\SPINACH_DLLS\InterpreterFrontEnd.pdb
-C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\InterpreterFrontEnd\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.dll
-C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\InterpreterFrontEnd\obj\Debug\InterpreterFrontEnd.pdb

@@ -1,1 +1,0 @@
-java -jar antlr-3.1.3.jar spinach.g

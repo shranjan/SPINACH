@@ -58,6 +58,7 @@ public class MatrixVariableDeclaration : Element
     int[,] intMatrix;
     double[,] doubleMatrix;
     String mType;
+    bool errorflag;
 
     public override void Accept(Visitor visitor)
     {
@@ -78,64 +79,123 @@ public class MatrixVariableDeclaration : Element
     {
         mValue.Add(val);
     }
+    public bool getError()
+    {
+        return errorflag;
+    }
     public void setValue()
     {
         try
         {
+            errorflag = false;
             int row = int.Parse(getRow().getText());
             int column = int.Parse(getColumn().getText());
             if (getType() == "int")
             {
-                List<int> list = new List<int>();
-                for (int i = 0; i < mValue.Count; i++)
+                if (mValue.Count != 0)
                 {
-                    IntegerElement int_element = (IntegerElement)mValue[i];
-                    int element = int.Parse(int_element.getText());
-                    list.Add(element);
+                    List<int> list = new List<int>();
+                    for (int i = 0; i < mValue.Count; i++)
+                    {
+                        if (mValue[i] is IntegerElement)
+                        {
+                            IntegerElement int_element = (IntegerElement)mValue[i];
+                            int element = int.Parse(int_element.getText());
+                            list.Add(element);
+                        }
+                        else
+                        {
+                            errorflag = true;
+                            break;
+                        }
+                    }
+                    //mValue.Add(int.Parse(val.getText()));
+                    if (!errorflag)
+                    {
+                        intMatrix = new int[row, column];
+                        int count = 0;
+                        if ((row * column) == list.Count)
+                        {
+                            for (int i = 0; i < row; i++)
+                            {
+                                for (int j = 0; j < column; j++)
+                                {
+                                    intMatrix[i, j] = list[count];
+                                    count++;
+                                }
+                            }
+                        }
+                    }
+                   // return false;
                 }
-                //mValue.Add(int.Parse(val.getText()));
-                intMatrix = new int[row, column];
-                int count = 0;
-                if ((row * column) == list.Count)
+                else
                 {
+                    intMatrix = new int[row, column];
                     for (int i = 0; i < row; i++)
                     {
                         for (int j = 0; j < column; j++)
                         {
-                            intMatrix[i, j] = list[count];
-                            count++;
+                            intMatrix[i, j] = 0;
                         }
                     }
+                   // return false;
                 }
             }
             else if (getType() == "double")
             {
-                List<double> list = new List<double>();
-                for (int i = 0; i < mValue.Count; i++)
+                if (mValue.Count != 0)
                 {
-                    DoubleElement double_element = (DoubleElement)mValue[i];
-                    double element = double.Parse(double_element.getText());
-                    list.Add(element);
+                    List<double> list = new List<double>();
+                    for (int i = 0; i < mValue.Count; i++)
+                    {
+                        if (mValue[i] is DoubleElement)
+                        {
+                            DoubleElement double_element = (DoubleElement)mValue[i];
+                            double element = double.Parse(double_element.getText());
+                            list.Add(element);
+                        }
+                        else
+                        {
+                            errorflag = true;
+                            break;
+                        }
+                    }
+                    //mValue.Add(int.Parse(val.getText()));
+                    if (!errorflag)
+                    {
+                        doubleMatrix = new double[row, column];
+                        int count = 0;
+                        if ((row * column) == list.Count)
+                        {
+                            for (int i = 0; i < row; i++)
+                            {
+                                for (int j = 0; j < column; j++)
+                                {
+                                    doubleMatrix[i, j] = list[count];
+                                    count++;
+                                }
+                            }
+                        }
+                    }
                 }
-                //mValue.Add(int.Parse(val.getText()));
-                doubleMatrix = new double[row, column];
-                int count = 0;
-                if ((row * column) == list.Count)
+                else
                 {
+                    doubleMatrix = new double[row, column];
                     for (int i = 0; i < row; i++)
                     {
                         for (int j = 0; j < column; j++)
                         {
-                            doubleMatrix[i, j] = list[count];
-                            count++;
+                            doubleMatrix[i, j] = 0;
                         }
                     }
                 }
             }
+           // return false;
         }
         catch (Exception e)
         {
             string s = e.Message;
+            errorflag =true;
         }
     }
     public void setintValueat(int r, int c,int value)

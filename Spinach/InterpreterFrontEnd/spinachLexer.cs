@@ -1,4 +1,4 @@
-// $ANTLR 3.1.3 Mar 18, 2009 10:09:25 spinach.g 2009-11-09 22:39:59
+// $ANTLR 3.1.3 Mar 18, 2009 10:09:25 spinach.g 2009-11-17 16:54:25
 
 
 using System.Collections.Generic;
@@ -809,8 +809,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = END_OF_STATEMENT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:422:17: ( ';' )
-            // spinach.g:422:19: ';'
+            // spinach.g:431:17: ( ';' )
+            // spinach.g:431:19: ';'
             {
             	Match(';'); 
 
@@ -832,7 +832,7 @@ public class spinachLexer : Lexer {
     		{
             int _type = SCALEMODE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:423:10: ( 'log' | 'linear' )
+            // spinach.g:432:10: ( 'log' | 'linear' )
             int alt1 = 2;
             int LA1_0 = input.LA(1);
 
@@ -866,7 +866,7 @@ public class spinachLexer : Lexer {
             switch (alt1) 
             {
                 case 1 :
-                    // spinach.g:423:12: 'log'
+                    // spinach.g:432:12: 'log'
                     {
                     	Match("log"); 
 
@@ -874,7 +874,7 @@ public class spinachLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // spinach.g:423:20: 'linear'
+                    // spinach.g:432:20: 'linear'
                     {
                     	Match("linear"); 
 
@@ -899,7 +899,7 @@ public class spinachLexer : Lexer {
     		{
             int _type = VARTYPE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:424:9: ( 'int' | 'double' )
+            // spinach.g:433:9: ( 'int' | 'double' )
             int alt2 = 2;
             int LA2_0 = input.LA(1);
 
@@ -921,7 +921,7 @@ public class spinachLexer : Lexer {
             switch (alt2) 
             {
                 case 1 :
-                    // spinach.g:424:11: 'int'
+                    // spinach.g:433:11: 'int'
                     {
                     	Match("int"); 
 
@@ -929,7 +929,7 @@ public class spinachLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // spinach.g:424:19: 'double'
+                    // spinach.g:433:19: 'double'
                     {
                     	Match("double"); 
 
@@ -954,8 +954,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = STRINGTYPE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:425:12: ( 'string' )
-            // spinach.g:425:14: 'string'
+            // spinach.g:434:12: ( 'string' )
+            // spinach.g:434:14: 'string'
             {
             	Match("string"); 
 
@@ -978,8 +978,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = DOT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:426:5: ( '.' )
-            // spinach.g:426:6: '.'
+            // spinach.g:435:5: ( '.' )
+            // spinach.g:435:6: '.'
             {
             	Match('.'); 
 
@@ -1001,8 +1001,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = ASSIGNMENT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:427:11: ( '=' )
-            // spinach.g:427:13: '='
+            // spinach.g:436:11: ( '=' )
+            // spinach.g:436:13: '='
             {
             	Match('='); 
 
@@ -1024,8 +1024,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = PLUS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:428:5: ( '+' )
-            // spinach.g:428:7: '+'
+            // spinach.g:437:5: ( '+' )
+            // spinach.g:437:7: '+'
             {
             	Match('+'); 
 
@@ -1047,8 +1047,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = MULTIPLY;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:429:9: ( '*' )
-            // spinach.g:429:10: '*'
+            // spinach.g:438:9: ( '*' )
+            // spinach.g:438:10: '*'
             {
             	Match('*'); 
 
@@ -1070,10 +1070,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = VARIABLE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:430:9: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
-            // spinach.g:430:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            // spinach.g:439:9: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
+            // spinach.g:439:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
             {
-            	// spinach.g:430:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
+            	// spinach.g:439:11: ( 'a' .. 'z' | 'A' .. 'Z' )+
             	int cnt3 = 0;
             	do 
             	{
@@ -1137,10 +1137,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = INT_LITERAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:431:12: ( ( '0' .. '9' )+ )
-            // spinach.g:431:14: ( '0' .. '9' )+
+            // spinach.g:440:12: ( ( '0' .. '9' )+ )
+            // spinach.g:440:14: ( '0' .. '9' )+
             {
-            	// spinach.g:431:14: ( '0' .. '9' )+
+            	// spinach.g:440:14: ( '0' .. '9' )+
             	int cnt4 = 0;
             	do 
             	{
@@ -1156,7 +1156,7 @@ public class spinachLexer : Lexer {
             	    switch (alt4) 
             		{
             			case 1 :
-            			    // spinach.g:431:15: '0' .. '9'
+            			    // spinach.g:440:15: '0' .. '9'
             			    {
             			    	MatchRange('0','9'); 
 
@@ -1194,11 +1194,11 @@ public class spinachLexer : Lexer {
     		{
             int _type = DOUBLE_LITERAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:432:15: ( ( INT_LITERAL DOT INT_LITERAL ) )
-            // spinach.g:432:16: ( INT_LITERAL DOT INT_LITERAL )
+            // spinach.g:441:15: ( ( INT_LITERAL DOT INT_LITERAL ) )
+            // spinach.g:441:16: ( INT_LITERAL DOT INT_LITERAL )
             {
-            	// spinach.g:432:16: ( INT_LITERAL DOT INT_LITERAL )
-            	// spinach.g:432:17: INT_LITERAL DOT INT_LITERAL
+            	// spinach.g:441:16: ( INT_LITERAL DOT INT_LITERAL )
+            	// spinach.g:441:17: INT_LITERAL DOT INT_LITERAL
             	{
             		mINT_LITERAL(); 
             		mDOT(); 
@@ -1225,10 +1225,10 @@ public class spinachLexer : Lexer {
     		{
             int _type = WHITESPACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:433:12: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
-            // spinach.g:433:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // spinach.g:442:12: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+            // spinach.g:442:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
             {
-            	// spinach.g:433:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            	// spinach.g:442:14: ( ' ' | '\\t' | '\\n' | '\\r' )+
             	int cnt5 = 0;
             	do 
             	{
@@ -1293,8 +1293,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LEFTBRACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:434:11: ( '(' )
-            // spinach.g:434:12: '('
+            // spinach.g:443:11: ( '(' )
+            // spinach.g:443:12: '('
             {
             	Match('('); 
 
@@ -1316,8 +1316,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = RIGHTBRACE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:435:11: ( ')' )
-            // spinach.g:435:12: ')'
+            // spinach.g:444:11: ( ')' )
+            // spinach.g:444:12: ')'
             {
             	Match(')'); 
 
@@ -1339,8 +1339,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LEFTPARANTHESIS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:436:16: ( '{' )
-            // spinach.g:436:17: '{'
+            // spinach.g:445:16: ( '{' )
+            // spinach.g:445:17: '{'
             {
             	Match('{'); 
 
@@ -1362,8 +1362,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = RIGHTPARANTHESIS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:437:17: ( '}' )
-            // spinach.g:437:18: '}'
+            // spinach.g:446:17: ( '}' )
+            // spinach.g:446:18: '}'
             {
             	Match('}'); 
 
@@ -1385,8 +1385,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = POINT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:438:6: ( '->' )
-            // spinach.g:438:8: '->'
+            // spinach.g:447:6: ( '->' )
+            // spinach.g:447:8: '->'
             {
             	Match("->"); 
 
@@ -1409,8 +1409,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = EQUALITYEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:439:19: ( '==' )
-            // spinach.g:439:21: '=='
+            // spinach.g:448:19: ( '==' )
+            // spinach.g:448:21: '=='
             {
             	Match("=="); 
 
@@ -1433,8 +1433,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = NONEQUALITYEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:440:22: ( '!=' )
-            // spinach.g:440:24: '!='
+            // spinach.g:449:22: ( '!=' )
+            // spinach.g:449:24: '!='
             {
             	Match("!="); 
 
@@ -1457,8 +1457,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LESSTHANEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:441:20: ( '<' )
-            // spinach.g:441:21: '<'
+            // spinach.g:450:20: ( '<' )
+            // spinach.g:450:21: '<'
             {
             	Match('<'); 
 
@@ -1480,8 +1480,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = LESSTHANEQUALTOEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:442:26: ( '<=' )
-            // spinach.g:442:27: '<='
+            // spinach.g:451:26: ( '<=' )
+            // spinach.g:451:27: '<='
             {
             	Match("<="); 
 
@@ -1504,8 +1504,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = GREATERTHANEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:443:23: ( '>' )
-            // spinach.g:443:24: '>'
+            // spinach.g:452:23: ( '>' )
+            // spinach.g:452:24: '>'
             {
             	Match('>'); 
 
@@ -1527,8 +1527,8 @@ public class spinachLexer : Lexer {
     		{
             int _type = GREATERTHANEQUALTOEXPRESSION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // spinach.g:444:29: ( '>=' )
-            // spinach.g:444:30: '>='
+            // spinach.g:453:29: ( '>=' )
+            // spinach.g:453:30: '>='
             {
             	Match(">="); 
 

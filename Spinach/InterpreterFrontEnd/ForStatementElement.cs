@@ -142,27 +142,19 @@ public class ForStatementElement : Element
         {
             if (CodeList[i] is MatrixVariableDeclaration)
             {
-                MatrixVariableDeclaration mat_elem = (MatrixVariableDeclaration)CodeList[i];
                 IsParallel = false;
             }
-            if (CodeList[i] is PlotFunctionElement)
+            else if (CodeList[i] is PlotFunctionElement)
             {
-                PlotFunctionElement plot_elem = (PlotFunctionElement)CodeList[i];
                 IsParallel = false;
             }
-            if (CodeList[i] is DeleteVariable)
+            else if (CodeList[i] is FunctionCallElement)
             {
-                DeleteVariable delete_elem = (DeleteVariable)CodeList[i];
                 IsParallel = false;
             }
-            if (CodeList[i] is PrintOperationElement)
+            else if (CodeList[i] is VectorVariableDeclaration)
             {
-                PrintOperationElement print_elem = (PrintOperationElement)CodeList[i];
                 IsParallel = false;
-            }
-            if (CodeList[i] is FunctionCallElement)
-            {
-                FunctionCallElement func_elem = (FunctionCallElement)CodeList[i];
             }
         }
     }

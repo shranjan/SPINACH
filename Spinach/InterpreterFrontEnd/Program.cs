@@ -75,7 +75,7 @@ namespace Spinach
         {
             return exLine;
         }
-        public Program(CommonTokenStream str, String coreObject)
+        public Program(CommonTokenStream str)
             : base(str)
         {
             strBuilder = new StringBuilder();
@@ -87,7 +87,7 @@ namespace Spinach
             ANTLRStringStream string_stream = new ANTLRStringStream(line);
             spinachLexer lexer = new spinachLexer(string_stream);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
-            spinachParser parser = new Program(tokens, "");
+            spinachParser parser = new Program(tokens);
             try
             {
                 spinachParser.program_return program = parser.program(); //h= (l+j)*h*l+l-h;
@@ -127,6 +127,12 @@ namespace Spinach
                     VisitLine(line);
             }
         }
+        public List<string> getKeywords()
+        {
+            Keywords obj = new Keywords();
+            return obj.getkeywords();
+        }
+
     }
 
 
@@ -144,7 +150,7 @@ namespace Spinach
         {
             CommonTokenStream str = new CommonTokenStream();
             //We need the syntax for the core object
-            Program myprog = new Program(str, "");
+            Program myprog = new Program(str);
             myprog.error += new Program.errorreport(Onerror);
             myprog.AstEvent += new Program.AstReport(Onoutput);
             myprog.VisitLine(args);

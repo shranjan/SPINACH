@@ -147,54 +147,54 @@ public class IfStatementElement : Element
         {
             if (IfCode[i] is MatrixVariableDeclaration)
             {
-                MatrixVariableDeclaration mat_elem = (MatrixVariableDeclaration)IfCode[i];
                 IsParallel = false;
             }
-            if (IfCode[i] is PlotFunctionElement)
+            else if (IfCode[i] is PlotFunctionElement)
             {
-                PlotFunctionElement plot_elem = (PlotFunctionElement)IfCode[i];
                 IsParallel = false;
             }
-            if (IfCode[i] is DeleteVariable)
+            else if (IfCode[i] is PrintOperationElement)
             {
-                DeleteVariable delete_elem = (DeleteVariable)IfCode[i];
                 IsParallel = false;
             }
-            if (IfCode[i] is PrintOperationElement)
+            else if (IfCode[i] is FunctionCallElement)
             {
-                PrintOperationElement print_elem = (PrintOperationElement)IfCode[i];
                 IsParallel = false;
             }
-            if (IfCode[i] is FunctionCallElement)
+            else if (IfCode[i] is ReturnElement)
             {
-                FunctionCallElement func_elem = (FunctionCallElement)IfCode[i];
+                IsParallel = false;
+            }
+            else if (IfCode[i] is VectorVariableDeclaration)
+            {
+                IsParallel = false;
             }
         }
         for (int i = 0; i < ElseCode.Count; i++)
         {
             if (ElseCode[i] is MatrixVariableDeclaration)
             {
-                MatrixVariableDeclaration mat_elem = (MatrixVariableDeclaration)ElseCode[i];
                 IsParallel = false;
             }
-            if (ElseCode[i] is PlotFunctionElement)
+            else if (ElseCode[i] is PlotFunctionElement)
             {
-                PlotFunctionElement plot_elem = (PlotFunctionElement)ElseCode[i];
                 IsParallel = false;
             }
-            if (ElseCode[i] is DeleteVariable)
+            else if (ElseCode[i] is PrintOperationElement)
             {
-                DeleteVariable delete_elem = (DeleteVariable)ElseCode[i];
                 IsParallel = false;
             }
-            if (ElseCode[i] is PrintOperationElement)
+            else if (ElseCode[i] is FunctionCallElement)
             {
-                PrintOperationElement print_elem = (PrintOperationElement)ElseCode[i];
                 IsParallel = false;
             }
-            if (ElseCode[i] is FunctionCallElement)
+            else if (ElseCode[i] is ReturnElement)
             {
-                FunctionCallElement func_elem = (FunctionCallElement)ElseCode[i];
+                IsParallel = false;
+            }
+            else if (ElseCode[i] is VectorVariableDeclaration)
+            {
+                IsParallel = false;
             }
         }
     }

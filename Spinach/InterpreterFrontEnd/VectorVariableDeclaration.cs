@@ -20,6 +20,7 @@ public class VectorVariableDeclaration : Element
     List<Element> mValue=new List<Element>();
     List<int> intlist;
     List<double> doublelist;
+    bool errorflag;
     //IntegerElement Column;
 
     public override void Accept(Visitor visitor)
@@ -49,30 +50,55 @@ public class VectorVariableDeclaration : Element
     {
         try
         {
+            errorflag = false;
             if (getType() == "int")
             {
                 intlist = new List<int>();
-                if (int.Parse(getRange().getText()) == mValue.Count)
+                if (mValue.Count != 0)
                 {
-                    for (int i = 0; i < mValue.Count; i++)
+                    if (int.Parse(getRange().getText()) == mValue.Count)
                     {
-                        IntegerElement int_element = (IntegerElement)mValue[i];
-                        int element = int.Parse(int_element.getText());
-                        intlist.Add(element);
+                        for (int i = 0; i < mValue.Count; i++)
+                        {
+                            if (mValue[i] is IntegerElement)
+                            {
+                                IntegerElement int_element = (IntegerElement)mValue[i];
+                                int element = int.Parse(int_element.getText());
+                                intlist.Add(element);
+                            }
+                            else
+                            {
+                                errorflag = true;
+                                intlist.Clear();
+                                break;
+                            }
 
+                        }
                     }
                 }
             }
             else if (getType() == "double")
             {
                 doublelist = new List<double>();
-                if (int.Parse(getRange().getText()) == mValue.Count)
+                if (mValue.Count != 0)
                 {
-                    for (int i = 0; i < mValue.Count; i++)
+                    if (int.Parse(getRange().getText()) == mValue.Count)
                     {
-                        DoubleElement int_element = (DoubleElement)mValue[i];
-                        double element = double.Parse(int_element.getText());
-                        doublelist.Add(element);
+                        for (int i = 0; i < mValue.Count; i++)
+                        {
+                            if (mValue[i] is DoubleElement)
+                            {
+                                DoubleElement int_element = (DoubleElement)mValue[i];
+                                double element = double.Parse(int_element.getText());
+                                doublelist.Add(element);
+                            }
+                            else
+                            {
+                                errorflag = true;
+                                doublelist.Clear();
+                                break;
+                            }
+                        }
                     }
                 }
             }
@@ -80,6 +106,7 @@ public class VectorVariableDeclaration : Element
         catch (Exception e)
         {
             string s = e.Message;
+            errorflag = true;
         }
     }
     public void setintValueat(int loc, int value)
@@ -107,7 +134,7 @@ public class VectorVariableDeclaration : Element
             intlist = new List<int>();
             for (int i = 0; i < range; i++)
             {
-                intlist.Add(i);
+                intlist.Add(vector[i]);
             }
             return true;
         }
@@ -125,7 +152,7 @@ public class VectorVariableDeclaration : Element
             doublelist = new List<double>();
             for (int i = 0; i < range; i++)
             {
-                doublelist.Add(i);
+                doublelist.Add(vector[i]);
             }
             return true;
         }
