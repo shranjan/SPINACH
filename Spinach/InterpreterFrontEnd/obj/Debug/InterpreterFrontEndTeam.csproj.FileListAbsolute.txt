@@ -1,6 +1,0 @@
-C:\Documents and Settings\ssunda04\Integration\pinac\interp_frontend\src\FrontEndTeamIntegration1\ConsoleApplication1\bin\Debug\Antlr3.Runtime.xml
-C:\Documents and Settings\ssunda04\Integration\pinac\interp_frontend\src\FrontEndTeamIntegration1\ConsoleApplication1\bin\Debug\InterpreterFrontEndTeam.pdb
-C:\Documents and Settings\ssunda04\Integration\pinac\interp_frontend\src\FrontEndTeamIntegration1\ConsoleApplication1\obj\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\ssunda04\Integration\pinac\interp_frontend\src\FrontEndTeamIntegration1\ConsoleApplication1\obj\Debug\InterpreterFrontEndTeam.pdb
-C:\Documents and Settings\ssunda04\Integration\pinac\interp_frontend\src\FrontEndTeamIntegration1\ConsoleApplication1\bin\Debug\InterpreterFrontEndTeam.exe
-C:\Documents and Settings\ssunda04\Integration\pinac\interp_frontend\src\FrontEndTeamIntegration1\ConsoleApplication1\obj\Debug\InterpreterFrontEndTeam.exe
