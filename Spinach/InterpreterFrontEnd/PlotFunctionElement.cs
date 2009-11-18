@@ -5,6 +5,11 @@
 // author: Kuldeep Gandhi (kpgandhi@syr.edu)
 // language: C# .Net 3.5
 ////////////////////////////////////////////////////////////////////////
+// Version:
+// Versino 1.2 : Made changes for subPlot function: kg
+
+
+
 /********************************************************************
  * Public Interface:
     public override void Accept(Visitor visitor)
@@ -14,9 +19,6 @@
 
     public void setRow(IntegerElement a)
     public IntegerElement getRow()
-
-    public void setColumn(IntegerElement a)
-    public IntegerElement getColumn()
     
     public void setData(VariableElement var)
     public VariableElement getData()
@@ -66,7 +68,7 @@ public class PlotFunctionElement : Element
 
     private string functionName;
     private IntegerElement row;
-    private IntegerElement col;
+    
     private VariableElement varData;
     private IntegerElement mode;
     private string type;
@@ -96,15 +98,12 @@ public class PlotFunctionElement : Element
 
 
 
-    public void setRow(IntegerElement a)
+    public void setPeno(IntegerElement a)
     { row = a; }
-    public IntegerElement getRow()
+    public IntegerElement getPeno()
     { return row; }
 
-    public void setColumn(IntegerElement a)
-    { col = a; }
-    public IntegerElement getColumn()
-    { return col; }
+   
 
 
     public void setData(VariableElement var)

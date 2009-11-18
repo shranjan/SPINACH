@@ -35,8 +35,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
+using System.Net.Sockets;
 
-namespace UserInterface
+namespace Spinach
 {
   /// <summary>
   /// Interaction logic for Connection.xaml
@@ -45,6 +46,7 @@ namespace UserInterface
   public partial class Connection : Window
   {
     private ErrorModule Err = new ErrorModule();
+    //private SwarmConnection SC = new SwarmConnection();
     private List<string> userList = new List<string>();
 
     //----< Connection Ctor >----
@@ -67,10 +69,16 @@ namespace UserInterface
     private string GetIP()
     {
       string strHostName = "";
+      string ipAddr = "";
       strHostName = System.Net.Dns.GetHostName();
       IPHostEntry ipEntry = System.Net.Dns.GetHostEntry(strHostName);
-      IPAddress[] addr = ipEntry.AddressList;
-      return addr[addr.Length-1].ToString();
+      //IPAddress[] addr = ipEntry.AddressList;
+      foreach (IPAddress ip in ipEntry.AddressList)
+      {
+          if (ip.AddressFamily.ToString() == ProtocolFamily.InterNetwork.ToString())
+              ipAddr = ip.ToString();
+      }
+      return ipAddr;
     }
 
     //----< Join Swarm Radio Button Checked Event >----
@@ -101,10 +109,11 @@ namespace UserInterface
     //----< Connect Button Click Event >----
     private void btnConnect_Click(object sender, RoutedEventArgs e)
     {
-        if (txtUsername.Text == "" || txtUsername.Text == " ")
+      bool conn = false;
+      if (txtUsername.Text.Trim() == "")
       {
-        MessageBox.Show("Please enter the Username", "Username", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-        txtUsername.Focus();
+          MessageBox.Show("Please enter the Username", "Username", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+          txtUsername.Focus();
       }
       else if ((rdbCreateSwarm.IsChecked == false) && (rdbJoinSwarm.IsChecked == false))
       {
@@ -114,30 +123,39 @@ namespace UserInterface
       else
       {
           //Connect to the Swarm
-          //userList = SwarmConnect(selfip, selfport, username, peerip, peerport);
-          //userList = SwarmConnect1(selfip, selfport, username);
-
-          //for prototype only
           if (rdbJoinSwarm.IsChecked == true)
           {
-              userList.Add("Prateek : 129.234.234.0 : 8080");
-              userList.Add("Abhay : 129.234.908.0 : 4040");
-              userList.Add("Arun : 129.432.543.0 : 3030");
-              userList.Add("Rutu : 129.324.355.0 : 2020");
+//              userList.Add("Prateek : 129.234.234.0 : 8080");
+//              userList.Add("Abhay : 129.234.908.0 : 4040");
+//              userList.Add("Arun : 129.432.543.0 : 3030");
+//              userList.Add("Rutu : 129.324.355.0 : 2020");
               //make sure whether the user has entered the peer ip and port
-              //i am making this as a function so that it can be used later
-              if (txtPeerIP.Text == "" || txtPeerPort.Text == "")
+              if (txtPeerIP.Text.Trim() == "" || txtPeerPort.Text.Trim() == "")
               {
                   MessageBox.Show("Please enter valid Peer IP/Port", "Peer IP/Port", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                   return;
               }
+              else
+              {
+                  //userList = SC.JoinSwarm(txtSelfIP.Text.Trim(), txtPort.Text.Trim(), txtUsername.Text.Trim(), txtPeerIP.Text.Trim(), txtPeerPort.Text.Trim());
+                  conn = true;
+              }
           }
-          //prototype ends
-          ProgConf winProgConf = new ProgConf();
-          winProgConf.setUserList(userList);
-          winProgConf.setUsername(txtUsername.Text);
-          winProgConf.Show();
-          this.Close();
+          else if (rdbCreateSwarm.IsChecked == true)
+          {
+              //SC.CreateSwarm(txtSelfIP.Text.Trim(), txtPort.Text.Trim(), txtUsername.Text.Trim());
+              conn = true;
+          }
+          //SWARM MUST TELL ME IF THE CONNECTION WAS SUCCESSFUL OR NOT
+          //Go to the next Window
+          if (conn == true)
+          {
+              ProgConf winProgConf = new ProgConf(/*SC*/);
+              winProgConf.setUserList(userList);
+              winProgConf.setDetails(txtSelfIP.Text.Trim(), txtPort.Text.Trim(), txtUsername.Text.Trim());
+              winProgConf.Show();
+              this.Close();
+          }
       }
     }
   }

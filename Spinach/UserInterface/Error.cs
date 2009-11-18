@@ -19,7 +19,7 @@ using System;
 using System.Collections.Generic;
 using Spinach;
 
-namespace UserInterface
+namespace Spinach
 {
     /// <summary>
     /// 
@@ -27,19 +27,28 @@ namespace UserInterface
     public delegate void ErrorNotification(string Msg);
     public class ErrorModule
     {
-        //FEO fo;
         public event ErrorNotification ConnError;
         public event ErrorNotification ProgConfError;
         public event ErrorNotification ProgWinError;
-        private exec FE;
+        
+        private executor Ex;
+        private PlotReceiver plot;
 
         private Dictionary<int, string> ErrorDict = new Dictionary<int, string>();
 
         //----< Create the Dictionary of Errors >----
         public ErrorModule()
         {
+            // FrontEnd Error Messages
             ErrorDict.Add(101, "Syntax Error: ");
             ErrorDict.Add(102, "Exception: ");
+            // CoreTeam Error Messages
+            ErrorDict.Add(112, "Semantic Error: ");
+            // PlotTeam Error Messages
+            ErrorDict.Add(121, "Plotting Error: ");
+            ErrorDict.Add(122, "Plotting Error: ");
+            ErrorDict.Add(123, "Plotting Error: ");
+
         }
 
         //----< Sends Error Message to appropriate window >----
@@ -54,10 +63,17 @@ namespace UserInterface
               ProgWinError(ErrMsg);
         }
 
-        public void SetFrontEndObject(exec fe)
+        public void SetExecutorObject(executor E)
         {
-            FE = fe;
-            FE.error_ += new exec.errorreport(ErrorMsg);
+            Ex = E;
+            Ex.errEvent +=new executor.err(ErrorMsg);
         }
+
+        public void SetPlotObject(PlotReceiver p)
+        {
+            plot = p;
+            plot.error +=new PlotReceiver.PlotError(ErrorMsg);
+        }
+        
     }
 }

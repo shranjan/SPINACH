@@ -1,0 +1,35 @@
+// Sample program (Incorrect) for checking plot commands:--
+
+// Author: Chetan Thawani
+
+double[] plist = { 10,3,5,10,2 };   // this is the list of datasets for plotting points on a 2D plane. the index of these points is taken on x-axis and these points are taken on y-axis.
+
+double[] plist1 = { 1,3,-5,10,2 };  // similar data structure as plist.
+
+double[] plist2 = { }; // empty dataset.
+
+plot(plist2,"qw",'2D'); // should not work as the plist2 dataset is empty or it should not plot anything on the panel. 
+
+plot(plist,"abc",'2D');  // checking if the plot function works by taking arguments plist as a 2D dataset, abc as the title of the plot and 2D as the type of the plot.
+
+plot(plist1,"xyz"); // should not work because the type of the plot is not defined in the argument.
+
+subplot(2,plist,"a",'2D'); // checking if the subplot function works by taking arguments 2 as the pane number, plist as the dataset, a as the title of the subplot and 2D as the type of the subplot.
+
+subplot(4,plist1,"x"); // should not work because the type of the plot is not defined in the argument.
+
+resetplot(); // function to reset the plot drawn on the panel (canvas).
+
+subplot(plist,"y",'2D'); // should not work as subplot function needs pane number as an argument which is not defined. 
+
+setplotaxis(2.5,1.5); // checking the setplotaxis function which takes x-factor and y-factor as an argument. x-factor and y-factor is the amount by which the plot resizes itself either by shrinking or expanding depending on the space left on the canvas.
+
+setplotaxis(); // should not work as setplotaxis function takes some axis factor as an argument which is not defined. 
+
+setaxistitle("xyz","abc"); // checking the setaxistitle function which takes the x-axis title name and y-axis title name as arguments.
+
+setscalemode(linear); // checking the setscalemode function which takes either linear or log as an argument. if it is linear, then the plot would be straight in shape and if it is logarithmic, then it would be curved in shape.
+
+setscalemode(); // should not work as this function takes some mode as an argument either linear or log. 
+
+// inputs for 3D plots are not decided till yet.  

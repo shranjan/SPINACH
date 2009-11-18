@@ -1,0 +1,49 @@
+vector<A>[5]=[1,1,1,1,1];
+vector<B>[5]=[10,10,10,10,10];
+
+//checks basic parallel-for with assignments
+parallelfor(x->0to5)
+{B[x]=A[x];A[x]=A[x]+100;}
+
+//printing values after parallel-for
+for(x->0to4){print A[x];}
+
+for(x->0to4){print B[x];}
+
+//parallel-for using SYNC statement
+parallelfor(x->0to3)
+{
+B[x]=500+x;
+SYNC;
+A[x]=B[x+1]+100;
+}
+
+//printing values to verify parallel-for with SYNC
+for(x->0to4){print A[x];}
+
+
+for(x->0to4){print A[x];}
+
+
+Matrix<int>[3][3]M=[1,2,3,4,5,6,7,8,9];
+
+//for inside parallel-for
+parallelfor(i->0to2)
+{
+for(j->0to2)
+{
+M[i][j]=i+j;
+}
+}
+
+for(i->0to3){for(j->0to3){print M[i][j];}}
+
+
+//ifelse inside parallel-for
+parallelfor(i->0to4)
+{
+	if(A[i]==B[i])
+	{A[i]=100;}
+	else
+	{A[i]=B[i];}
+}

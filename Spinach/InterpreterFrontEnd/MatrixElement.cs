@@ -39,8 +39,8 @@ public class MatrixElement : Element
 {
 
     VariableElement mVar;
-    IntegerElement mRow;
-    IntegerElement mColumn;
+    Element mRow;
+    Element mColumn;
 
     public override void Accept(Visitor visitor)
     {
@@ -51,11 +51,11 @@ public class MatrixElement : Element
     public VariableElement getVar() { return mVar; }
     public void setVar(VariableElement var) { mVar = var; }
     //get and set the row of the matrix
-    public IntegerElement getRow() { return mRow; }
-    public void setRow(IntegerElement row) { mRow = row; }
+    public Element getRow() { return mRow; }
+    public void setRow(Element row) { mRow = row; }
     //get and set the column of the matrix
-    public IntegerElement getColumn() { return mColumn; }
-    public void setColumn(IntegerElement column) { mColumn = column; }
+    public Element getColumn() { return mColumn; }
+    public void setColumn(Element column) { mColumn = column; }
 
 #if(Test_MatrixElement)
 

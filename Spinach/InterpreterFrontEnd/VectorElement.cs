@@ -13,7 +13,7 @@ public class VectorElement : Element
 {
 
     VariableElement mVar;
-    IntegerElement mRange;
+    Element mRange;
 
     public override void Accept(Visitor visitor)
     {
@@ -22,8 +22,8 @@ public class VectorElement : Element
 
     public VariableElement getVar() { return mVar; }
     public void setVar(VariableElement var) { mVar = var; }
-    public IntegerElement getRange() { return mRange; }
-    public void setRange(IntegerElement range) { mRange = range; }
+    public Element getRange() { return mRange; }
+    public void setRange(Element range) { mRange = range; }
     
 }
 

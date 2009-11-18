@@ -37,14 +37,32 @@ using System.Collections;
 public class IfStatementElement : Element
 {
     //if condition element
-    Element Condition;
+    private String Condition;
+
+    //Lhs element.
+    private Element mLhs;
+
+    //Rhs element.
+    private Element mRhs;
 
     //List that contains If body
-    List<Element> IfCode;
+    private List<Element> IfCode;
 
     //List that contains else Body
-    List<Element> ElseCode;
+    private List<Element> ElseCode;
 
+    //Boolean to check if its parallelizable
+    bool IsParallelizable;
+
+
+
+    //Constructor
+    public IfStatementElement()
+    {
+        IfCode = new List<Element>();
+        ElseCode = new List<Element>();
+        IsParallelizable = true;
+    }
 
     public override void Accept(Visitor visitor)
     {
@@ -52,7 +70,7 @@ public class IfStatementElement : Element
     }
 
     //sets and gets the condition for if else.
-    public Element CONDITION
+    public string OP
     {
         get
         {
@@ -62,6 +80,26 @@ public class IfStatementElement : Element
         {
             Condition = value;
         }
+    }
+
+    //Set and get Lhs
+    public Element getLhs()
+    {
+        return mLhs;
+    }
+    public void setLhs(Element elem)
+    {
+        mLhs = elem;
+    }
+
+    //Set and get Rhs
+    public Element getRhs()
+    {
+        return mRhs;
+    }
+    public void setRhs(Element elem)
+    {
+        mRhs = elem;
     }
 
     //Sets and gets the if body.
@@ -90,6 +128,76 @@ public class IfStatementElement : Element
         }
     }
 
+    //set and get the isParallelizable boolean
+    public bool IsParallel
+    {
+        get
+        {
+            return IsParallelizable;
+        }
+        set
+        {
+            IsParallelizable = value;
+        }
+    }
+
+    public void ChkforParallel()
+    {
+        for (int i = 0; i < IfCode.Count; i++)
+        {
+            if (IfCode[i] is MatrixVariableDeclaration)
+            {
+                MatrixVariableDeclaration mat_elem = (MatrixVariableDeclaration)IfCode[i];
+                IsParallel = false;
+            }
+            if (IfCode[i] is PlotFunctionElement)
+            {
+                PlotFunctionElement plot_elem = (PlotFunctionElement)IfCode[i];
+                IsParallel = false;
+            }
+            if (IfCode[i] is DeleteVariable)
+            {
+                DeleteVariable delete_elem = (DeleteVariable)IfCode[i];
+                IsParallel = false;
+            }
+            if (IfCode[i] is PrintOperationElement)
+            {
+                PrintOperationElement print_elem = (PrintOperationElement)IfCode[i];
+                IsParallel = false;
+            }
+            if (IfCode[i] is FunctionCallElement)
+            {
+                FunctionCallElement func_elem = (FunctionCallElement)IfCode[i];
+            }
+        }
+        for (int i = 0; i < ElseCode.Count; i++)
+        {
+            if (ElseCode[i] is MatrixVariableDeclaration)
+            {
+                MatrixVariableDeclaration mat_elem = (MatrixVariableDeclaration)ElseCode[i];
+                IsParallel = false;
+            }
+            if (ElseCode[i] is PlotFunctionElement)
+            {
+                PlotFunctionElement plot_elem = (PlotFunctionElement)ElseCode[i];
+                IsParallel = false;
+            }
+            if (ElseCode[i] is DeleteVariable)
+            {
+                DeleteVariable delete_elem = (DeleteVariable)ElseCode[i];
+                IsParallel = false;
+            }
+            if (ElseCode[i] is PrintOperationElement)
+            {
+                PrintOperationElement print_elem = (PrintOperationElement)ElseCode[i];
+                IsParallel = false;
+            }
+            if (ElseCode[i] is FunctionCallElement)
+            {
+                FunctionCallElement func_elem = (FunctionCallElement)ElseCode[i];
+            }
+        }
+    }
 }
 
 

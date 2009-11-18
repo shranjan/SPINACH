@@ -23,9 +23,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 using Spinach;
 
-namespace UserInterface
+namespace Spinach
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
@@ -33,35 +34,40 @@ namespace UserInterface
     public partial class ProgWin : Window
     {
         private ErrorModule err = new ErrorModule();
+        //private Core core = new Core();
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
-        private Spinach.exec FE = new exec();
+        bool read, write;
+
+        private PlotReceiver plot = new PlotReceiver();
+        PngBitmapEncoder PBE = new PngBitmapEncoder();
+        private executor Controller;
+        private string plotpath = "";
+        private int isplotReady = 0;
 
         public enum editorType { owner, collaborator };
 
         //this is to know the type of invocation
 
-        public ProgWin()
-        {
-            InitializeComponent();
-            err.ProgWinError+=new ErrorNotification(ShowError);
-            keywords = FE.getKeywords();
-        }
+        //public ProgWin()
+        //{
+        //    InitializeComponent();
+        //    err.ProgWinError+=new ErrorNotification(ShowError);
+        //    keywords = FE.getKeywords();
+        //}
 
         public ProgWin(editorType e)
         {
             InitializeComponent();
             et = e;
             err.ProgWinError += new ErrorNotification(ShowError);
-            keywords = FE.getKeywords();
-            err.SetFrontEndObject(FE);
-            
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            
+            plot.image +=new PlotReceiver.BmpImage(EnablePlot);
+            Controller = new executor(plot);
+            Controller.resEvent +=new executor.result(Display);
+            keywords = Controller.frontEnd.getKeywords();
+            err.SetExecutorObject(Controller);
+            err.SetPlotObject(plot);
         }
 
         private void mnuFile_Click(object sender, RoutedEventArgs e)
@@ -114,11 +120,6 @@ namespace UserInterface
             mnuDelete.Visibility = Visibility.Visible;
             mnuEdit.Visibility = Visibility.Visible;
         }
-       
-        private void mnuPlot_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
         private void mnuAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -162,6 +163,9 @@ namespace UserInterface
                 {
                     lstUsers.Items.Add(progUserList[i]);
                 }
+
+                //This will disable the Access Control menu
+                mnuAccess.IsEnabled = false;
             }
             //keywords.Add("int");
             //keywords.Add("double");
@@ -198,17 +202,21 @@ namespace UserInterface
                     text = text.Substring(0, index + keywords[s].Length);
                     txt = text.Split('\n');
                     int num = 0;
-                    for (int i = 0; i <txt.Length; i++)
+                    for (int i = 0; i < txt.Length; i++)
                         if (txt[i].Length > 1)
                             num = num + 1;
-                    if ((index == 0 || (index > 0 && (text[index - 1] == ' ' || text[index - 1] == '\n'))) && index + keywords[s].Length <= tr.Text.Length && (tr.Text[index + keywords[s].Length] == ' ' || tr.Text[index + keywords[s].Length] == '\r'))
+                        else if (txt[i].Length == 1 && keywords[s].Length == 1 && txt[i] == keywords[s])
+                            num = num + 1;
+                    if ((index==0 || (index >= 1 &&
+                        !((tr.Text[index - 1] >= 'a' && tr.Text[index - 1] <= 'z') || (tr.Text[index - 1] >= 'A' && tr.Text[index - 1] <= 'Z')))) &&
+                        !((tr.Text[index + keywords[s].Length] >= 'a' && tr.Text[index + keywords[s].Length] <= 'z') || (tr.Text[index + keywords[s].Length] >= 'A' && tr.Text[index + keywords[s].Length] <= 'Z')))
                     {
                         t.start = index+2*num;
                         t.size = keywords[s].Length;
                         m_tags.Add(t);
                     }
-                    text = text.Substring(0, index);
-                    index = text.LastIndexOf(keywords[s]);
+                        text = text.Substring(0, index);
+                        index = text.LastIndexOf(keywords[s]);
                 }
             }
             format();
@@ -293,18 +301,21 @@ namespace UserInterface
 
             private void btnCompute_Click(object sender, RoutedEventArgs e)
             {
+                isplotReady = 0;
+                plotpath = Title;
+                plotpath += ".png";
                 TextPointer start = rtbInput.Document.ContentStart;
                 TextPointer end = rtbInput.Document.ContentEnd;
                 TextRange tr = new TextRange(start, end);
-                FE.Visitline(tr.Text.ToString());
+                Controller.VisitLine(tr.Text.ToString());
+                mnuPlot.IsEnabled = true;
             }
 
-            public void loadProgram(int read, int write, string text)
+            public void loadProgram(string text)
             {
-                TextPointer tp = rtbInput.CaretPosition.GetPositionAtOffset(0, LogicalDirection.Forward);
-                rtbInput.CaretPosition.InsertTextInRun(text);
-                //rtbChat.CaretPosition.InsertParagraphBreak();
-                rtbInput.CaretPosition = tp;
+                rtbInput.AppendText(text);
+                syntax();
+                LineNumbers();
             }
 
             private void mnuSave_Click(object sender, RoutedEventArgs e)
@@ -320,7 +331,6 @@ namespace UserInterface
                             StreamWriter sw = new StreamWriter(saveFileDialog1.FileName,false);
                             using (sw)
                             {
-
                                 TextPointer start = rtbInput.Document.ContentStart;
                                 TextPointer end = rtbInput.Document.ContentEnd;
                                 TextRange tr = new TextRange(start, end);
@@ -334,6 +344,92 @@ namespace UserInterface
                     }
                 }
 
+            }
+
+            private void EnablePlot(PngBitmapEncoder encoder)
+            {
+                try
+                {
+                    if (encoder != null)
+                    {
+                        PBE = new PngBitmapEncoder();
+                        PBE.Frames.Add(BitmapFrame.Create(encoder.Frames[0].Clone()));
+                        isplotReady = 1;
+                        System.IO.FileStream outStream = new System.IO.FileStream(plotpath, System.IO.FileMode.Create);
+                        PBE.Save(outStream);
+                        outStream.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.Windows.MessageBox.Show("Error in enable plot:" + e.Message);
+                }
+            }
+            
+            private void Display(string res)
+	        {
+	    	    rtbResult.AppendText(res);
+            }
+
+            private void mnuShowPlot_Click(object sender, RoutedEventArgs e)
+            {
+                if (isplotReady == 1)
+                {
+                    ProgPlot frmPlot = new ProgPlot(plotpath);
+                    frmPlot.ShowDialog();
+                }
+                else
+                    System.Windows.MessageBox.Show("No Plot");
+            }
+
+            private void mnuSavePlot_Click(object sender, RoutedEventArgs e)
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "png files (*.png)|*.png";
+                saveFileDialog1.FilterIndex = 1;
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    try
+                    {
+                        String tempPath = saveFileDialog1.FileName;
+
+                        // create a file stream for saving image
+                        using (FileStream outStream = new FileStream(tempPath, FileMode.Create))
+                        {
+                            PBE.Save(outStream);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.MessageBox.Show("Error: Could not Write file to disk. Original error: " + ex.Message);
+                    }
+                }
+            }
+
+            public void setPermissions(string perm)
+            {
+                if (perm == "RW")
+                {
+                    read = true;
+                    write = true;
+                }
+                else if (perm == "R")
+                {
+                    read = true;
+                    write = false;
+                }
+                else if (perm == "W")
+                {
+                    read = false;
+                    write = true;
+                }
+
+                if (write)
+                    rtbInput.IsEnabled = true;
+                else
+                    rtbInput.IsEnabled = false;
             }
     }
 }

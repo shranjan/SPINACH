@@ -8,8 +8,8 @@
     <ProjectGuid>{F0B45798-C319-409A-A9DA-D21A9E3374B6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UserInterface</RootNamespace>
-    <AssemblyName>UserInterface</AssemblyName>
+    <RootNamespace>Spinach</RootNamespace>
+    <AssemblyName>Spinach</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -33,7 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SwarmComputing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="InterpreterExec, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SPINACH_DLLS\InterpreterExec.dll</HintPath>
+    </Reference>
+    <Reference Include="InterpreterFrontEnd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SPINACH_DLLS\InterpreterFrontEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="Plot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SPINACH_DLLS\Plot.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -47,9 +61,15 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -80,6 +100,9 @@
     <Compile Include="Error.cs" />
     <Compile Include="ProgConf.xaml.cs">
       <DependentUpon>ProgConf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgPlot.xaml.cs">
+      <DependentUpon>ProgPlot.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProgWin.xaml.cs">
       <SubType>Code</SubType>
@@ -128,6 +151,10 @@
     <Page Include="ProgConf.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProgPlot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProgWin.xaml">
       <Generator>MSBuild:Compile</Generator>

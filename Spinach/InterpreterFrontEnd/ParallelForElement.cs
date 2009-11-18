@@ -38,32 +38,73 @@ using System.Collections;
 
 public class ParallelForElement : Element
 {
-    //The Range variable.
-    RangeElement Range;
-    
+    //The Range Variable.
+    private VariableElement RangeVar;
+
+    //The starting Range.
+    private IntegerElement StartRange;
+
+    //The Ending Range.
+    private IntegerElement EndingRange;
+
     //List of code.
-    List<Element> Code = new List<Element>();
+    private List<Element> Code;
 
     //List that contains the code in the body of the loop.
-    List<List<Element>> CodeList = new List<List<Element>>();
+    private List<List<Element>> CodeList;
     
+    //Constructor
+    public ParallelForElement()
+    {
+        Code = new List<Element>();
+        CodeList = new List<List<Element>>();
+    }
+
+
     public override void Accept(Visitor visitor)
     {
         visitor.VisitParallelForElement(this);
     }
 
     //Set and get property for range variable.
-    public RangeElement RANGE
+    public VariableElement RANGEVARIABLE
     {
         get
         {
-            return Range;
+            return RangeVar;
         }
         set
         {
-            Range= value;
+            RangeVar = value;
         }
     }
+
+    //set and get the starting range
+    public IntegerElement STARTINGRANGE
+    {
+        get
+        {
+            return StartRange;
+        }
+        set
+        {
+            StartRange = value;
+        }
+    }
+
+    //set and get the Ending range
+    public IntegerElement ENDINGRANGE
+    {
+        get
+        {
+            return EndingRange;
+        }
+        set
+        {
+            EndingRange = value;
+        }
+    }
+
 
     //adds the code inside the parallelfor loop to the list.
     public Element ADDCODE
@@ -78,6 +119,7 @@ public class ParallelForElement : Element
     public void syncfunction()
     {
         CodeList.Add(Code);
+        chkForIf(Code);
         Code = new List<Element>();
     }
 
@@ -88,6 +130,24 @@ public class ParallelForElement : Element
         get
         {
             return CodeList;
+        }
+    }
+
+
+    public void chkForIf(List<Element> code)
+    {
+        for (int i = 0; i < code.Count; i++)
+        {
+            if (code[i] is IfStatementElement)
+            {
+                IfStatementElement if_elem = (IfStatementElement)code[i];
+                if_elem.ChkforParallel();
+            }
+            if (code[i] is ForStatementElement)
+            {
+                ForStatementElement for_elem = (ForStatementElement)code[i];
+                for_elem.ChkforParallel();
+            }
         }
     }
 }

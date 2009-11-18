@@ -1,0 +1,12 @@
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\Window1.baml
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\Window1.g.cs
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\App.g.cs
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\PlotModule_MarkupCompile.cache
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\PlotModule.g.resources
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\PlotModule.Properties.Resources.resources
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\PlotModule.csproj.GenerateResource.Cache
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\bin\Debug\PlotModule.exe
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\bin\Debug\PlotModule.pdb
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\PlotModule.exe
+C:\Users\Spidey\Documents\Visual Studio 2008\Projects\PlotModule\PlotModule\obj\Debug\PlotModule.pdb
