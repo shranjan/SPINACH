@@ -116,8 +116,8 @@ namespace Spinach
 
         private void mnuAccess_Click(object sender, RoutedEventArgs e)
         {
-            mnuAdd.Visibility = Visibility.Visible;
-            mnuDelete.Visibility = Visibility.Visible;
+            //mnuAdd.Visibility = Visibility.Visible;
+            //mnuDelete.Visibility = Visibility.Visible;
             mnuEdit.Visibility = Visibility.Visible;
         }
 
@@ -301,6 +301,7 @@ namespace Spinach
 
             private void btnCompute_Click(object sender, RoutedEventArgs e)
             {
+                txtResult.Text = "";
                 isplotReady = 0;
                 plotpath = Title;
                 plotpath += ".png";
@@ -368,7 +369,7 @@ namespace Spinach
             
             private void Display(string res)
 	        {
-	    	    rtbResult.AppendText(res);
+	    	    txtResult.Text += res;
             }
 
             private void mnuShowPlot_Click(object sender, RoutedEventArgs e)
@@ -430,6 +431,11 @@ namespace Spinach
                     rtbInput.IsEnabled = true;
                 else
                     rtbInput.IsEnabled = false;
+            }
+
+            private void Window_Unloaded(object sender, RoutedEventArgs e)
+            {
+                plot.terminate();
             }
     }
 }
