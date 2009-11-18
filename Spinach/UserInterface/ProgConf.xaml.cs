@@ -147,6 +147,7 @@ namespace Spinach
 
       private void submnuNew_Click(object sender, RoutedEventArgs e)
       {
+        programText = "";
         Thread newWindowThread =
                         new Thread(
                              new ThreadStart(
