@@ -59,3 +59,8 @@ H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\Plot.pdb
 H:\EarlyMorning\pinac\Spinach\InterpreterCore\obj\Debug\ResolveAssemblyReference.cache
 H:\EarlyMorning\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.dll
 H:\EarlyMorning\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.pdb
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\SPINACH_DLLS\InterpreterCore.dll
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\SPINACH_DLLS\InterpreterCore.pdb
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\InterpreterCore\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.dll
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.pdb
