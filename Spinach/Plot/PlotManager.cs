@@ -45,16 +45,17 @@ namespace Spinach
             if (error != null)
                 error(code, message);
 
-        } 
+        }
 
 
+       
         public PlotManager(Paint pa)
         {
             Canvas_Obj = new Hashtable();
             Updates = new Hashtable();
             encoder1 = new PngBitmapEncoder();
             paint = pa;
-
+            
 
         }
 
@@ -138,7 +139,7 @@ namespace Spinach
                 {
 
                     Canvas canvas_value = (Canvas)entry.Value;
-                    if (canvas_value.Height != can.Height)
+                    if (canvas_value.ActualHeight != can.Height)
                     {
                         resized_canvas = resize_canvas(canvas_value, pane_number);                        
                         resized_pane_number = FindKey(canvas_value);
