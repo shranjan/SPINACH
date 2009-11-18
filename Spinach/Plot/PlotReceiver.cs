@@ -35,7 +35,7 @@ public partial class PlotReceiver
     {
         //paint.error += new PlotError(OnError);
         paint.error +=new Paint.PlotError(OnError);
-
+        
     }
 
     public void OnError(int code, string message)
@@ -116,10 +116,15 @@ public partial class PlotReceiver
         }   // Exit synchronization block
     }
 
+
+
+
+
     public void checklist()
     {
         plot = new Thread(new ThreadStart(ThreadRun));
         plot.ApartmentState = ApartmentState.STA;
+        plot.IsBackground = true;
         plot.Start();    
         
     }
@@ -150,50 +155,64 @@ public partial class PlotReceiver
     private void parsePaint()
     {
        
-        paint.Plottitle = "sample plot";
-        paint.X_Fact = 1;
-        paint.Y_Fact = 1;
-        paint.Xtitle = "X-axis";
-        paint.Ytitle = "Y-axis";
-        paint.Mode = p1.ScaleMode;
+        //paint.Plottitle = paint.Plottitle==null?"sample plot":p1.PlotTitle;
+        //paint.X_Fact = paint.X_Fact!=1?paint.X_Fact:1;
+        //paint.Y_Fact = paint.Y_Fact != 1 ? paint.Y_Fact : 1;
+        //paint.Xtitle = paint.Xtitle != "X-Axis" ? paint.Xtitle : "X-Axis";//paint.Xtitle = "X-axis";
+        //paint.Ytitle = paint.Ytitle != "Y-Axis" ? paint.Ytitle : "Y-Axis";//paint.Ytitle = "Y-axis";
+        //paint.Mode = paint.Mode;
+        
         
         switch (p1.Command)
         {
-            case "subplot":
-
+            case "subPlot":
+                
                 if (p1.Dimensions == 1) { }// the public function is yet to be designed
                 if (p1.Dimensions == 2) 
-                {                    
-                    double[] list = new double[p1.Data.GetLength(1)];
+                {
+                    int length = 0;
+                    double[] list = new double[p1.Data.GetLength(1) * p1.Data.GetLength(0)];
+                    for (int i = 0; i < p1.Data.GetLength(0); i++)
                         for (int j = 0; j < p1.Data.GetLength(1); j++)
-                            list[j]=p1.Data[0, j];
-                        paint.Plottitle = p1.PlotTitle;
+                            list[length++] = p1.Data[i, j];
                     paint.subplot2D(list, p1.PaneNum);
                 }
-                if (p1.Dimensions == 3) { }// the public function is yet to be designed
+                if (p1.Dimensions == 3) { }// the public function is yet to be designed              
+
                 retImage(paint.pmanager.returnEncoderImage());
                 break;
             case "plot":
+
                 if (p1.Dimensions == 1) { }// the public function is yet to be designed
                     if (p1.Dimensions == 2)
                     {
-                        double[] list = new double[p1.Data.GetLength(1)];
-                        for (int j = 0; j < p1.Data.GetLength(1); j++)
-                            list[j] = p1.Data[0, j];
+                        int length = 0;
+                        double[] list = new double[p1.Data.GetLength(1) * p1.Data.GetLength(0)];
+                        for (int i = 0; i < p1.Data.GetLength(0); i++)
+                            for (int j = 0; j < p1.Data.GetLength(1); j++)
+                                list[length++] = p1.Data[i, j];
                         paint.Plottitle = p1.PlotTitle;
                         paint.plot2D(list);  // canvas has to be removed
                     }
                     if (p1.Dimensions == 3) { }// the public function is yet to be designed
+                   /* paint.pmanager.returnEncoderImage().Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal,
+          new Action(
+            delegate()
+            {
+                retImage(paint.pmanager.returnEncoderImage());
+               
+            }
+        ));*/
                     retImage(paint.pmanager.returnEncoderImage());
                     break;
-            case "plot3D": break;// the public function is yet to be designed
-            case "resetplot": paint.reset(); retImage(paint.pmanager.returnEncoderImage()); break; // the public function is yet to be designed
-            case "setplotaxis": paint.X_Fact = p1.X_Fact;
-                paint.Y_Fact = p1.Y_Fact; retImage(paint.pmanager.returnEncoderImage()); break; // for 3D, zfact is to be inserted
-            case "setaxistitle": paint.Xtitle = p1.X_Axis_Title;
+            case "resetPlot": paint.reset(); retImage(paint.pmanager.returnEncoderImage()); break; // the public function is yet to be designed
+            case "setPlotAxis": paint.X_Fact = p1.X_Fact;
+                paint.Y_Fact = p1.Y_Fact; break; // for 3D, zfact is to be inserted
+            case "setAxisTitle": paint.Xtitle = p1.X_Axis_Title;
                 paint.Ytitle = p1.Y_Axis_Title;
                 paint.Ztitle = p1.Z_Axis_Title;
-                retImage(paint.pmanager.returnEncoderImage());
+                break;
+            case "setScaleMode": paint.Mode = p1.ScaleMode;
                 break;// the public function is yet to be designed
             
 
