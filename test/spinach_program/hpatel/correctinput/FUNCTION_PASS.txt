@@ -1,0 +1,76 @@
+
+int funcf(int x)
+{
+x=x*5;
+return x;
+}
+
+int funca(int x)
+{
+x=x/5;
+x=funcf(x);
+return x;
+}
+
+
+void funcb(int x,double d)
+{
+x=x+d;
+}
+
+
+double funcc()
+{
+return 1.0;
+}
+
+
+int funcd(int x,int y)
+{
+	if(x==y)
+	{
+	return 1;
+	}
+	else
+	{
+	return 0;
+	}
+}
+
+
+int funce(int x)
+{
+	int a=funca(x);
+	if(a==x)
+	{
+	return 0;
+	}
+	else
+	{
+	return 1;
+	}
+}
+
+int funcg(int x)
+{
+	if(x==5)
+	{
+	int a=funca(x);
+	return a;
+	}
+	else
+	{
+	int a=funcf(x);
+	return a;
+	}
+return 0;
+}
+
+int x=funca(10);
+print x;
+int y=funce(10);
+print y;
+int z=funcd(10,10);
+print z;
+int a=funcg(10);
+print a;

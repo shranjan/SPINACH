@@ -68,6 +68,7 @@ public class PlotFunctionElement : Element
 
     private string functionName;
     private IntegerElement row;
+    
     private VariableElement varData;
     private IntegerElement mode;
     private string type;

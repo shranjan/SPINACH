@@ -23,6 +23,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 using Spinach;
 
 namespace Spinach
@@ -37,11 +38,13 @@ namespace Spinach
         private List<string> swarmUserList;
         private List<string> progUserList;
         public editorType et;
+        bool read, write;
 
-        PngBitmapEncoder PBE = new PngBitmapEncoder();
-        private executor Controller = new executor();
-        //private Spinach.exec FE = new exec();
         private PlotReceiver plot = new PlotReceiver();
+        PngBitmapEncoder PBE = new PngBitmapEncoder();
+        private executor Controller;
+        private string plotpath = "";
+        private int isplotReady = 0;
 
         public enum editorType { owner, collaborator };
 
@@ -60,14 +63,11 @@ namespace Spinach
             et = e;
             err.ProgWinError += new ErrorNotification(ShowError);
             plot.image +=new PlotReceiver.BmpImage(EnablePlot);
+            Controller = new executor(plot);
+            Controller.resEvent +=new executor.result(Display);
             keywords = Controller.frontEnd.getKeywords();
             err.SetExecutorObject(Controller);
             err.SetPlotObject(plot);
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void mnuFile_Click(object sender, RoutedEventArgs e)
@@ -163,6 +163,9 @@ namespace Spinach
                 {
                     lstUsers.Items.Add(progUserList[i]);
                 }
+
+                //This will disable the Access Control menu
+                mnuAccess.IsEnabled = false;
             }
             //keywords.Add("int");
             //keywords.Add("double");
@@ -298,13 +301,17 @@ namespace Spinach
 
             private void btnCompute_Click(object sender, RoutedEventArgs e)
             {
+                isplotReady = 0;
+                plotpath = Title;
+                plotpath += ".png";
                 TextPointer start = rtbInput.Document.ContentStart;
                 TextPointer end = rtbInput.Document.ContentEnd;
                 TextRange tr = new TextRange(start, end);
                 Controller.VisitLine(tr.Text.ToString());
+                mnuPlot.IsEnabled = true;
             }
 
-            public void loadProgram(int read, int write, string text)
+            public void loadProgram(string text)
             {
                 rtbInput.AppendText(text);
                 syntax();
@@ -341,8 +348,22 @@ namespace Spinach
 
             private void EnablePlot(PngBitmapEncoder encoder)
             {
-                mnuPlot.IsEnabled = true;
-                PBE = encoder;
+                try
+                {
+                    if (encoder != null)
+                    {
+                        PBE = new PngBitmapEncoder();
+                        PBE.Frames.Add(BitmapFrame.Create(encoder.Frames[0].Clone()));
+                        isplotReady = 1;
+                        System.IO.FileStream outStream = new System.IO.FileStream(plotpath, System.IO.FileMode.Create);
+                        PBE.Save(outStream);
+                        outStream.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    System.Windows.MessageBox.Show("Error in enable plot:" + e.Message);
+                }
             }
             
             private void Display(string res)
@@ -352,8 +373,13 @@ namespace Spinach
 
             private void mnuShowPlot_Click(object sender, RoutedEventArgs e)
             {
-                ProgPlot frmPlot = new ProgPlot(PBE);
-                frmPlot.ShowDialog();
+                if (isplotReady == 1)
+                {
+                    ProgPlot frmPlot = new ProgPlot(plotpath);
+                    frmPlot.ShowDialog();
+                }
+                else
+                    System.Windows.MessageBox.Show("No Plot");
             }
 
             private void mnuSavePlot_Click(object sender, RoutedEventArgs e)
@@ -380,6 +406,30 @@ namespace Spinach
                         System.Windows.MessageBox.Show("Error: Could not Write file to disk. Original error: " + ex.Message);
                     }
                 }
+            }
+
+            public void setPermissions(string perm)
+            {
+                if (perm == "RW")
+                {
+                    read = true;
+                    write = true;
+                }
+                else if (perm == "R")
+                {
+                    read = true;
+                    write = false;
+                }
+                else if (perm == "W")
+                {
+                    read = false;
+                    write = true;
+                }
+
+                if (write)
+                    rtbInput.IsEnabled = true;
+                else
+                    rtbInput.IsEnabled = false;
             }
     }
 }

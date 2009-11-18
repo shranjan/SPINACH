@@ -28,3 +28,15 @@ C:\Users\Rajika\Desktop\pinac\pinac\Spinach\Spinach\obj\Debug\Spinach.exe
 C:\Users\Rajika\Desktop\pinac\pinac\Spinach\Spinach\obj\Debug\Spinach.pdb
 C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\Spinach\obj\Debug\Spinach.exe
 C:\Users\JAGADISH PRADEEP\Desktop\SPINACH\pinac\Spinach\Spinach\obj\Debug\Spinach.pdb
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\bin\Debug\Spinach.exe
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\bin\Debug\Spinach.pdb
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\Window1.baml
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\Window1.g.cs
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\App.g.cs
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach_MarkupCompile.cache
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.g.resources
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.Properties.Resources.resources
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.csproj.GenerateResource.Cache
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.exe
+C:\Users\shashi\Desktop\pinac\Spinach\Spinach\obj\Debug\Spinach.pdb

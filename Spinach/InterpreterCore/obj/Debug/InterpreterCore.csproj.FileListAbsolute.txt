@@ -36,3 +36,26 @@ C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\obj\Debug\ResolveA
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.dll
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.pdb
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterFrontEnd.dll
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterCore.dll
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterCore.pdb
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\antlr.runtime.dll
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\Antlr3.Runtime.dll
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\Antlr3.Utility.dll
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\StringTemplate.dll
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterFrontEnd.pdb
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.dll
+C:\Users\shashi\Desktop\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.pdb
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterCore.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterCore.pdb
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\antlr.runtime.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\Antlr3.Runtime.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\Antlr3.Utility.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterFrontEnd.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\Plot.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\StringTemplate.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\InterpreterFrontEnd.pdb
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\bin\Debug\Plot.pdb
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\obj\Debug\ResolveAssemblyReference.cache
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.dll
+H:\EarlyMorning\pinac\Spinach\InterpreterCore\obj\Debug\InterpreterCore.pdb

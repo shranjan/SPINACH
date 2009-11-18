@@ -1,0 +1,33 @@
+// Sample program for checking plot commands:--
+
+// Author: Chetan Thawani
+
+// Currently, only plot functions for 2D plots are implemented, so only these are tested below:
+
+double[] plist = { 10,3,5,10,2 }   // this is the list of datasets for plotting points on a 2D plane. the index of these points is taken on x-axis and these points are taken on y-axis.
+
+double[] plist1 = { 1,3,-5,10,2 }  // similar data structure as plist.
+
+plot(plist,"abc",'2D');  // checking if the plot function works by taking arguments plist as a 2D dataset, abc as the title of the plot and 2D as the type of the plot.
+
+plot(plist1,"xyz",'2D'); // checking if the plot function works by taking arguments plist1 as a 2D dataset, xyz as the title of the plot and 2D as the type of the plot.
+
+subplot(2,plist,"a",'2D'); // checking if the subplot function works by taking arguments 2 as the pane number, plist as the dataset, a as the title of the subplot and 2D as the type of the subplot.
+
+subplot(4,plist1,"x",'2D'); // checking if the subplot function works by taking arguments 4 as the pane number, plist1 as the dataset, x as the title of the subplot and 2D as the type of the subplot.
+
+resetplot(); // function to reset the plot drawn on the panel (canvas).
+
+subplot(3,plist,"y",'2D'); // checking if the subplot function works by taking arguments 3 as the pane number, plist as the dataset, y as the title of the subplot and 2D as the type of the subplot.
+
+setplotaxis(2.5,1.5); // checking the setplotaxis function which takes x-factor and y-factor as an argument. x-factor and y-factor is the amount by which the plot resizes itself either by shrinking or expanding depending on the space left on the canvas.
+
+setplotaxis(3.5); // checking the setplotaxis function which takes only x-factor as an argument.
+
+setaxistitle("xyz","abc"); // checking the setaxistitle function which takes the x-axis title name and y-axis title name as arguments.
+
+setscalemode(linear); // checking the setscalemode function which takes either linear or log as an argument. if it is linear, then the plot would be straight in shape and if it is logarithmic, then it would be curved in shape.
+
+setscalemode(log); // checking the setscalemode function which takes either linear or log as an argument. if it is linear, then the plot would be straight in shape and if it is logarithmic, then it would be curved in shape.
+
+// inputs for 3D plots are not decided till yet.  

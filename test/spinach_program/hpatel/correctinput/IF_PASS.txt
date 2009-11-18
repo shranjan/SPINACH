@@ -1,0 +1,7 @@
+int a;
+a=10;
+double b;
+b=3.0;
+int c;
+if(a==10){a=11;int x;return 10;}
+if(a==11){if(b<3.0){}else{return 1;}}else{return 0;}

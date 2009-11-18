@@ -33,11 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InterpreterExec, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SPINACH_DLLS\InterpreterExec.dll</HintPath>
+    </Reference>
     <Reference Include="InterpreterFrontEnd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\InterpreterFrontEnd\bin\Debug\InterpreterFrontEnd.dll</HintPath>
+      <HintPath>..\SPINACH_DLLS\InterpreterFrontEnd.dll</HintPath>
     </Reference>
-    <Reference Include="SwarmComputing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Plot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SPINACH_DLLS\Plot.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -55,9 +65,6 @@
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="WindowsBase">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="PresentationCore">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="PresentationFramework">
@@ -157,20 +164,6 @@
   <ItemGroup>
     <Resource Include="Icon.JPG" />
     <Resource Include="SPINACH_logo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\InterpreterCore\InterpreterCore.csproj">
-      <Project>{B3D75F06-4B39-4ADF-9AA3-FBCE00999600}</Project>
-      <Name>InterpreterCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InterpreterExec\InterpreterExec.csproj">
-      <Project>{03078AB8-5AA2-4478-93AC-2B090B13150C}</Project>
-      <Name>InterpreterExec</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plot\Plot.csproj">
-      <Project>{82C7B14D-6F1B-4353-A457-66885DC960E3}</Project>
-      <Name>Plot</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

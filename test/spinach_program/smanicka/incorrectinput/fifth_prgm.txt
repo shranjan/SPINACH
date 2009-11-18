@@ -1,0 +1,28 @@
+int var;
+int secondvar;
+double thirdvar;
+int fourthvar;
+int fifthvar;
+int sixthvar;
+var = 2;
+secondvar = 4;
+thirdvar  = 567.89; 
+fourthvar = var + secondvar;
+fifthvar  = firstvar * secondvar;
+sixthvar  = fifthvar - secondvar;
+// this struct contains a string as well
+Struct s{ int a; int b; string str};
+s svar;
+svar.a=4;
+svar.str = \"string variable\";
+print var;
+print secondvar;
+print thirdvar;
+print fourthvar;
+print fifthvar;
+print sixthvar;
+print svar.a;
+print svar.str;
+print \" This is a String\";
+delete var;
+delete svar;
