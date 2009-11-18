@@ -432,5 +432,10 @@ namespace Spinach
                 else
                     rtbInput.IsEnabled = false;
             }
+
+            private void Window_Unloaded(object sender, RoutedEventArgs e)
+            {
+                plot.terminate();
+            }
     }
 }
