@@ -44,3 +44,5 @@ C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\UserInterface\obj\Debug\UserInterf
 C:\Users\KULDEEP GANDHI\Desktop\pinac\Spinach\UserInterface\obj\Debug\UserInterface.pdb
 I:\Course\CSE784_Software_engineering_studio\final_project\pinac\Spinach\UserInterface\obj\Debug\UserInterface.exe
 I:\Course\CSE784_Software_engineering_studio\final_project\pinac\Spinach\UserInterface\obj\Debug\UserInterface.pdb
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\UserInterface\obj\Debug\UserInterface.exe
+C:\Users\Shaonan Wang\zuzhu\pinac\Spinach\UserInterface\obj\Debug\UserInterface.pdb
