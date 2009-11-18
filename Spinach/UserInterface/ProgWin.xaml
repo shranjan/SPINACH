@@ -45,11 +45,11 @@
         <Label HorizontalAlignment="Left" Margin="20,52,0,0" Name="lblInput" Width="63" Height="32" VerticalAlignment="Top">Program</Label>
         <Label Margin="7,57,0,0" Name="lblResult" Height="32" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="47">Result</Label>
         <Button Height="23" Margin="0,0,21,32" Name="btnCompute" VerticalAlignment="Bottom" Grid.Row="1" HorizontalAlignment="Right" Width="75" Click="btnCompute_Click">Compute</Button>
-        <RichTextBox Margin="11,81,12,9" Name="rtbResult" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Column="1" IsEnabled="True" IsReadOnly="True" Grid.ColumnSpan="2" />
         <ListBox Margin="11,54,12,71" Name="lstUsers" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" />
         <Label Margin="11,27,49,0" Name="lblUsers" Height="32" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1">Collaborators</Label>
         <Label Height="32" Margin="25,0,0,0" Name="lblProgName" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Width="98">Program Name</Label>
         <Label Height="32" Name="lblOwner" VerticalAlignment="Top" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="1" Width="47">Owner</Label>
         <ListBox HorizontalAlignment="Left" Margin="0,81,0,71" Name="lstLine" Width="27" Grid.RowSpan="2" Visibility="Hidden" Padding="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" FontSize="14" />
+        <TextBox Margin="11,81,12,9" Name="txtResult" Grid.Column="1" Grid.ColumnSpan="2" />
     </Grid>
 </Window>

@@ -301,6 +301,7 @@ namespace Spinach
 
             private void btnCompute_Click(object sender, RoutedEventArgs e)
             {
+                txtResult.Text = "";
                 isplotReady = 0;
                 plotpath = Title;
                 plotpath += ".png";
@@ -368,7 +369,7 @@ namespace Spinach
             
             private void Display(string res)
 	        {
-	    	    rtbResult.AppendText(res);
+	    	    txtResult.Text += res;
             }
 
             private void mnuShowPlot_Click(object sender, RoutedEventArgs e)
