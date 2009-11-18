@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterpreterExec", "Interpre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plot", "Plot\Plot.csproj", "{82C7B14D-6F1B-4353-A457-66885DC960E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swarm", "SwarmComputing\Swarm.csproj", "{B303F988-4CD6-451D-97CC-A8704B510B64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{82C7B14D-6F1B-4353-A457-66885DC960E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82C7B14D-6F1B-4353-A457-66885DC960E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82C7B14D-6F1B-4353-A457-66885DC960E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B303F988-4CD6-451D-97CC-A8704B510B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B303F988-4CD6-451D-97CC-A8704B510B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B303F988-4CD6-451D-97CC-A8704B510B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B303F988-4CD6-451D-97CC-A8704B510B64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
