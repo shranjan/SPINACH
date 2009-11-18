@@ -138,6 +138,9 @@ namespace Spinach
             mode = 1;
             factx = 1;
             facty = 1;
+            Xtitle = "X-Axis";
+            Ytitle = "Y-Axis";
+            Plottitle = "sample plot";
             pm = new PlotManager(this);
             pm.error += new PlotManager.PlotError(OnError);
         }
@@ -313,7 +316,7 @@ namespace Spinach
             activeCanvas = new Canvas();
             activeCanvas.Width = 500;
             activeCanvas.Height = 500;
-            adjustPaneSize(panenum);
+            adjustPaneSize(4);
             pointslist = transformValuesToPoints(plist);
             if (mode == 1)
                 plotPoints(pointslist);
@@ -478,6 +481,8 @@ namespace Spinach
             double Ylen = ((maxPt.Y >= 0 && minPt.Y <= 0) || (maxPt.Y <= 0 && minPt.Y >= 0)) ? (Math.Abs(maxPt.Y) + Math.Abs(minPt.Y)) + 2 : (minPt.Y > 0) ? maxPt.Y + 2 : Math.Abs(minPt.Y) + 2;
             spanX = (int)(activeCanvas.Width / Xlen / factx);
             spanY = (int)(activeCanvas.Height / Ylen / facty);
+            spanX=spanX==0?1:spanX;
+            spanY=spanY==0?1:spanY;
         }
 
         // changed by rushabh
@@ -523,8 +528,10 @@ namespace Spinach
             int jx, jy, xtext, ytext;
             int xpart = (int)activeCanvas.Width / spanX;
             int ypart = (int)activeCanvas.Height / spanY;
-            xtext = jx = (xpart < 25) ? 1 : (xpart < 50) ? 2 : (xpart < 100) ? 5 : (xpart < 200) ? 10 : 50;
-            ytext = jy = (ypart < 25) ? 1 : (ypart < 50) ? 2 : (ypart < 100) ? 5 : (ypart < 200) ? 10 : 50;
+            //xtext = jx = (xpart < 25) ? 1 : (xpart < 50) ? 2 : (xpart < 100) ? 5 : (xpart < 200) ? 10 : 50;
+            //ytext = jy = (ypart < 25) ? 1 : (ypart < 50) ? 2 : (ypart < 100) ? 5 : (ypart < 200) ? 10 : 50;
+            xtext = jx = Math.Ceiling((double)xpart / 10) == 0 ? 1 : (int)Math.Ceiling((double)xpart / 10);
+            ytext = jy = Math.Ceiling((double)ypart / 10) == 0 ? 1 : (int)Math.Ceiling((double)ypart / 10);
             xstep *= jx;
             ystep *= jy;
             int xincre = (int)xstep;
